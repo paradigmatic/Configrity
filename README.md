@@ -106,7 +106,7 @@ In your code, you can then directly get files from configurations:
    
 or:
 
-   val homeDir = env( "HOME", new File( "/tmp" ) )
+    val homeDir = env( "HOME", new File( "/tmp" ) )
        // homeDir == Some(new File("/home/paradigmatic"))
 
 See `src/ValueConverter.scala` for other examples.
