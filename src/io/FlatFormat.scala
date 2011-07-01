@@ -19,7 +19,9 @@ package configrity.io
 
 import configrity.Configuration
 import configrity.ValueConverters._
+
 import scala.collection.mutable.StringBuilder
+import scala.util.parsing.combinator._
 
 /**
  * Basic format:
@@ -40,4 +42,30 @@ object FlatFormat extends ExportFormat {
     out.toString
   }
 
-}
+  case class ParserException(s: String) extends Exception(s)
+
+  object Parser extends RegexParsers {
+
+
+    override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
+    def key: Parser[String] = """([^=\s])+""".r
+    def value: Parser[String] = """([^=\n])*""".r ^^ { _.trim }
+    def equals: Parser[String]  = "="
+    
+    def entry = key ~ equals ~ value ^^ {
+      case k ~ _ ~ v => (k,v)
+    }
+    
+      def entries = repsep( entry, '\n' )
+    
+    def parse( in: String )  = {
+      parseAll(entries, in) match {
+        case Success( lst , _ ) => Configuration( lst.toMap )
+        case x: NoSuccess => throw ParserException(x.toString)
+      }
+    }
+
+  }
+
+
+} 
