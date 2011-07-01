@@ -19,23 +19,33 @@ package configrity.io
 
 import configrity.Configuration
 
+/**
+ * Format for converting a String into a Configuration
+ */
 trait ImportFormat {
 
   /**
-   * Convert a string into a configuration
+   * Converts a string into a configuration
    */
   def fromText( s: String ): Configuration
 
 }
 
+/**
+ * Format for converting a Configuration into a String.
+ */
 trait ExportFormat {
 
   /**
-   * Convert a configuration into a string.
+   * Converts a configuration into a string.
    */
   def toText( configuration: Configuration ): String
 
 }
 
+/**
+ * Format able to convert Configuration to String and
+ * String to Configuration
+ */
 trait Format extends ImportFormat with ExportFormat
 

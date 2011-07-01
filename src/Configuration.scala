@@ -17,6 +17,8 @@
 
 package configrity
 
+import configrity.io._
+
 /**
  * A Configuration class stores and allow access to configuration data. Although
  * immutable, several methods allow to easily change configuration data, returning
@@ -57,6 +59,12 @@ case class Configuration( data: Map[String,String] ) {
     else
       this
 
+  /**
+   * Convert the map in a string using a provided export format.
+   * By default, FlatFormat is used.
+   */
+  def format( fmt: ExportFormat ) = fmt.toText( this )
+
 }
 
 
@@ -65,10 +73,16 @@ case class Configuration( data: Map[String,String] ) {
 object Configuration {
 
   /** Returns the environement variables as a Configuration */
-  def environement = Configuration( sys.env )
+  def environment = Configuration( sys.env )
 
   /** Returns the system properties as a Configuration */
   def systemProperties = Configuration( sys.props.toMap ) 
 
+  /** Instanciates a configuration file from a string using
+   *  eventually a specified format. By default, the FlatFormat
+   *  will be used.
+   */
+  def from( s: String, fmt: ImportFormat = FlatFormat ) = 
+    fmt.fromText( s )
 
 }

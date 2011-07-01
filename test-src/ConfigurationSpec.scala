@@ -1,6 +1,7 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import configrity.Configuration
+import configrity.io._
 import configrity.ValueConverters._
 
 
@@ -49,6 +50,13 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
     c2 should be (config)
   }
 
+  it can "be nicely formatted" in {
+    val out = new ExportFormat {
+      def toText( c: Configuration ) = "FOOBAR"
+    }
+    config.format(out) should be ("FOOBAR")
+  }
+
 }
 
 class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
@@ -59,8 +67,21 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
   }
 
   it can "be created from environement variables" in {
-    val config = Configuration.environement
+    val config = Configuration.environment
     config[String]("HOME") should be ('defined)
+  }
+
+  it can "be created from a string using a given format" in {
+    val s = 
+      """
+      foo = true
+      bar = 2
+      baz = hello world
+      """
+    val config = Configuration.from( s, FlatFormat )
+    config[Boolean]("foo") should be (Some(true))
+    config[Int]("bar") should be (Some(2))
+    config[String]("baz") should be (Some("hello world"))
   }
 }
 

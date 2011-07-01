@@ -24,10 +24,16 @@ import scala.collection.mutable.StringBuilder
 import scala.util.parsing.combinator._
 
 /**
- * Basic format:
- * key1 = value1
- * key2 = value2
- * etc.
+ * Encodes a simple flat text format. Composed of:
+ * 
+ * key1 = value1<br/>
+ * key2 = value2<br/>
+ * ...
+ * 
+ * where keys and values cannot contain an '=' character. Keys
+ * cannot contain whitespaces, while values can.
+ * Whitespaces elsewhere are ignored.
+ * Comment should start with '#' and are ignored.
  */
 object FlatFormat extends Format {
   
@@ -44,8 +50,10 @@ object FlatFormat extends Format {
 
   def fromText( s: String ) = Parser.parse( s )
 
+  /** Parser exceptions */
   case class ParserException(s: String) extends Exception(s)
 
+  /** Parser for FlatFormat */
   object Parser extends RegexParsers {
 
 
