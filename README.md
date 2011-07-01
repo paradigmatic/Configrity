@@ -111,6 +111,6 @@ or:
 
 See `src/ValueConverter.scala` for other examples.
 
-== License ==
+## License ##
 
 GPL 3. See `LICENSE.txt`.
