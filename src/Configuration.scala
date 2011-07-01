@@ -41,3 +41,17 @@ case class Configuration( data: Map[String,String] ) {
       this
 
 }
+
+
+/** Configuration companion object */
+
+object Configuration {
+
+  /** Returns the environement variables as a Configuration */
+  def environement = Configuration( sys.env )
+
+  /** Returns the system properties as a Configuration */
+  def systemProperties = Configuration( sys.props.toMap ) 
+
+
+}

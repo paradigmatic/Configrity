@@ -50,3 +50,17 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
   }
 
 }
+
+class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
+
+  "A configuration" can "be created from the system properties" in {
+    val config = Configuration.systemProperties
+    config.get[String]("line.separator") should be ('defined)
+  }
+
+  it can "be created from environement variables" in {
+    val config = Configuration.environement
+    config.get[String]("HOME") should be ('defined)
+  }
+}
+
