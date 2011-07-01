@@ -1,21 +1,23 @@
 # Configrity README file #
 
 Configrity is a scala configuration library. Project aims at
-simplicity, immutability, type safety and flexibility.
+simplicity, immutability, type safety, flexibility and humility.
 
 ## Features ##
 
 ### Implemented ###
 
   - Automatic values conversions via type classes.
-  - Configuration from system properties and environment variables.
+  - Loading configurations for a file or a source (InputStream, URL, etc.)
+  - Loading configurations from system properties and environment variables.
+  - Saving configurations to files.
 
 ### Planned ###
 
   - Interoperability with java properties.
   - Hierarchical configuration blocks.
-  - Loading configuration via scala io sources.
   - Configuration chaining (such as to provide default values).
+  - Export/Import formats: plists, JSON, XML, apache, etc.
 
 ## Installation ##
 
@@ -30,9 +32,22 @@ JDK 1.6, but should work with 1.5) and SBT.
     > doc
     > package
 
+## Example ##
+
+    import configrity.Configuration._
+    import configrity.ValueConverters._
+    
+    val config = Configuration.load( "server.conf" )
+    val hostname = config[String]("host")
+    val port = config[Int]("port")
+    val updatedConfig = config.set("port",80)
+    upddateConfig.save( "local.conf" )	
+
 ## Usage ##
 
-### Accessing a configuration value ###
+### Basics ###
+
+#### Accessing a configuration value ####
 
 If the configuration instance `config` represents the configuration:
 
@@ -62,7 +77,7 @@ When accessing a value, the conversion is realized by an implicit
 `ValueConverters` (hence the import in the first example). See below
 to learn how to write converters for pther types.
 
-### Setting values ###
+#### Setting values ####
 
 A Configuration can be modified using the `set` method. It either creates 
 a new value or replace silently an existing one. Since Configuration is
@@ -72,7 +87,7 @@ immutable, a new instance will be returned:
     val name = config2[String]( "name" )         // name == Some("Robert")
     val hasChildren = config2[Boolean]( "children" ) // hasChildren == Some(true)
 
-### Removing values ###
+#### Removing values ####
 
 The method `clear` allows to remove an existing key. If the key does not exist,
 nothing will happen:
@@ -80,7 +95,27 @@ nothing will happen:
     val config2 = config.clear( "name" ).clear( "address" )
     val name = config2[String]( "name" )         // name == None
 
-### System properties and environment variables ###
+### Loading and saving
+
+A configuration can be easily loaded from a file or a `scala.io.Source`:
+
+    val config1 = Configuration.load("config1.conf")
+    val config2 = Configuration.load( 
+    	Source fromURL "http://www.example.com/config/default"
+    )
+
+An optional `ImportFormat` argument can be passed. By default the
+`FlatFormat` is used.
+
+A configuration can also be saved to a file:
+
+    val config = Configuration.load( "before.conf" )
+    config.set("name","Gina").save( "after.conf" )
+    
+An optional `ExportFormat` argument can be passed. By default the
+`FlatFormat` is used.
+
+#### System properties and environment variables ####
 
 Configurations can be created from the current system properties or the environement
 variables:
