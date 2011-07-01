@@ -13,14 +13,14 @@ case class Configuration( data: Map[String,String] ) {
    * a ValueConverter instance which should be provided or implicitly defined
    * elsewhere.
    */
-  def get[A]( key: String )( implicit converter: ValueConverter[A] ) =
+  def apply[A]( key: String )( implicit converter: ValueConverter[A] ) =
     converter( data get key )
 
   /**
    * Retrieve and convert configuration data in the wanted type. The user
    * must supply a default value, returned is the key is not found.
    */
-  def get[A]( key: String, default: A )( implicit converter: ValueConverter[A] ) =
+  def apply[A]( key: String, default: A )( implicit converter: ValueConverter[A] ) =
     converter( data get key ) getOrElse default
 
   /**

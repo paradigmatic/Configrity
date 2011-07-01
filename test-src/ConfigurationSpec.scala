@@ -10,38 +10,38 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
   val config = Configuration( data )
 
   "A configuration" should "return none if it doesn't contain a key" in {
-    config.get[Int]("buzz") should be (None)
+    config[Int]("buzz") should be (None)
   }
 
   it should "be able to return converted values" in {
-    config.get[String]("foo") should be (Some("FOO"))
-    config.get[Int]("bar") should be (Some(1234))
-    config.get[Boolean]("baz") should be (Some(true))
+    config[String]("foo") should be (Some("FOO"))
+    config[Int]("bar") should be (Some(1234))
+    config[Boolean]("baz") should be (Some(true))
   }
 
   it should "return a default value when asked" in {
-    config.get[String]("foo", "HELLO") should be ("FOO")
-    config.get[Int]("bar", 0) should be (1234)
-    config.get[Boolean]("baz", false) should be (true)
-    config.get[Int]("buzz", 12) should be (12)
+    config[String]("foo", "HELLO") should be ("FOO")
+    config[Int]("bar", 0) should be (1234)
+    config[Boolean]("baz", false) should be (true)
+    config[Int]("buzz", 12) should be (12)
   }
 
   it should "be able to add new key" in {
     val c2 = config.set("buzz", 0.5)
-    c2.get[Double]("buzz") should be (Some(0.5))
-    config.get[Double]("buzz") should be (None)
+    c2[Double]("buzz") should be (Some(0.5))
+    config[Double]("buzz") should be (None)
   }
 
   it should "be able to replace existing key" in {
     val c2 = config.set("foo", 0.5)
-    c2.get[Double]("foo") should be (Some(0.5))
-    config.get[String]("foo") should be (Some("FOO"))
+    c2[Double]("foo") should be (Some(0.5))
+    config[String]("foo") should be (Some("FOO"))
   }
 
   it should "be able to remove an exitsing key" in {
     val c2 = config.clear("foo")
-    config.get[String]("foo") should be (Some("FOO"))
-    c2.get[String]("foo") should be (None)
+    config[String]("foo") should be (Some("FOO"))
+    c2[String]("foo") should be (None)
   }
   
   it should "not complain when trying to remove an inexistant key" in {
@@ -55,12 +55,12 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
 
   "A configuration" can "be created from the system properties" in {
     val config = Configuration.systemProperties
-    config.get[String]("line.separator") should be ('defined)
+    config[String]("line.separator") should be ('defined)
   }
 
   it can "be created from environement variables" in {
     val config = Configuration.environement
-    config.get[String]("HOME") should be ('defined)
+    config[String]("HOME") should be ('defined)
   }
 }
 
