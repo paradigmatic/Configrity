@@ -1,0 +1,10 @@
+*~
+.#*
+
+*.dat
+*.out
+
+lib_managed/
+target/
+project/boot
+project/build/target
