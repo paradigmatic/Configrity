@@ -1,5 +1,3 @@
-package configrity
-
 /*
  This file is part of Configrity.
  
@@ -16,6 +14,8 @@ package configrity
  You should have received a copy of the GNU General Public License
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+package configrity
 
 /**
  * Parse and convert an Option[String] into an Option[A].
