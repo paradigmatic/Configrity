@@ -100,14 +100,14 @@ can define a converter which retrieves a `java.io.File` with:
 
 In your code, you can then directly get files from configurations:
 
-   val env = Configuration.environment
-   val homeDir = env[File]( "HOME" ) 
-       // homeDir == Some(new File("/home/paradigmatic"))
+    val env = Configuration.environment
+    val homeDir = env[File]( "HOME" ) 
+        // homeDir == Some( new File("/home/paradigmatic") )
    
 or:
 
     val homeDir = env( "HOME", new File( "/tmp" ) )
-       // homeDir == Some(new File("/home/paradigmatic"))
+        // homeDir == new File("/home/paradigmatic"
 
 See `src/ValueConverter.scala` for other examples.
 
