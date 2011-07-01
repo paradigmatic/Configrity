@@ -6,6 +6,24 @@ import configrity.io.FlatFormat
 import configrity.io.FlatFormat._
 
 
+class FlatFormatSpec extends FlatSpec with ShouldMatchers{
+
+
+  "The flat format" can "write and read an empty Configuration" in {
+    val config = Configuration( Map() )
+    fromText( toText( config ) ) should be (config)
+  }
+
+  it can "write and read a Configuration" in {
+    val config = Configuration( 
+      Map("foo"->"FOO", "bar"->"1234", "baz"->"on")
+    )
+    fromText( toText( config ) ) should be (config)
+
+  }
+
+}
+
 class FlatFormatParserSpec extends FlatSpec with ShouldMatchers{
 
 

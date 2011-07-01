@@ -1,7 +1,8 @@
 import sbt._
+import reaktor.scct.ScctProject
 
 class ConfigrityProject(info: ProjectInfo) extends DefaultProject(info)
-{
+with ScctProject {
 
   val scalatest = "org.scalatest" % "scalatest_2.9.0" % "1.6.1"
   

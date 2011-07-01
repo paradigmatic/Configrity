@@ -29,7 +29,7 @@ import scala.util.parsing.combinator._
  * key2 = value2
  * etc.
  */
-object FlatFormat extends ExportFormat {
+object FlatFormat extends Format {
   
   lazy val sep = Configuration.systemProperties("line.separator", "\n")
 
@@ -41,6 +41,8 @@ object FlatFormat extends ExportFormat {
     }
     out.toString
   }
+
+  def fromText( s: String ) = Parser.parse( s )
 
   case class ParserException(s: String) extends Exception(s)
 
