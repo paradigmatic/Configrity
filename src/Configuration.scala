@@ -18,6 +18,7 @@
 package configrity
 
 import configrity.io._
+import scala.io.Source
 
 /**
  * A Configuration class stores and allow access to configuration data. Although
@@ -63,7 +64,26 @@ case class Configuration( data: Map[String,String] ) {
    * Convert the map in a string using a provided export format.
    * By default, FlatFormat is used.
    */
-  def format( fmt: ExportFormat ) = fmt.toText( this )
+  def format( fmt: ExportFormat = Configuration.defaultFormat ) = 
+    fmt.toText( this )
+
+  /** Saves the configuration to a file */
+  def save( 
+    file: java.io.File, 
+    fmt: ExportFormat = Configuration.defaultFormat
+  ) {
+    val out = new java.io.PrintWriter( file )
+    out.println( format(fmt) )
+    out.close
+  }
+
+  /** Saves the configuration to a file */
+  def save( filename: String, fmt: ExportFormat ): Unit =
+    save( new java.io.File( filename ), fmt )
+
+  /** Saves the configuration to a file */
+  def save( filename: String ): Unit =
+    save( new java.io.File( filename ) )
 
 }
 
@@ -71,6 +91,9 @@ case class Configuration( data: Map[String,String] ) {
 /** Configuration companion object */
 
 object Configuration {
+
+  /** By default, all conversions are done with FlatFormat */
+  val defaultFormat = FlatFormat
 
   /** Returns the environement variables as a Configuration */
   def environment = Configuration( sys.env )
@@ -82,7 +105,31 @@ object Configuration {
    *  eventually a specified format. By default, the FlatFormat
    *  will be used.
    */
-  def from( s: String, fmt: ImportFormat = FlatFormat ) = 
+  def from( s: String, fmt: ImportFormat = defaultFormat ) = 
     fmt.fromText( s )
+
+  /**
+   * Load a configuration from a scala.io.Source. An optional
+   * format can be passed.
+   */
+  def load( source: Source,
+           fmt: ImportFormat = defaultFormat ): Configuration = 
+    fmt.fromText( source.mkString )
+
+  /**
+   * Load a configuration from a file specified by a filename.
+   */
+  def load( fileName: String )
+  (implicit codec: scala.io.Codec): Configuration =
+    load( Source.fromFile( fileName ) )
+
+  /**
+   * Load a configuration from a file specified by a filename and
+   * using a given format.
+   */
+  def load( fileName: String, fmt: ImportFormat )
+  (implicit codec: scala.io.Codec): Configuration =
+    load( Source.fromFile( fileName ), fmt )
+
 
 }

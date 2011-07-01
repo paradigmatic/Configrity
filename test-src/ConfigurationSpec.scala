@@ -56,6 +56,26 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
     }
     config.format(out) should be ("FOOBAR")
   }
+  
+  it can "be saved to a file" in {
+    val file1 = "/tmp/configrity_configuration_spec_1.conf"
+    val file2 = "/tmp/configrity_configuration_spec_2.conf"
+
+    try {
+      config.save( file1 )
+      config.save( file2, FlatFormat )
+      val config2 = Configuration.load( file1 )
+      val config3 = Configuration.load( file2 )
+      config2 should be (config)
+      config3 should be (config)
+    } finally {
+      ( new java.io.File(file1) ).delete
+      ( new java.io.File(file2) ).delete
+    }
+    
+  }
+
+
 
 }
 
@@ -83,5 +103,31 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
     config[Int]("bar") should be (Some(2))
     config[String]("baz") should be (Some("hello world"))
   }
+
+  it can "be loaded from a file" in {
+    val filename = "/tmp/configrity_configuration_obj_spec.conf"
+    val fmt = FlatFormat
+    val s = 
+      """
+      foo = true
+      bar = 2
+      baz = hello world
+      """
+    val writer = new java.io.PrintWriter( filename )
+    writer.println(s)
+    writer.close()
+    try {
+      val config = Configuration.load(filename,fmt)
+      config[Boolean]("foo") should be (Some(true))
+      config[Int]("bar") should be (Some(2))
+      config[String]("baz") should be (Some("hello world"))
+      val config2 = Configuration.load(filename)
+      config2 should be (config)
+    } finally {
+      ( new java.io.File(filename) ).delete
+    }
+  }
+
+
 }
 

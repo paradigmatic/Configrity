@@ -1,11 +1,12 @@
 # Changelog #
 
-## Next version ##
+## Version 0.2.0 - 2011-07-01 ##
 
   ### New features ###
     
   - FlatFormat
   - From and to string conversion
+  . Load and save to files and scala.io.Source
   - Pretty text formatting
 
   ### Code quality ###
