@@ -8,7 +8,7 @@ simplicity, immutability, type safety, flexibility and humility.
 ### Implemented ###
 
   - Automatic values conversions via type classes.
-  - Loading configurations for a file or a source (InputStream, URL, etc.)
+  - Loading configurations from any source (File, InputStream, URL, etc.)
   - Loading configurations from system properties and environment variables.
   - Saving configurations to files.
   - Interoperability with java properties.
