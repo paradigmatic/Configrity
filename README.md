@@ -19,19 +19,6 @@ simplicity, immutability, type safety, flexibility and humility.
   - Configuration chaining (such as to provide default values).
   - Export/Import formats: plists, JSON, XML, apache, etc.
 
-## Installation ##
-
-To install Configrity you just need a worling java installation (tested with
-JDK 1.6, but should work with 1.5) and SBT.
-
-    $ git clone git://github.com/paradigmatic/Configrity.git
-    $ cd Configrity
-    $ sbt
-    > update
-    > test
-    > doc
-    > package
-
 ## Example ##
 
     import configrity.Configuration._
@@ -45,16 +32,24 @@ JDK 1.6, but should work with 1.5) and SBT.
     val updatedConfig = config.set("port",80)
     upddatedConfig.save( "local.conf" )	
 
+## Installation ##
+
+To install Configrity you just need a worling java installation (tested with
+JDK 1.6, but should work with 1.5) and SBT.
+
+    $ git clone git://github.com/paradigmatic/Configrity.git
+    $ cd Configrity
+    $ sbt
+    > update
+    > test
+    > doc
+    > package
+
 ## Documentation ##
 
 See the wiki: <https://github.com/paradigmatic/Configrity/wiki>
 
 A scaladoc reference will be generated when following the install procedure described above.
-
-
-## License ##
-
-GPL 3. See `LICENSE.txt`.
 
 ## License and ownership ##
 
