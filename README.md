@@ -38,10 +38,12 @@ JDK 1.6, but should work with 1.5) and SBT.
     import configrity.ValueConverters._
     
     val config = Configuration.load( "server.conf" )
+
     val hostname = config[String]("host")
     val port = config[Int]("port")
+
     val updatedConfig = config.set("port",80)
-    upddateConfig.save( "local.conf" )	
+    upddatedConfig.save( "local.conf" )	
 
 ## Usage ##
 
@@ -58,6 +60,7 @@ If the configuration instance `config` represents the configuration:
 The values can be retrieved with the `apply` method:
 
     import configrity.ValueConverters._
+
     val name = config[String]( "name" )         // name == Some("Bob")
     val age = config[Int]( "age" )              // age == Some(42)
     val isMarried = config[Boolean]( "married" ) // isMarried == Some(true)
