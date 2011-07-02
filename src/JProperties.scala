@@ -1,7 +1,7 @@
 /*
  This file is part of Configrity.
  
- Foobar is free software: you can redistribute it and/or modify
+ Configrity is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
@@ -24,6 +24,11 @@ import java.util.Properties
  * instance and the opposite. Both methods are defined as implicit conversions.
  */
 object JProperties {
+
+  /**
+   * java.util.Properties plain text format.
+   */
+  val format = io.PropertiesFormat
 
   /**
    * Converts a java.util.Properties instance into a Configuration.

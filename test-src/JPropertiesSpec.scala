@@ -7,7 +7,7 @@ import configrity.io._
 import configrity.ValueConverters._
 import java.util.Properties
 
-class PropertiesSpec extends FlatSpec with ShouldMatchers {
+class JPropertiesSpec extends FlatSpec with ShouldMatchers {
 
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )
@@ -18,7 +18,13 @@ class PropertiesSpec extends FlatSpec with ShouldMatchers {
     val config2: Configuration =
       JProperties.propertiesToConfiguration( props )
     config2 should be (config)
+  }
 
+  it can "be saved and read in java properties format" in {
+    val fmt = JProperties.format
+    val s = config format fmt
+    val config2 = Configuration.parse( s, fmt )
+    config2 should be (config)
   }
 
 }

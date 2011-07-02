@@ -17,35 +17,31 @@
 
 package configrity.io
 
+
 import configrity.Configuration
+import configrity.JProperties._
+import java.io.StringWriter
+import java.io.StringReader
+import java.util.Properties
 
 /**
- * Format for converting a String into a Configuration
+ * Text format described by java.util.Properties javadoc
  */
-trait ImportFormat {
+object PropertiesFormat extends Format {
 
-  /**
-   * Converts a string into a configuration
-   */
-  def fromText( s: String ): Configuration
+  def toText( config: Configuration ) = {
+    val out = new StringWriter
+    config.store( out, "")
+    out.close
+    out.toString
+  }
+
+  def fromText( s: String ) = {
+    val in = new StringReader( s )
+    val props = new Properties
+    props.load( in )
+    in.close
+    props: Configuration
+  }
 
 }
-
-/**
- * Format for converting a Configuration into a String.
- */
-trait ExportFormat {
-
-  /**
-   * Converts a configuration into a string.
-   */
-  def toText( configuration: Configuration ): String
-
-}
-
-/**
- * Format able to convert Configuration to String and
- * String to Configuration
- */
-trait Format extends ImportFormat with ExportFormat
-

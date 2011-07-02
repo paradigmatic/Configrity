@@ -98,7 +98,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
       bar = 2
       baz = hello world
       """
-    val config = Configuration.from( s, FlatFormat )
+    val config = Configuration.parse( s, FlatFormat )
     config[Boolean]("foo") should be (Some(true))
     config[Int]("bar") should be (Some(2))
     config[String]("baz") should be (Some("hello world"))
