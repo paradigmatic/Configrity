@@ -5,6 +5,32 @@ import configrity.ValueConverters._
 import configrity.io.BlockFormat
 import configrity.io.BlockFormat._
 
+class BlockFormatSpec extends FlatSpec with ShouldMatchers{
+
+  "The block format" can "write and read an empty Configuration" in {
+    val config = Configuration( Map() )
+    fromText( toText( config ) ) should be (config)
+  }
+
+  it can "write and read a Configuration" in {
+    val config = Configuration( 
+      Map("foo"->"FOO", "bar"->"1234", "baz"->"on")
+    )
+    fromText( toText( config ) ) should be (config)
+  }
+
+   it can "write and read a Configuration with nested blocks" in {
+    val config = Configuration( 
+      Map(
+        "foo.gnats.gnits"->"FOO", 
+        "bar.buzz"->"1234", 
+        "bar.baz"->"on"
+      )
+    )
+    fromText( toText( config ) ) should be (config)
+  }
+
+}
 
 class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
 
@@ -245,6 +271,18 @@ class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
   }
 
   it should "merge blocks with same key" in {
-    pending
+    val s = 
+    """
+     # Example
+    foo = true
+    block {
+      bar = 2 
+    }
+    block {
+      bar = x
+    }
+    """
+    val config = parse( s )
+    config[String]("block.bar") should be (Some("x"))
   }
 }
