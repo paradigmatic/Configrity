@@ -34,7 +34,6 @@ class BlockFormatSpec extends FlatSpec with ShouldMatchers{
 
 class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
 
-
   def parse( s: String ) = new Parser().parse(s)
 
   "The flat format parse" can "parse empty string" in {
@@ -67,7 +66,7 @@ class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
     """
     foo = true
     bar = 2
-    baz = hello world
+    baz = "hello world"
     """
     val config = parse( s )
     config[Boolean]("foo") should be (Some(true))
@@ -80,12 +79,24 @@ class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
     """
        foo  =true
     bar= 2        
-                                 baz = hello world
+                                 baz = "hello world"
      """
     val config = parse( s )
     config[Boolean]("foo") should be (Some(true))
     config[Int]("bar") should be (Some(2))
     config[String]("baz") should be (Some("hello world"))
+  }
+
+  it must "choke when encoutering an unquoted value with spaces" in {
+       val s = 
+    """
+    foo = true
+    bar = 2
+    baz = hello world
+    """
+    intercept[ParserException] {
+      val config = parse( s ) 
+    }
   }
 
   it must "choke when encountering lines with two equals" in {

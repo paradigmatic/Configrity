@@ -1,5 +1,11 @@
 # Changelog #
 
+## Next verstion ##
+
+### New features ###
+
+  - Hierarchical BlockFormat
+
 ## Version 0.3.0 - 2011-07-02 ##
 
 ### New features ###

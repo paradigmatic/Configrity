@@ -78,7 +78,9 @@ object BlockFormat extends Format {
 
     private var blocks = List[String]()
 
-    def addPrefix( lst: List[(String,String)] ) = {
+    private def unquote( s: String ) = s.substring( 1, s.size - 1 )
+   
+    private def addPrefix( lst: List[(String,String)] ) = {
       val prefix = blocks.head + dot
       for( (k,v) <- lst ) yield {
         ( prefix + k, v ) 
@@ -86,13 +88,17 @@ object BlockFormat extends Format {
     }
 
     override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
-    def key: Parser[String] = """([^=\s])+""".r
+    def key = """([^=\s])+""".r 
     val lineSep = "\n"
     val dot = "."
-    def value: Parser[String] = """([^=\n#])*""".r ^^ { _.trim }
-    def equals: Parser[String]  = "="
+    def word = """([^=\s\n#\{\}\"])+""".r 
+    def quoted = """"([^"]*)"""".r /*"*/ ^^ { unquote }
+
+    val equals  = "="
     val openBrace = "{"
     val closeBrace = "}"
+
+    def value = word | quoted
 
     def entry = key ~ equals ~ value ^^ {
       case k ~ _ ~ v  => List( (k,v) )
