@@ -34,7 +34,7 @@ class BlockFormatSpec extends FlatSpec with ShouldMatchers{
 
 class BlockFormatParserSpec extends FlatSpec with ShouldMatchers{
 
-  def parse( s: String ) = new Parser().parse(s)
+  def parse( s: String ) = parser.parse(s)
 
   "The flat format parse" can "parse empty string" in {
     val config = parse( "" )

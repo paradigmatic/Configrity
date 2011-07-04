@@ -35,9 +35,9 @@ import scala.util.parsing.combinator._
  * Whitespaces elsewhere are ignored.
  * Comment should start with '#' and are ignored.
  */
-object FlatFormat extends Format {
+object FlatFormat extends StandardFormat {
   
-  lazy val sep = Configuration.systemProperties("line.separator", "\n")
+  val sep = "\n"
 
   def toText( configuration: Configuration ) = {
     val out = new StringBuilder
@@ -48,34 +48,11 @@ object FlatFormat extends Format {
     out.toString
   }
 
-  def fromText( s: String ) = Parser.parse( s )
-
-  /** Parser exceptions */
-  case class ParserException(s: String) extends Exception(s)
+  def parser = FlatParser
 
   /** Parser for FlatFormat */
-  object Parser extends RegexParsers {
-
-
-    override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
-    def key: Parser[String] = """([^=\s])+""".r
-    def value: Parser[String] = """([^=\n])*""".r ^^ { _.trim }
-    def equals: Parser[String]  = "="
-    
-    def entry = key ~ equals ~ value ^^ {
-      case k ~ _ ~ v => (k,v)
-    }
-    
-      def entries = repsep( entry, '\n' )
-    
-    def parse( in: String )  = {
-      parseAll(entries, in) match {
-        case Success( lst , _ ) => Configuration( lst.toMap )
-        case x: NoSuccess => throw ParserException(x.toString)
-      }
-    }
-
+  object FlatParser extends Parser {
+    def content = rep( entry ) ^^ {  _.flatten }
   }
-
 
 } 

@@ -26,12 +26,9 @@ import scala.util.parsing.combinator._
 /**
  * Encodes the default block format
  */
-object BlockFormat extends Format {
+object BlockFormat extends StandardFormat {
 
   def toText( configuration: Configuration ) = write( configuration.data )
-
-  def fromText( s: String ) = new Parser().parse( s )
-
 
   private def splitKey( s: String ) = s.split("""\.""").toList
   private def joinKey( ss: List[String] ) = ss.mkString(".")
@@ -67,18 +64,11 @@ object BlockFormat extends Format {
     out.toString
   }
 
-  
+  def parser = new BlockParser
 
-
-  /** Parser exceptions */
-  case class ParserException(s: String) extends Exception(s)
-
-  /** Parser for FlatFormat */
-  class Parser extends RegexParsers {
+  class BlockParser extends Parser {
 
     private var blocks = List[String]()
-
-    private def unquote( s: String ) = s.substring( 1, s.size - 1 )
    
     private def addPrefix( lst: List[(String,String)] ) = {
       val prefix = blocks.head + dot
@@ -87,26 +77,12 @@ object BlockFormat extends Format {
       }
     }
 
-    override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
-    def key = """([^=\s])+""".r 
-    val lineSep = "\n"
-    val dot = "."
-    def word = """([^=\s\n#\{\}\"])+""".r 
-    def quoted = """"([^"]*)"""".r /*"*/ ^^ { unquote }
-
-    val equals  = "="
+    val dot  = "."
     val openBrace = "{"
     val closeBrace = "}"
 
-    def value = word | quoted
-
-    def entry = key ~ equals ~ value ^^ {
-      case k ~ _ ~ v  => List( (k,v) )
-    }
-
     def blocOrEntry:Parser[List[(String,String)]] = block | entry
     
-    def content = rep( blocOrEntry ) ^^ {  _.flatten } 
     
     def blockStart: Parser[Unit] = key ~ openBrace ^^ {
       case k ~ _ => blocks ::= k
@@ -120,12 +96,7 @@ object BlockFormat extends Format {
       }
     }
    
-    def parse( in: String )  = {
-      parseAll(content, in) match {
-        case Success( lst , _ ) => Configuration( lst.toMap )
-        case x: NoSuccess => throw ParserException(x.toString)
-      }
-    }
+    def content = rep( blocOrEntry ) ^^ {  _.flatten } 
 
   }
 
