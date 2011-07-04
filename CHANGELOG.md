@@ -1,6 +1,10 @@
 # Changelog #
 
-## Next verstion ##
+## Version 0.4.0 - 2011-07-04 ##
+
+### Licensing ###
+
+  Configrity is now licensed with the LGPL
 
 ### New features ###
 

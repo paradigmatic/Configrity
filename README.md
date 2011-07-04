@@ -12,12 +12,12 @@ simplicity, immutability, type safety, flexibility and humility.
   - Loading configurations from system properties and environment variables.
   - Saving configurations to files.
   - Interoperability with java properties.
+  - Hierarchical configuration blocks.
 
 ### Planned ###
 
-  - Hierarchical configuration blocks.
   - Configuration chaining (such as to provide default values).
-  - Export/Import formats: plists, JSON, XML, apache, etc.
+  - Export/Import formats: INI, JSON, XML, apache, plists, etc.
 
 ## Example ##
 
@@ -53,6 +53,7 @@ A scaladoc reference will be generated when following the install procedure desc
 
 ## License and ownership ##
 
-Configrity is an free open source library released under GNU GPLv3 license (see `LICENSE.txt`).
+Configrity is a free and open source library released under the
+permissive GNU LesserGPLv3 license (see `LICENSE.txt`).
 
-Copyright Paradigmatic, 2011. All rights reserved.
+Copyright (C) 2011. Paradigmatic. All rights reserved.
