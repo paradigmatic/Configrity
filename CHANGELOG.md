@@ -5,6 +5,11 @@
 ### New features ###
 
   - Hierarchical BlockFormat
+  - Block manipulations (attach and dettach)  
+
+### Code quality ###
+
+  - Block and Flat formats have common behavior in common Trait
 
 ## Version 0.3.0 - 2011-07-02 ##
 

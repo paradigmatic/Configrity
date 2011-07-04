@@ -75,7 +75,35 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
     
   }
 
+  "A sub configuration" can "be attached at a given prefix" in {
+    val data2 = Map( "one" -> "1", "two" -> "2" )
+    val config2 = Configuration( data2 )
+    val config3 = config attach ("nums", config2)
+    config3[String]("foo") should be (Some("FOO"))
+    config3[Int]("nums.one") should be (Some(1))
+  }
 
+
+  it can "will replace values when attached at an existing prefix" in {
+    val data2 = Map( "one" -> "1", "two" -> "2" )
+    val config2 = Configuration( data2 )
+    val config3 = config attach ("nums", config2)
+    val data4 = Map( "one" -> "I", "five" -> "V" )
+    val config4 = Configuration( data4 )
+    val config5 = config3 attach( "nums", config4 )
+    config5[String]("foo") should be (Some("FOO"))
+    config5[String]("nums.one") should be (Some("I"))
+    config5[Int]("nums.two") should be (Some(2))
+    config5[String]("nums.five") should be (Some("V"))
+  }
+
+  it can "be dettach from a configuration" in {
+    val data2 = Map( "one" -> "1", "two" -> "2" )
+    val config2 = Configuration( data2 )
+    val config3 = config attach ("nums", config2 )
+    val config4 = config3 dettach ("nums")
+    config4 should be (config2)
+  }
 
 }
 

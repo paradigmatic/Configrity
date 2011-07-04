@@ -85,6 +85,45 @@ case class Configuration( data: Map[String,String] ) {
   def save( filename: String ): Unit =
     save( new java.io.File( filename ) )
 
+  /** Attach a configuration as a sub block. Existing entries with
+   *  same keys will be replaced. Prefix should not end with a 'dot'.
+   */
+  def attach( prefix: String, block: Configuration ) = {
+    require( 
+      prefix.substring( prefix.length-1) != ".", 
+      "Prefix should not end with a dot"
+    )
+    var nextData = Map[String,String]()
+    for( (k,v) <- block.data ) {
+      val nextKey = prefix + "." + k
+      nextData += nextKey -> v
+    }
+    Configuration( data ++ nextData )
+  }
+
+  /** Detach all values whose keys have the given prefix as a new configuration.
+   *  The initial configuration is not modified. The prefix is removed in the
+   *  resulting configuration. An important property:
+   *
+   *  <pre>val c2 = c1.attach(prefix, c1.dettach( prefix )</pre>
+   *
+   *  The resulting configuration c2 should be equal to c1.
+   */
+  def dettach( prefix: String ) = {
+    require( 
+      prefix.substring( prefix.length-1) != ".", 
+      "Prefix should not end with a dot"
+    )
+    val regexp = (prefix + """\.(.+)""" ).r
+    var nextData = Map[String,String]()
+    for( (k,v) <- data ) k match {
+      case regexp( subkey ) =>  nextData += subkey -> v
+      case _ => {}
+    }
+    Configuration( nextData )
+  }
+  
+
 }
 
 
