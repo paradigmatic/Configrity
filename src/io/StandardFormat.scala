@@ -32,8 +32,6 @@ trait StandardFormat extends Format {
 
   def fromText( s: String ) = parser.parse( s )
 
-  /** Parser exceptions */
-  case class ParserException(s: String) extends Exception(s)
 
   trait Parser extends RegexParsers {
 
@@ -59,7 +57,7 @@ trait StandardFormat extends Format {
     def parse( in: String )  = {
       parseAll(content, in) match {
         case Success( lst , _ ) => Configuration( lst.toMap )
-        case x: NoSuccess => throw ParserException(x.toString)
+        case x: NoSuccess => throw StandardFormat.ParserException(x.toString)
       }
     }
 
@@ -67,3 +65,10 @@ trait StandardFormat extends Format {
 
 
 } 
+
+object StandardFormat {
+
+  /** Parser exceptions */
+  case class ParserException(s: String) extends Exception(s)
+
+}

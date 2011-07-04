@@ -96,7 +96,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
       """
       foo = true
       bar = 2
-      baz = hello world
+      baz = "hello world"
       """
     val config = Configuration.parse( s, FlatFormat )
     config[Boolean]("foo") should be (Some(true))
@@ -111,7 +111,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
       """
       foo = true
       bar = 2
-      baz = hello world
+      baz = "hello world"
       """
     val writer = new java.io.PrintWriter( filename )
     writer.println(s)
