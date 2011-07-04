@@ -92,8 +92,8 @@ case class Configuration( data: Map[String,String] ) {
 
 object Configuration {
 
-  /** By default, all conversions are done with FlatFormat */
-  val defaultFormat = FlatFormat
+  /** By default, all conversions are done with BlockFormat */
+  val defaultFormat = BlockFormat
 
   /** Returns the environement variables as a Configuration */
   def environment = Configuration( sys.env )
