@@ -1,7 +1,6 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity.Configuration
-import configrity.ValueConverters._
+import configrity._
 import configrity.io.BlockFormat
 import configrity.io.BlockFormat._
 import configrity.io.StandardFormat.ParserException

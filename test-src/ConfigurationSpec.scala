@@ -1,11 +1,11 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import configrity.Configuration
+import configrity.DefaultConverters
 import configrity.io._
-import configrity.ValueConverters._
 
 
-class ConfigurationSpec extends FlatSpec with ShouldMatchers{
+class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConverters{
 
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )

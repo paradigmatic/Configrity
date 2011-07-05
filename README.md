@@ -14,17 +14,18 @@ simplicity, immutability, type safety, flexibility and humility.
   - Interoperability with java properties.
   - Hierarchical configuration blocks.
   - Configuration chaining (such as to provide default values).
+  - Single import: `import configrity._` imports all you need.
+
 
 ### Planned ###
   
+  - Loading from resources.
   - Implicit converters for: File, URL, URI and Color.
-  - Single import
   - Export/Import formats: INI, JSON, XML, apache, plists, etc.
 
 ## Example ##
 
-    import configrity.Configuration._
-    import configrity.ValueConverters._
+    import configrity._
     
     val config = Configuration.load( "server.conf" )
 

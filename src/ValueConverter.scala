@@ -118,5 +118,3 @@ trait DefaultConverters {
   }
 
 }
-
-object ValueConverters extends DefaultConverters

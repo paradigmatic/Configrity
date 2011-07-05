@@ -1,10 +1,10 @@
 import org.scalatest.WordSpec
 import org.scalatest.matchers.ShouldMatchers
 import configrity.ValueConverter
-import configrity.ValueConverters._
+import configrity.DefaultConverters
 
 
-class ValueConverterSpec extends WordSpec with ShouldMatchers{
+class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConverters{
 
 
   def convert[A]( opt: Option[String] )(implicit converter: ValueConverter[A] )  =

@@ -1,10 +1,9 @@
 import org.scalatest.FlatSpec
 
 import org.scalatest.matchers.ShouldMatchers
-import configrity.Configuration
+import configrity._
 import configrity.JProperties
 import configrity.io._
-import configrity.ValueConverters._
 import java.util.Properties
 
 class JPropertiesSpec extends FlatSpec with ShouldMatchers {

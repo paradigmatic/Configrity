@@ -20,9 +20,9 @@
 package configrity.io
 
 import configrity.Configuration
-import configrity.ValueConverters._
 
 import scala.collection.mutable.StringBuilder
+
 import scala.util.parsing.combinator._
 
 /**
