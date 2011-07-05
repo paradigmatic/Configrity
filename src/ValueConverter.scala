@@ -48,7 +48,7 @@ object ValueConverter {
 /**
  * Several predefined value converters for basic types: Int, Double, Boolean, etc.
  */
-object ValueConverters {
+trait DefaultConverters {
 
   /**
    * Converts a string, to itself... Well just an identity converter.
@@ -118,3 +118,5 @@ object ValueConverters {
   }
 
 }
+
+object ValueConverters extends DefaultConverters
