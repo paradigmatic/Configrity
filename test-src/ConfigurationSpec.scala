@@ -105,13 +105,13 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers{
     config4 should be (config2)
   }
 
-  it can "be merged with another " in {
+  it can "include another configuration" in {
     val config2 = Configuration( "foo" -> "fu", "buzz" -> 122 )
-    val config3 = config merge config2
-    config3[String]("foo") should be (Some("fu"))
+    val config3 = config include config2
+    config3[String]("foo") should be (Some("FOO"))
     config3[Int]("bar") should be (Some(1234))
     config3[Int]("buzz") should be (Some(122))
-    (config2 merge config) should not be (config merge config2)
+    (config2 include config) should not be (config include config2)
   }
 
 }

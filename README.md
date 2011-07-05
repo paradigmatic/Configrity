@@ -13,10 +13,12 @@ simplicity, immutability, type safety, flexibility and humility.
   - Saving configurations to files.
   - Interoperability with java properties.
   - Hierarchical configuration blocks.
+  - Configuration chaining (such as to provide default values).
 
 ### Planned ###
-
-  - Configuration chaining (such as to provide default values).
+  
+  - Implicit converters for: File, URL, URI and Color.
+  - Single import
   - Export/Import formats: INI, JSON, XML, apache, plists, etc.
 
 ## Example ##

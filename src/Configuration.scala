@@ -126,12 +126,11 @@ case class Configuration( data: Map[String,String] ) {
   }
 
   /**
-   * Merge another Configuration in the current one. The entries of
-   * both Configurations are added. If both configuration have an entry
-   * with the same key, only the value of the configuration passed in argument
-   * is kept.
+   * Adds another configuration values providing entries
+   * which are not present in the present one. Useful
+   * for defaulting to another Configuration
    */
-  def merge( config: Configuration ) = Configuration( data ++ config.data )
+  def include( config: Configuration ) = Configuration( config.data ++ data )
 
 }
 
