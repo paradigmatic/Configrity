@@ -102,7 +102,7 @@ object ValueConverters {
    * will be converted to true and the strings: "F", "false" and "off" will
    * be converted to false.
    */
-   implicit val booleanConverter = BooleanConverter
+  implicit val booleanConverter = BooleanConverter
   
 
   object BooleanConverter extends ValueConverter[Boolean] {

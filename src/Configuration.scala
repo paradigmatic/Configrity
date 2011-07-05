@@ -136,6 +136,11 @@ object Configuration {
   /** By default, all conversions are done with BlockFormat */
   val defaultFormat = BlockFormat
 
+  /** Creates a configuration from tuples of key,value */
+  def apply( entries:(String,Any)* ):Configuration =
+    Configuration( entries.map( t => (t._1,t._2.toString) ).toMap  )
+
+
   /** Returns the environement variables as a Configuration */
   def environment = Configuration( sys.env )
 

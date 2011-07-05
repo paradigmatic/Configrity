@@ -10,7 +10,7 @@ class FlatFormatSpec extends FlatSpec with ShouldMatchers{
 
 
   "The flat format" can "write and read an empty Configuration" in {
-    val config = Configuration( Map() )
+    val config = Configuration()
     fromText( toText( config ) ) should be (config)
   }
 

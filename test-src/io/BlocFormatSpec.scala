@@ -9,7 +9,7 @@ import configrity.io.StandardFormat.ParserException
 class BlockFormatSpec extends FlatSpec with ShouldMatchers{
 
   "The block format" can "write and read an empty Configuration" in {
-    val config = Configuration( Map() )
+    val config = Configuration( )
     fromText( toText( config ) ) should be (config)
   }
 

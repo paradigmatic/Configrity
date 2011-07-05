@@ -119,6 +119,18 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
     config[String]("HOME") should be ('defined)
   }
 
+  it can "be created empty" in {
+    val config = Configuration()
+    config.data.size should be (0)
+  }
+
+  it can "be created with key value pairs" in {
+    val config = Configuration("foo"->"bar", "bazz"->2)
+    config[String]("foo") should be (Some("bar"))
+    config[Int]("bazz") should be (Some(2))
+  }
+
+
   it can "be created from a string using a given format" in {
     val s = 
       """
