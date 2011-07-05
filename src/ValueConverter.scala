@@ -51,26 +51,54 @@ object ValueConverter {
 object ValueConverters {
 
   /**
-   * Converts a string, into itself... Well just an identity converter.
+   * Converts a string, to itself... Well just an identity converter.
    */
   implicit val stringConverter = ValueConverter[String]( s => s )
 
   /**
-   * Convert strings into ints.
+   * Convert strings to bytes.
+   */
+  implicit val byteConverter = ValueConverter[Byte]( 
+    s => java.lang.Byte.parseByte(s)
+  )
+
+  /**
+   * Convert strings to shorts.
+   */
+  implicit val shortConverter = ValueConverter[Short]( 
+    s => java.lang.Short.parseShort(s)
+  )
+
+  /**
+   * Convert strings to ints.
    */
   implicit val intConverter = ValueConverter[Int]( 
     s => java.lang.Integer.parseInt(s)
   )
 
   /**
-   * Convert strings into doubles.
+   * Convert strings to longs.
+   */
+  implicit val longConverter = ValueConverter[Long]( 
+    s => java.lang.Long.parseLong(s)
+  )
+
+  /**
+   * Convert strings to floats.
+   */
+  implicit val floatConverter = ValueConverter[Float]( 
+    s => java.lang.Float.parseFloat(s)
+  )
+
+  /**
+   * Convert strings to doubles.
    */
   implicit val doubleConverter = ValueConverter[Double]( 
     s => java.lang.Double.parseDouble(s)
   )
 
   /**
-   * Convert strings into Booleans. The strings values: "T", "true" and "on"
+   * Convert strings to Booleans. The strings values: "T", "true" and "on"
    * will be converted to true and the strings: "F", "false" and "off" will
    * be converted to false.
    */
@@ -84,7 +112,7 @@ object ValueConverters {
       if( trues contains s ) true
       else if ( falses contains s ) false
       else throw new IllegalArgumentException( 
-        s + " could not be converted in into a Boolean" 
+        s + " could not be converted in to a Boolean" 
       )
     }
   }

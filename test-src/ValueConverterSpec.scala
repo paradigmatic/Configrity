@@ -17,6 +17,28 @@ class ValueConverterSpec extends WordSpec with ShouldMatchers{
     }
   }
 
+  "The byte converter" should {
+    "parse a string in Byte" in {
+      convert[Byte](Option("12")) should be (Option(12:Byte))
+    }
+    "return a exception when the string cannot be parsed" in {
+       intercept[Exception] {
+         convert[Byte](Option("129"))
+       }
+    }
+  }
+
+  "The short converter" should {
+    "parse a string in short" in {
+      convert[Short](Option("1234")) should be (Option(1234:Short))
+    }
+    "return a exception when the string cannot be parsed" in {
+       intercept[Exception] {
+         convert[Short](Option("12341234"))
+       }
+    }
+  }
+
   "The int converter" should {
     "parse a string in Int" in {
       convert[Int](Option("1234")) should be (Option(1234))
@@ -27,6 +49,31 @@ class ValueConverterSpec extends WordSpec with ShouldMatchers{
        }
     }
   }
+
+  "The long converter" should {
+    "parse a string in Long" in {
+      convert[Long](Option("1234")) should be (Option(1234:Long))
+    }
+    "return a exception when the string cannot be parsed" in {
+       intercept[Exception] {
+         convert[Long](Option("12.34"))
+       }
+    }
+  }
+
+  "The float converter" should {
+    "parse a string into a Float" in {
+      convert[Float](Option("1234")) should be (Option(1234.0f))
+      convert[Float](Option("1e-9")) should be (Option(1e-9f))
+      convert[Float](Option(".1")) should be (Option(.1f))
+    }
+    "return a exception when the string cannot be parsed" in {
+       intercept[Exception] {
+         convert[Float](Option("1ef-9"))
+       }
+    }
+  }
+
 
   "The double converter" should {
     "parse a string into a Double" in {
