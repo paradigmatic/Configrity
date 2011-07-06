@@ -172,4 +172,22 @@ class BlockFormatParserSpec extends StandardParserSpec {
     val config = parse( s )
     config[String]("block.bar") should be (Some("x"))
   }
+
+  it must "choke on empty blocks" in {
+    val s = 
+    """
+     # Example
+    foo = true
+    block {
+      bar = 2 
+      sub {
+        
+      }
+      baz = x
+    }
+    """
+    intercept[ParserException] {
+      val config = parse( s ) 
+    }
+  }
 }

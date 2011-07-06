@@ -88,9 +88,9 @@ object BlockFormat extends StandardFormat {
       case k ~ _ => blocks ::= k
     }
 
-    def block = blockStart ~ content ~ closeBrace ^^ {
-      case _ ~ lst ~ _ => {
-        val newLst = addPrefix( lst )
+    def block = blockStart ~ blocOrEntry ~ content ~ closeBrace ^^ {
+      case _ ~ single ~ lst ~ _ => {
+        val newLst = addPrefix( single ::: lst )
         blocks = blocks.tail
         newLst
       }
