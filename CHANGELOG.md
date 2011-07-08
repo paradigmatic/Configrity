@@ -10,6 +10,10 @@ Next version
   - A configuration can include another one
   - Better Configuration factory methods
 
+### Bugfix
+
+  - Empty blocks parsing throw an exception in BlockFormat
+
 Version 0.4.0 - 2011-07-04
 --------------------------
 
