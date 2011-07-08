@@ -51,10 +51,10 @@ class BlockFormatParserSpec extends StandardParserSpec {
     }
     """
     val config = parse( s ) 
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("block.bar") should be (Some(2))
-    config[String]("block.baz") should be (Some("x"))
-    config[String]("block.sub.buzz") should be (Some("hello"))
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config[String]("block.baz") should be ("x")
+    config[String]("block.sub.buzz") should be ("hello")
   }
 
   it can "parse nested blocks mixed with flat notation" in {
@@ -72,11 +72,11 @@ class BlockFormatParserSpec extends StandardParserSpec {
     block.baz = x
     """
     val config = parse( s ) 
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("block.bar") should be (Some(2))
-    config[String]("block.baz") should be (Some("x"))
-    config[String]("block.sub.buzz") should be (Some("hello"))
-    config[Boolean]("block.sub.blah") should be (Some(true))
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config[String]("block.baz") should be ("x")
+    config[String]("block.sub.buzz") should be ("hello")
+    config[Boolean]("block.sub.blah") should be (true)
   }
 
   it must "skip all comment with nested blocks" in {
@@ -94,10 +94,10 @@ class BlockFormatParserSpec extends StandardParserSpec {
     }
     """
     val config = parse( s ) 
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("block.bar") should be (Some(2))
-    config[String]("block.baz") should be (Some("x"))
-    config[String]("block.sub.buzz") should be (Some("hello"))
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config[String]("block.baz") should be ("x")
+    config[String]("block.sub.buzz") should be ("hello")
   }
 
   it should "ignore whitespaces" in {
@@ -114,10 +114,10 @@ class BlockFormatParserSpec extends StandardParserSpec {
                        }
     """
     val config = parse( s ) 
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("block.bar") should be (Some(2))
-    config[String]("block.baz") should be (Some("x"))
-    config[String]("block.sub.buzz") should be (Some("hello"))
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config[String]("block.baz") should be ("x")
+    config[String]("block.sub.buzz") should be ("hello")
   }
 
   it must "choke if no key is provided for blocks" in {
@@ -170,7 +170,7 @@ class BlockFormatParserSpec extends StandardParserSpec {
     }
     """
     val config = parse( s )
-    config[String]("block.bar") should be (Some("x"))
+    config[String]("block.bar") should be ("x")
   }
 
   it must "choke on empty blocks" in {

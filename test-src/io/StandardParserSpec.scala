@@ -16,22 +16,22 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
 
   it can "parse a wellformed entry line" in {
     val config = parse( "foo = 2" )
-    config[Int]("foo") should be (Some(2))
+    config[Int]("foo") should be (2)
   }
  
   it should "ignore leading and trailing space" in {
     val config = parse( "    foo = 2" )
-    config[Int]("foo") should be (Some(2))
+    config[Int]("foo") should be (2)
   } 
 
   it should "ignore extra spaces around the equal sign" in {
     val config = parse( "    foo     =      2" )
-    config[Int]("foo") should be (Some(2))
+    config[Int]("foo") should be (2)
   } 
 
   it should "tolerate an equal sign without space around" in {
     val config = parse( "    foo=2 " )
-    config[Int]("foo") should be (Some(2))
+    config[Int]("foo") should be (2)
   }
 
   it can "parse several lines" in {
@@ -42,9 +42,9 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     baz = "hello world"
     """
     val config = parse( s )
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("bar") should be (Some(2))
-    config[String]("baz") should be (Some("hello world"))
+    config[Boolean]("foo") should be (true)
+    config[Int]("bar") should be (2)
+    config[String]("baz") should be ("hello world")
   }
 
   it can "parse several badly spaced lines" in {
@@ -55,9 +55,9 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
                                  baz = "hello world"
      """
     val config = parse( s )
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("bar") should be (Some(2))
-    config[String]("baz") should be (Some("hello world"))
+    config[Boolean]("foo") should be (true)
+    config[Int]("bar") should be (2)
+    config[String]("baz") should be ("hello world")
   }
 
   it must "choke when encoutering an unquoted value with spaces" in {
@@ -129,9 +129,9 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     baz = x 
     """
     val config = parse( s ) 
-    config[Boolean]("foo") should be (Some(true))
-    config[Int]("bar") should be (None)
-    config[String]("baz") should be (Some("x"))
+    config[Boolean]("foo") should be (true)
+    config.get[Int]("bar") should be (None)
+    config[String]("baz") should be ("x")
   }
 
 }
