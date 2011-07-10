@@ -29,10 +29,20 @@ import scala.io.Source
  */
 case class Configuration( data: Map[String,String] ) {
 
-  def apply[A]( key: String )( implicit converter: ValueConverter[A], 
-                            manifest: ClassManifest[A] ) =
-                              get[A](key).get
+  /**
+   * Returns true if some value is associated with the
+   * given key, else false.
+   */
+  def contains( key: String ) = data contains key
 
+  /**
+   * Retrieve and convert configuration data in the wanted type. Throws
+   * an NoSuchElementException if the data is not defined. The conversion
+   * is done by a ValueConverter instance which should be provided or
+   * implicitly defined elsewhere.
+   */
+  def apply[A]( key: String )( implicit converter: ValueConverter[A] ) =
+    get[A](key).get
 
   /**
    * Retrieve and convert configuration data in the wanted type. Returns None
@@ -40,14 +50,7 @@ case class Configuration( data: Map[String,String] ) {
    * a ValueConverter instance which should be provided or implicitly defined
    * elsewhere.
    */
-  def get[A]( key: String )( implicit converter: ValueConverter[A], manifest: ClassManifest[A] ) =
-    converter( data get key )
-
-  /**
-   * Retrieve data as string. This is a fallback in case where no type could
-   * be infered.
-   */
-  def get( key: String )( implicit converter: ValueConverter[String] ) =
+  def get[A]( key: String )( implicit converter: ValueConverter[A] ) =
     converter( data get key )
 
   /**

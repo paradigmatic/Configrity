@@ -10,8 +10,22 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )
 
-  "A configuration" should "return none if it doesn't contain a key" in {
+  "A configuration" should "return none if it doesn't contain a key when 'getted'" in {
     config.get[Int]("buzz") should be (None)
+  }
+
+  it can "tell if a key is defined" in {
+    config.contains("foo") should be (true)
+    config.contains("bar") should be (true)
+    config.contains("baz") should be (true)
+    config.contains("buzz") should be (false)
+    
+  }
+
+  it should "throw exception if it doesn't contain a key when 'applied'" in {
+    intercept[java.util.NoSuchElementException] {
+      config[Int]("buzz")
+    }
   }
 
   it should "be able to return converted values" in {

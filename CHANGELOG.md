@@ -4,6 +4,10 @@ Changelog
 Next version
 ------------
 
+### Major Change
+
+  - Adoption of Map semantic.
+
 ### New features
 
   - Value converters fo bytes, shots, longs and floats.
