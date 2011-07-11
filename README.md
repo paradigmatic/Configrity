@@ -43,8 +43,6 @@ it may contain some bugs.
   - Implicit converters for: File, URL, URI and Color.
   - Export/Import formats: INI, JSON, XML, apache, plists, etc.
 
-
-
 ## Requirements ##
 
 The only requirement is Scala 2.9. It should be easy to provide
@@ -70,7 +68,8 @@ JDK 1.6, but should work with 1.5) and SBT:
 
 See the wiki: <https://github.com/paradigmatic/Configrity/wiki>
 
-A scaladoc reference will be generated when following the install procedure described above.
+A scaladoc reference can be found online: 
+<http://paradigmatic.github.com/Configrity/>
 
 ## Collaboration
 
