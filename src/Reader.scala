@@ -19,9 +19,12 @@
 
 package configrity
 
+/** Monadic Reader */
 trait Reader[A] {
 
+  /** Produce a value from a Configuration */
   def apply( c: Configuration ): A
+
   def map[B]( f: A => B ) = {
     val parent = this
     new Reader[B] {

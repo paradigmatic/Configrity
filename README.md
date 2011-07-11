@@ -15,6 +15,7 @@ simplicity, immutability, type safety, flexibility and humility.
   - Hierarchical configuration blocks.
   - Configuration chaining (such as to provide default values).
   - Single import: `import configrity._` imports all you need.
+  - Reader monad
 
 
 ### Planned ###

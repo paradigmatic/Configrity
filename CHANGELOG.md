@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Next version
-------------
+Version 0.5.0 - 2011-07-11
+--------------------------
 
 ### Major Change
 
@@ -11,6 +11,7 @@ Next version
 ### New features
 
   - Value converters fo bytes, shots, longs and floats.
+  - Reader monads
   - A configuration can include another one
   - Better Configuration factory methods
 
