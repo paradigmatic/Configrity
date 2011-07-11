@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.streum.configrity.io</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a></p>
+        <h1>io</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol"> 
+        <span class="name">io</span>
+        
+        
+      </span>
+      </h4>
+      
+          <div class="fullcommenttop" id="comment"></div>
+        
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.streum.configrity.io.ExportFormat" data-isabs="true">
+      <a id="ExportFormat:ExportFormat"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="ExportFormat.html"><span class="name">ExportFormat</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Format for converting a Configuration into a String.</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.Format" data-isabs="true">
+      <a id="Format:Format"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="Format.html"><span class="name">Format</span></a>
+        
+        <span class="result"> extends ImportFormat with ExportFormat</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Format able to convert Configuration to String and
+String to Configuration
+</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.ImportFormat" data-isabs="true">
+      <a id="ImportFormat:ImportFormat"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="ImportFormat.html"><span class="name">ImportFormat</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Format for converting a String into a Configuration
+</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat" data-isabs="true">
+      <a id="StandardFormat:StandardFormat"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="StandardFormat.html"><span class="name">StandardFormat</span></a>
+        
+        <span class="result"> extends Format</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Encodes the common behavior of standard formats
+</p>
+    </li></ol>
+            </div>
+        
+        
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="org.streum.configrity.io.BlockFormat" data-isabs="false">
+      <a id="BlockFormat:BlockFormat"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="BlockFormat$.html"><span class="name">BlockFormat</span></a>
+        
+        <span class="result"> extends StandardFormat</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Encodes the default block format
+</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.FlatFormat" data-isabs="false">
+      <a id="FlatFormat:FlatFormat"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="FlatFormat$.html"><span class="name">FlatFormat</span></a>
+        
+        <span class="result"> extends StandardFormat</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Encodes a simple flat text format.</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.PropertiesFormat" data-isabs="false">
+      <a id="PropertiesFormat:PropertiesFormat"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="PropertiesFormat$.html"><span class="name">PropertiesFormat</span></a>
+        
+        <span class="result"> extends Format</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Text format described by java.</p>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat" data-isabs="false">
+      <a id="StandardFormat:StandardFormat"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="StandardFormat$.html"><span class="name">StandardFormat</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>
