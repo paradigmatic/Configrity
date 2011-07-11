@@ -17,9 +17,9 @@
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package configrity.io
+package org.streum.configrity.io
 
-import configrity.Configuration
+import org.streum.configrity.Configuration
 
 import scala.collection.mutable.StringBuilder
 

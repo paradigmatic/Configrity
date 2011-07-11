@@ -1,7 +1,27 @@
 # Configrity README file #
 
-Configrity is a scala configuration library. Project aims at
-simplicity, immutability, type safety, flexibility and humility.
+Configrity is a configuration library for Scala 2.9 or
++. Configuration instances are immutable, thread-safe and allow
+functional design patterns, such as:
+
+  - Getting options to values
+  - Converting implicitly values via type-classes
+  - Reader monad
+
+The API is now stable and covered by tests. However, as it is very young,
+it may contain some bugs.
+
+## Example ##
+
+    import org.streum.configrity._
+    
+    val config = Configuration.load( "server.conf" )
+
+    val hostname = config[String]("host")
+    val port = config[Int]("port")
+
+    val updatedConfig = config.set("port",80)
+    upddatedConfig.save( "local.conf" )	
 
 ## Features ##
 
@@ -15,8 +35,7 @@ simplicity, immutability, type safety, flexibility and humility.
   - Hierarchical configuration blocks.
   - Configuration chaining (such as to provide default values).
   - Single import: `import configrity._` imports all you need.
-  - Reader monad
-
+  - Access through reader monads
 
 ### Planned ###
   
@@ -24,22 +43,20 @@ simplicity, immutability, type safety, flexibility and humility.
   - Implicit converters for: File, URL, URI and Color.
   - Export/Import formats: INI, JSON, XML, apache, plists, etc.
 
-## Example ##
 
-    import configrity._
-    
-    val config = Configuration.load( "server.conf" )
 
-    val hostname = config[String]("host")
-    val port = config[Int]("port")
+## Requirements ##
 
-    val updatedConfig = config.set("port",80)
-    upddatedConfig.save( "local.conf" )	
+The only requirement is Scala 2.9. It should be easy to provide
+compatibility with Scala 2.8 by dropping some minor features. If you
+are interested, let me know.
 
 ## Installation ##
 
-To install Configrity you just need a worling java installation (tested with
-JDK 1.6, but should work with 1.5) and SBT.
+### From source ###
+
+To install Configrity you just need a working java installation (tested with
+JDK 1.6, but should work with 1.5) and SBT:
 
     $ git clone git://github.com/paradigmatic/Configrity.git
     $ cd Configrity
@@ -54,6 +71,24 @@ JDK 1.6, but should work with 1.5) and SBT.
 See the wiki: <https://github.com/paradigmatic/Configrity/wiki>
 
 A scaladoc reference will be generated when following the install procedure described above.
+
+## Collaboration
+
+### Reporting bugs
+
+You can github issues tracker, to report bugs or to ask for new features:
+
+https://github.com/paradigmatic/Configrity/issues
+
+### Submitting patches
+
+Patches are gladly accepted from their original author. Along with any
+patches, please state that the patch is your original work and that
+you license the work to the Configrity project under the LGPLv3 or
+a compatible license.
+
+To propose a patch, fork the project and send a pull request via
+github. Tests are appreciated.
 
 ## License and ownership ##
 

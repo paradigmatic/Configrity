@@ -1,9 +1,9 @@
 import org.scalatest.FlatSpec
 
 import org.scalatest.matchers.ShouldMatchers
-import configrity._
-import configrity.JProperties
-import configrity.io._
+import org.streum.configrity._
+import org.streum.configrity.JProperties
+import org.streum.configrity.io._
 import java.util.Properties
 
 class JPropertiesSpec extends FlatSpec with ShouldMatchers {

@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Version 0.6.0 - 2007-07-11
+--------------------------
+
+First stable version.
+
+### Major Change
+
+  - Changed package `configrity` to `org.streum.configrity`.
+
 Version 0.5.0 - 2011-07-11
 --------------------------
 

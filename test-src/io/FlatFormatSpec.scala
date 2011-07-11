@@ -1,8 +1,8 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity._
-import configrity.io.FlatFormat._
-import configrity.io.FlatFormat
+import org.streum.configrity._
+import org.streum.configrity.io.FlatFormat._
+import org.streum.configrity.io.FlatFormat
 
 
 class FlatFormatSpec extends FlatSpec with ShouldMatchers{

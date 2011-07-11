@@ -1,8 +1,8 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity.Configuration
-import configrity.DefaultConverters
-import configrity.io._
+import org.streum.configrity.Configuration
+import org.streum.configrity.DefaultConverters
+import org.streum.configrity.io._
 
 
 class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConverters{

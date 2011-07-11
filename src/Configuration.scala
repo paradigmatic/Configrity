@@ -17,9 +17,9 @@
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package configrity
+package org.streum.configrity
 
-import configrity.io._
+import org.streum.configrity.io._
 import scala.io.Source
 
 /**

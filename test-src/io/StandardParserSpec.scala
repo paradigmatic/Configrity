@@ -1,7 +1,7 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity._
-import configrity.io.StandardFormat.ParserException
+import org.streum.configrity._
+import org.streum.configrity.io.StandardFormat.ParserException
 
 trait StandardParserSpec extends FlatSpec with ShouldMatchers {
 

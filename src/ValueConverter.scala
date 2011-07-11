@@ -17,7 +17,7 @@
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package configrity
+package org.streum.configrity
 
 /**
  * Parse and convert an Option[String] into an Option[A].

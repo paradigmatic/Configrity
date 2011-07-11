@@ -1,6 +1,6 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity._
+import org.streum.configrity._
 
 
 class ReeaderSpec extends FlatSpec with ShouldMatchers with DefaultConverters{

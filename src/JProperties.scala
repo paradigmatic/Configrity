@@ -17,7 +17,7 @@
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package configrity
+package org.streum.configrity
 
 import java.util.Properties
 

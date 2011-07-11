@@ -1,9 +1,9 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
-import configrity._
-import configrity.io.BlockFormat
-import configrity.io.BlockFormat._
-import configrity.io.StandardFormat.ParserException
+import org.streum.configrity._
+import org.streum.configrity.io.BlockFormat
+import org.streum.configrity.io.BlockFormat._
+import org.streum.configrity.io.StandardFormat.ParserException
 
 class BlockFormatSpec extends FlatSpec with ShouldMatchers{
 

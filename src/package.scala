@@ -1,4 +1,4 @@
-package configrity
+package org.streum.configrity
 
 
 /** Package object containing the default converters + default formats */
