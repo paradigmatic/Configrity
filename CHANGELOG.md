@@ -1,7 +1,15 @@
 Changelog
 =========
 
-Version 0.6.0 - 2007-07-11
+Version 0.6.1 - 2011-08-18
+--------------------------
+
+### Build process
+
+  - Moved to SBT 0.10.x
+
+
+Version 0.6.0 - 2011-07-11
 --------------------------
 
 First stable version.

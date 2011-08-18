@@ -55,7 +55,7 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" % "configrity_2.9.0" % "0.6.0"
+    "org.streum" % "configrity_2.9.0" % "0.6.1"
 
 ### From Maven ###
 
@@ -64,18 +64,17 @@ The dependency section is:
     <dependency>
         <groupId>org.streum</groupId>
         <artifactId>configrity_2.9.0</artifactId>
-        <version>0.6.0</version>
+        <version>0.6.1</version>
     </dependency>
 
 ### From source (master branch) ###
 
 To install Configrity you just need a working java installation (tested with
-JDK 1.6, but should work with 1.5) and SBT:
+JDK 1.6, but should work with 1.5) and SBT **0.10.x**:
 
     $ git clone git://github.com/paradigmatic/Configrity.git
     $ cd Configrity
     $ sbt
-    > update
     > test
     > doc
     > package
