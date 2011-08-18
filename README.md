@@ -20,7 +20,7 @@ it may contain some bugs.
     val hostname = config[String]("host")
     val port = config[Int]("port")
 
-    val updatedConfig = config.set("port",80)
+    val updatedConfig = config.set ("port",8080 )
     upddatedConfig.save( "local.conf" )	
 
 ## Features ##
@@ -51,7 +51,23 @@ are interested, let me know.
 
 ## Installation ##
 
-### From source ###
+### From SBT ###
+
+The dependency line is:
+
+    "org.streum" % "configrity_2.9.0" % "0.6.0"
+
+### From Maven ###
+
+The dependency section is:
+
+    <dependency>
+        <groupId>org.streum</groupId>
+        <artifactId>configrity_2.9.0</artifactId>
+        <version>0.6.0</version>
+    </dependency>
+
+### From source (master branch) ###
 
 To install Configrity you just need a working java installation (tested with
 JDK 1.6, but should work with 1.5) and SBT:
@@ -73,7 +89,7 @@ A scaladoc reference can be found online:
 
 ## Collaboration
 
-### Reporting bugs
+### Reporting bugs and asking for features
 
 You can github issues tracker, to report bugs or to ask for new features:
 
