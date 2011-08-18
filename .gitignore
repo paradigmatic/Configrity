@@ -5,9 +5,7 @@
 *.dat
 *.out
 
-lib_managed/
+.history
+
 target/
-project/boot
-project/build/target
-project/plugins/project
-project/plugins/src_managed
+project/
