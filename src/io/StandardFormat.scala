@@ -44,11 +44,18 @@ trait StandardFormat extends Format {
     override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
     def key = """([^=\s])+""".r 
     val lineSep = "\n"
-    def word = """([^=\s\n#\{\}\"])+""".r 
+    def word = """([^=\s\n#\{\}\"\[\],])+""".r 
     def quoted = """"([^"]*)"""".r /*"*/ ^^ { unquote }
     val equals  = "="
 
-    def value = word | quoted
+    def item = word | quoted
+
+    def items = repsep( item, "," )
+    def list = "[" ~ items ~ "]" ^^ {
+      case _ ~ lst ~ _ => lst.map( "\"" + _ + "\"" ).mkString("[ ", ", ", " ]")
+    }
+
+    def value = item | list
 
     def entry = key ~ equals ~ value ^^ {
       case k ~ _ ~ v  => List( (k,v) )
