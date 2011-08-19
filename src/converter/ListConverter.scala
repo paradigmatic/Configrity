@@ -17,7 +17,7 @@
  along with Configrity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package org.streum.configrity
+package org.streum.configrity.converter
 
 import scala.util.parsing.combinator._
 

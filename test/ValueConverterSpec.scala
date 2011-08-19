@@ -1,8 +1,6 @@
 import org.scalatest.WordSpec
 import org.scalatest.matchers.ShouldMatchers
-import org.streum.configrity.ValueConverter
-import org.streum.configrity.DefaultConverters
-
+import org.streum.configrity.converter._
 
 class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConverters{
 

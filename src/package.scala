@@ -1,5 +1,6 @@
 package org.streum.configrity
 
+import converter.{ValueConverter,DefaultConverters}
 
 /** Package object containing the default converters + default formats */
 object `package` extends DefaultConverters {

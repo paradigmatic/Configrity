@@ -1,7 +1,7 @@
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.streum.configrity.Configuration
-import org.streum.configrity.DefaultConverters
+import org.streum.configrity.converter.DefaultConverters
 import org.streum.configrity.io._
 
 

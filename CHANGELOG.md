@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Next release
+------------
+
+### New features
+
+  - Parser accepts lists
+  - List value converters
+
 Version 0.6.1 - 2011-08-18
 --------------------------
 

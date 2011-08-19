@@ -19,7 +19,8 @@
 
 package org.streum.configrity
 
-import org.streum.configrity.io._
+import converter.ValueConverter
+import io._
 import scala.io.Source
 
 /**
