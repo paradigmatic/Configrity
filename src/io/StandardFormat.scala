@@ -41,6 +41,11 @@ trait StandardFormat extends Format {
 
     private def unquote( s: String ) = s.substring( 1, s.size - 1 )
 
+    private def protect( s: String ) =  word.findFirstIn(s)  match {
+      case Some(z) if s == z => s
+      case _ => "\"" + s + "\""
+    }
+
     override val whiteSpace = """(\s+|#[^\n]*\n)+""".r
     def key = """([^=\s])+""".r 
     val lineSep = "\n"
@@ -52,7 +57,7 @@ trait StandardFormat extends Format {
 
     def items = repsep( item, "," )
     def list = "[" ~ items ~ "]" ^^ {
-      case _ ~ lst ~ _ => lst.map( "\"" + _ + "\"" ).mkString("[ ", ", ", " ]")
+      case _ ~ lst ~ _ => lst.map( protect ).mkString("[ ", ", ", " ]")
     }
 
     def value = item | list

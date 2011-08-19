@@ -143,10 +143,32 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     baz = [ "hello", "wo,rld" ]
     """
     val config = parse( s ) 
-    config[String]("foo") should be ("[ \"true\", \"false\" ]")
-    config[String]("bar") should be ("[ \"1\", \"2\", \"3\", \"4\" ]")
-    config[String]("baz") should be ("[ \"hello\", \"wo,rld\" ]")
+    config[String]("foo") should be ("[ true, false ]")
+    config[String]("bar") should be ("[ 1, 2, 3, 4 ]")
+    config[String]("baz") should be ("[ hello, \"wo,rld\" ]")
   }
+  
+    it can "accept lists defined over several lines" in {
+       val s = 
+    """
+     # Example
+    foo = [ true, false ]
+    bar = [ 1,
+            2,
+            3,
+            4
+          ]
+    baz = [ "hello", 
+                   "wo,rld"
+        ]
+    """
+    val config = parse( s ) 
+    config[String]("foo") should be ("[ true, false ]")
+    config[String]("bar") should be ("[ 1, 2, 3, 4 ]")
+    config[String]("baz") should be ("[ hello, \"wo,rld\" ]")
+  }
+
+
 
   it must "choke if a list is not between square brackets" in {
        val s = 

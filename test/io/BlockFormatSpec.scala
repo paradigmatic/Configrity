@@ -24,7 +24,8 @@ class BlockFormatSpec extends FlatSpec with ShouldMatchers{
       Map(
         "foo.gnats.gnits"->"FOO", 
         "bar.buzz"->"1234", 
-        "bar.baz"->"on"
+        "bar.baz"->"on",
+	"lst" -> """[ on, on, off, off ]"""
       )
     )
     fromText( toText( config ) ) should be (config)

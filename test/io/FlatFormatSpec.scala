@@ -7,7 +7,6 @@ import org.streum.configrity.io.FlatFormat
 
 class FlatFormatSpec extends FlatSpec with ShouldMatchers{
 
-
   "The flat format" can "write and read an empty Configuration" in {
     val config = Configuration()
     fromText( toText( config ) ) should be (config)
@@ -15,10 +14,10 @@ class FlatFormatSpec extends FlatSpec with ShouldMatchers{
 
   it can "write and read a Configuration" in {
     val config = Configuration( 
-      Map("foo"->"FOO", "bar"->"1234", "baz"->"on")
+      Map("foo"->"FOO", "bar"->"1234", "baz"->"on",
+          "lst" -> """[ on, on, off, off ]""" )
     )
     fromText( toText( config ) ) should be (config)
-
   }
 
 }
