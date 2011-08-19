@@ -103,7 +103,6 @@ trait DefaultConverters {
    * be converted to false.
    */
   implicit val booleanConverter = BooleanConverter
-  
 
   object BooleanConverter extends ValueConverter[Boolean] {
     val trues = Set("T","true","on")
@@ -116,5 +115,12 @@ trait DefaultConverters {
       )
     }
   }
+
+  /**
+   * Converts string to Lists on arbitrary element type A. A value
+   * converter for element type must be available.
+   */
+  implicit def listConverter[A: ValueConverter]: ValueConverter[List[A]] = 
+    new ListConverter[A]
 
 }

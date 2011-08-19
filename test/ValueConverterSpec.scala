@@ -107,4 +107,23 @@ class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConver
        }
     }
   }
+
+  "The list converter" should {
+    "parse a string into a List of String" in {
+      convert[List[String]](
+	Some( "[ hello, world ]" )
+       ) should be (Some( List("hello", "world" ) ))
+    }
+    "parse a string into a List of booleans" in {
+      convert[List[Boolean]](
+	Some( "[on,off,on,off,off]" )
+       ) should be (Some( List(true,false,true,false,false) ))
+    }
+    "return a exception when the string cannot be parsed" in {
+       intercept[Exception] {
+         convert[List[Boolean]](Option("on,off"))
+       }
+    }
+  }
+
 }

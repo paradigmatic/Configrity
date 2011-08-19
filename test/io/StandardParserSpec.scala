@@ -158,7 +158,7 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     """
     intercept[ParserException] {
       val config = parse( s ) 
-    ]
+    }
   }
 
 }
