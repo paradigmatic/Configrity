@@ -23,16 +23,26 @@ package org.streum.configrity.converter
  * Parse and convert an Option[String] into an Option[A].
  */
 
-trait ValueConverter[A] {
+trait ValueConverter[A] { self =>
   /**
    * Defines how to parse the string.
    */
   def parse( s: String ): A
 
   /**
-   * Parse the string if defined or return None
+   * Parse the string if defined or return None.
    */
   def apply( s: Option[String] ) = s map parse
+
+  /**
+   * Creates a new ValueConverter by mapping the result of this converter
+   * to another one.
+   */
+  def map[B]( f: A => B ) = new ValueConverter[B] {
+    def parse( s: String ) = f( self parse s )
+  }
+
+
 }
 
 /**

@@ -4,9 +4,7 @@ import org.streum.configrity.converter._
 
 class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConverters{
 
-
-  def convert[A]( opt: Option[String] )(implicit converter: ValueConverter[A] )  =
-    converter(opt)
+  import ConverterHelper._
 
   "The string converter" should {
     "parse string without changing it" in {

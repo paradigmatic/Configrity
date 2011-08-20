@@ -1,13 +1,14 @@
 Changelog
 =========
 
-Next release
-------------
+Version 0.7.0 - 2011-08-20
+--------------------------
 
 ### New features
 
   - Parser accepts lists
   - List value converters
+  - Extra converters: Color, File, URI, URL
 
 Version 0.6.1 - 2011-08-18
 --------------------------

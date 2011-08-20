@@ -19,15 +19,53 @@
 
 package org.streum.configrity.converter
 
+import java.io.File
+import java.awt.Color
+import java.net.URL
+import java.net.URI
 
+/**
+ * Extra value converters.
+ */
 trait Extra {
   
-  // File
+  /**
+   * Converts a string to a java.io.File object.
+   */
+  implicit val fileConverter = ValueConverter[File]( new File(_) )
 
-  // Color
+  /**
+   * Converts a string to a java.awt.Color object. The string must be an hexadecimal
+   * representation of the color (for instance #ffa0a0). The initial hash ('#') is
+   * optional. The hexdigits must be exactly 6 and may be in upper or lower case.
+   */
+  implicit object ColorConverter extends ValueConverter[Color] {
 
-  // URL
+    val HexColor = """#?([a-fA-F0-9]{6})""".r
 
-  // URI
+    def parse( s: String ) = s match {
+      case HexColor(c) => {
+	val rgb = Integer.parseInt( c.toLowerCase, 16 )
+	new Color( rgb )
+      }
+    }
+
+  }
+
+  /**
+   * Converts a string to an URI.
+   */
+  implicit val URIConverter = ValueConverter[URI]( new URI(_) )
+
+  /**
+   * Converts a string to an URL.
+   */
+  implicit val URLConverter = URIConverter map ( _.toURL )
 
 }
+
+
+/*
+ * Extra value converters.
+ */
+object Extra extends Extra
