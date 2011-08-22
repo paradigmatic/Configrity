@@ -34,7 +34,7 @@ it may contain some bugs.
   - Interoperability with java properties.
   - Hierarchical configuration blocks.
   - Configuration chaining (such as to provide default values).
-  - Single import: `import configrity._` imports all you need.
+  - Single import: `import org.streum.configrity._` imports all you need.
   - Access through reader monads
   - Values can be lists (v0.7.0)
   - Extra value converters: File, Color, URL, URI (v0.7.0)

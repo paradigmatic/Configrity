@@ -1,0 +1,5 @@
+New features since version 0.6.1:
+
+  - Implicit converters for `File`, `Color`, `URL` and `URI`.
+  - List of values are accepted:
+
