@@ -36,12 +36,13 @@ it may contain some bugs.
   - Configuration chaining (such as to provide default values).
   - Single import: `import configrity._` imports all you need.
   - Access through reader monads
+  - Values can be lists (v0.7.0)
+  - Extra value converters: File, Color, URL, URI (v0.7.0)
 
 ### Planned ###
   
   - Loading from resources.
-  - Implicit converters for: File, URL, URI and Color.
-  - Export/Import formats: INI, JSON, XML, apache, plists, etc.
+  - Export/Import formats: INI, JSON, XML, apache, etc.
 
 ## Requirements ##
 
@@ -55,7 +56,7 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" % "configrity_2.9.0" % "0.6.1"
+    "org.streum" % "configrity_2.9.0" % "0.7.0"
 
 ### From Maven ###
 
@@ -64,7 +65,7 @@ The dependency section is:
     <dependency>
         <groupId>org.streum</groupId>
         <artifactId>configrity_2.9.0</artifactId>
-        <version>0.6.1</version>
+        <version>0.7.0</version>
     </dependency>
 
 ### From source (master branch) ###

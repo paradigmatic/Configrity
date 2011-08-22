@@ -2,7 +2,7 @@ organization := "org.streum"
 
 name := "configrity"
 
-version := "0.6.1"
+version := "0.7.0"
 
 scalaVersion := "2.9.0"
 
