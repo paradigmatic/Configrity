@@ -2,35 +2,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>org.streum.configrity.ConfigurationReader</title>
+          <title>org.streum.configrity.converter.Extra.ColorConverter</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../lib/template.css" />
-      <script type="text/javascript" src="../../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="type">
+        <body class="value">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
-        <p id="owner"><a name="org" class="extype" href="../../package.html">org</a>.<a name="org.streum" class="extype" href="../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="package.html">configrity</a></p>
-        <h1>ConfigurationReader</h1>
+        <img src="../../../../lib/object_big.png" />
+        <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a>.<a name="org.streum.configrity.converter" class="extype" href="package.html">converter</a>.<a name="org.streum.configrity.converter.Extra" class="extype" href="Extra.html">Extra</a></p>
+        <h1>ColorConverter</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">case class</span>
+      <span class="kind">object</span>
       <span class="symbol"> 
-        <span class="name">ConfigurationReader</span>
-        <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="params">(<span name="key">key: String</span>, <span name="default">default: <span name="scala.Option" class="extype">Option</span>[A]</span>, <span name="evidence$1">evidence$1: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result"> extends <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[A] with <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="name">ColorConverter</span>
+        
+        <span class="result"> extends <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="java.awt.Color" class="extype">Color</span>]</span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Converts a string to a java.awt.Color object. The string must be an hexadecimal
+representation of the color (for instance #ffa0a0). The initial hash ('#') is
+optional. The hexdigits must be exactly 6 and may be in upper or lower case.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[A], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="java.awt.Color" class="extype">Color</span>], AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
         
 
@@ -46,7 +49,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="org.streum.configrity.ConfigurationReader" class="in"><span>ConfigurationReader</span></li><li name="scala.Serializable" class="in"><span>Serializable</span></li><li name="java.io.Serializable" class="in"><span>Serializable</span></li><li name="scala.Product" class="in"><span>Product</span></li><li name="scala.Equals" class="in"><span>Equals</span></li><li name="org.streum.configrity.Reader" class="in"><span>Reader</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="org.streum.configrity.converter.Extra.ColorConverter" class="in"><span>ColorConverter</span></li><li name="org.streum.configrity.converter.ValueConverter" class="in"><span>ValueConverter</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -54,21 +57,7 @@
             </div>
         </div>
 
-        <div class="members" id="constructors">
-              <h3>Instance Constructors</h3>
-              <ol><li visbl="pub" name="org.streum.configrity.ConfigurationReader#this" data-isabs="false">
-      <a id="this:ConfigurationReader[A]"></a>
-      <h4 class="signature">
-      <span class="kind">new</span>
-      <span class="symbol"> 
-        <span class="name">ConfigurationReader</span>
         
-        <span class="params">(<span name="key">key: String</span>, <span name="default">default: <span name="scala.Option" class="extype">Option</span>[A]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[A]</span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
 
         
         
@@ -131,17 +120,29 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#apply" data-isabs="false">
-      <a id="apply(Configuration):A"></a>
+    </li><li visbl="pub" name="org.streum.configrity.converter.Extra.ColorConverter#HexColor" data-isabs="false">
+      <a id="HexColor:Regex"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">HexColor</span>
+        
+        <span class="result">: <span name="scala.util.matching.Regex" class="extype">Regex</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="org.streum.configrity.converter.ValueConverter#apply" data-isabs="false">
+      <a id="apply(Option[String]):Option[Color]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">apply</span>
         
-        <span class="params">(<span name="c">c: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>)</span><span class="result">: A</span>
+        <span class="params">(<span name="s">s: <span name="scala.Option" class="extype">Option</span>[String]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="java.awt.Color" class="extype">Color</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Produce a value from a Configuration</p><div class="fullcomment"><div class="comment cmt"><p>Produce a value from a Configuration</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a></dd></dl></div>
+      <p class="shortcomment cmt">Parse the string if defined or return None.</p><div class="fullcomment"><div class="comment cmt"><p>Parse the string if defined or return None.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -153,17 +154,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#canEqual" data-isabs="false">
-      <a id="canEqual(Any):Boolean"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">canEqual</span>
-        
-        <span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → Equals</dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -174,21 +164,10 @@
         <span class="params">()</span><span class="result">: AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#default" data-isabs="false">
-      <a id="default:Option[A]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">default</span>
-        
-        <span class="result">: <span name="scala.Option" class="extype">Option</span>[A]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -200,7 +179,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#equals" data-isabs="false">
+    </li><li visbl="pub" name="scala.AnyRef#equals" data-isabs="false">
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -210,7 +189,7 @@
         <span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → Equals → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -221,21 +200,10 @@
         <span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Reader#flatMap" data-isabs="false">
-      <a id="flatMap[B]((A) ⇒ Reader[B]):Reader[B]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">flatMap</span>
-        <span class="tparams">[<span name="B">B</span>]</span>
-        <span class="params">(<span name="f">f: (A) ⇒ <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[B]</span>)</span><span class="result">: <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[B]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -247,7 +215,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#hashCode" data-isabs="false">
+    </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -257,7 +225,7 @@
         <span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -269,28 +237,20 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#key" data-isabs="false">
-      <a id="key:String"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">key</span>
-        
-        <span class="result">: String</span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="org.streum.configrity.Reader#map" data-isabs="false">
-      <a id="map[B]((A) ⇒ B):Reader[B]"></a>
+    </li><li visbl="pub" name="org.streum.configrity.converter.ValueConverter#map" data-isabs="false">
+      <a id="map[B]((Color) ⇒ B):ValueConverter[B]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">map</span>
         <span class="tparams">[<span name="B">B</span>]</span>
-        <span class="params">(<span name="f">f: (A) ⇒ B</span>)</span><span class="result">: <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[B]</span>
+        <span class="params">(<span name="f">f: (<span name="java.awt.Color" class="extype">Color</span>) ⇒ B</span>)</span><span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[B]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a></dd></dl></div>
+      <p class="shortcomment cmt">Creates a new ValueConverter by mapping the result of this converter
+to another one.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new ValueConverter by mapping the result of this converter
+to another one.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -324,50 +284,18 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#productArity" data-isabs="false">
-      <a id="productArity:Int"></a>
+    </li><li visbl="pub" name="org.streum.configrity.converter.Extra.ColorConverter#parse" data-isabs="false">
+      <a id="parse(String):Color"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">productArity</span>
+        <span class="name">parse</span>
         
-        <span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="params">(<span name="s">s: String</span>)</span><span class="result">: <span name="java.awt.Color" class="extype">Color</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → Product</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#productElement" data-isabs="false">
-      <a id="productElement(Int):Any"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">productElement</span>
-        
-        <span class="params">(<span name="arg0">arg0: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Any" class="extype">Any</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → Product</dd></dl></div>
-    </li><li visbl="pub" name="scala.Product#productIterator" data-isabs="false">
-      <a id="productIterator:Iterator[Any]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">productIterator</span>
-        
-        <span class="result">: Iterator[<span name="scala.Any" class="extype">Any</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#productPrefix" data-isabs="false">
-      <a id="productPrefix:String"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">productPrefix</span>
-        
-        <span class="result">: <span name="java.lang.String" class="extype">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → Product</dd></dl></div>
+      <p class="shortcomment cmt">Defines how to parse the string.</p><div class="fullcomment"><div class="comment cmt"><p>Defines how to parse the string.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.Extra.ColorConverter" class="extype" href="">ColorConverter</a> → <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -379,17 +307,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.ConfigurationReader#toString" data-isabs="false">
+    </li><li visbl="pub" name="scala.AnyRef#toString" data-isabs="false">
       <a id="toString():String"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">toString</span>
         
-        <span class="params">()</span><span class="result">: String</span>
+        <span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.ConfigurationReader" class="extype" href="">ConfigurationReader</a> → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
@@ -432,33 +360,11 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
-      <a id="productElements:Iterator[Any]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name deprecated">productElements</span>
-        
-        <span class="result">: Iterator[<span name="scala.Any" class="extype">Any</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p>use productIterator instead</p></dd></dl></div>
     </li></ol>
             </div>
 
-        <div name="scala.Serializable" class="parent">
-              <h3>Inherited from <span name="scala.Serializable" class="extype">Serializable</span></h3>
-            </div><div name="java.io.Serializable" class="parent">
-              <h3>Inherited from <span name="java.io.Serializable" class="extype">Serializable</span></h3>
-            </div><div name="scala.Product" class="parent">
-              <h3>Inherited from <span name="scala.Product" class="extype">Product</span></h3>
-            </div><div name="scala.Equals" class="parent">
-              <h3>Inherited from <span name="scala.Equals" class="extype">Equals</span></h3>
-            </div><div name="org.streum.configrity.Reader" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.Reader" class="extype" href="Reader.html">Reader</a>[A]</h3>
+        <div name="org.streum.configrity.converter.ValueConverter" class="parent">
+              <h3>Inherited from <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="java.awt.Color" class="extype">Color</span>]</h3>
             </div><div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">

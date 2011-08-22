@@ -69,17 +69,6 @@
       </span>
       </h4>
       
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters" data-isabs="true">
-      <a id="DefaultConverters:DefaultConverters"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="DefaultConverters.html"><span class="name">DefaultConverters</span></a>
-        
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Several predefined value converters for basic types: Int, Double, Boolean, etc.</p>
     </li><li visbl="pub" name="org.streum.configrity.Reader" data-isabs="true">
       <a id="Reader:Reader[A]"></a>
       <h4 class="signature">
@@ -91,17 +80,6 @@
       </span>
       </h4>
       <p class="comment cmt">Monadic Reader</p>
-    </li><li visbl="pub" name="org.streum.configrity.ValueConverter" data-isabs="true">
-      <a id="ValueConverter:ValueConverter[A]"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ValueConverter.html"><span class="name">ValueConverter</span></a>
-        <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Parse and convert an Option[String] into an Option[A].</p>
     </li></ol>
             </div>
         
@@ -120,12 +98,12 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.package" class="extype" href="package$.html">package</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters.BooleanConverter" data-isabs="false">
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters.BooleanConverter" data-isabs="false">
       <a id="BooleanConverter:BooleanConverter"></a>
       <h4 class="signature">
       <span class="kind">object</span>
       <span class="symbol"> 
-        <a href="DefaultConverters$BooleanConverter$.html"><span class="name">BooleanConverter</span></a>
+        <a href="converter/DefaultConverters$BooleanConverter$.html"><span class="name">BooleanConverter</span></a>
         
         <span class="result"> extends ValueConverter[Boolean]</span>
       </span>
@@ -164,18 +142,7 @@
       </span>
       </h4>
       <p class="comment cmt">Provides method for converting a Configuration in a java.</p>
-    </li><li visbl="pub" name="org.streum.configrity.ValueConverter" data-isabs="false">
-      <a id="ValueConverter:ValueConverter"></a>
-      <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ValueConverter$.html"><span class="name">ValueConverter</span></a>
-        
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Ease the creation of a value converter.</p>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#booleanConverter" data-isabs="false">
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#booleanConverter" data-isabs="false">
       <a id="booleanConverter:DefaultConverters.this.BooleanConverter.type"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
@@ -188,55 +155,66 @@
       <p class="shortcomment cmt">Convert strings to Booleans.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to Booleans. The strings values: &quot;T&quot;, &quot;true&quot; and &quot;on&quot;
 will be converted to true and the strings: &quot;F&quot;, &quot;false&quot; and &quot;off&quot; will
 be converted to false.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#byteConverter" data-isabs="false">
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#byteConverter" data-isabs="false">
       <a id="byteConverter:ValueConverter[Byte]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">byteConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Byte" class="extype">Byte</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Byte" class="extype">Byte</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to bytes.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to bytes.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#doubleConverter" data-isabs="false">
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter" data-isabs="false">
+      <a id="converter:converter"></a>
+      <h4 class="signature">
+      <span class="kind">package</span>
+      <span class="symbol"> 
+        <a href="converter/package.html"><span class="name">converter</span></a>
+        
+        
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#doubleConverter" data-isabs="false">
       <a id="doubleConverter:ValueConverter[Double]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">doubleConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Double" class="extype">Double</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Double" class="extype">Double</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to doubles.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to doubles.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#floatConverter" data-isabs="false">
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#floatConverter" data-isabs="false">
       <a id="floatConverter:ValueConverter[Float]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">floatConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Float" class="extype">Float</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Float" class="extype">Float</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to floats.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to floats.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#intConverter" data-isabs="false">
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#intConverter" data-isabs="false">
       <a id="intConverter:ValueConverter[Int]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">intConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Int" class="extype">Int</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Int" class="extype">Int</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to ints.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to ints.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io" data-isabs="false">
       <a id="io:io"></a>
       <h4 class="signature">
@@ -248,18 +226,31 @@ be converted to false.
       </span>
       </h4>
       
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#longConverter" data-isabs="false">
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#listConverter" data-isabs="false">
+      <a id="listConverter[A](ValueConverter[A]):ValueConverter[List[A]]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol"> 
+        <span class="name">listConverter</span>
+        <span class="tparams">[<span name="A">A</span>]</span>
+        <span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[List[A]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Converts string to Lists on arbitrary element type A.</p><div class="fullcomment"><div class="comment cmt"><p>Converts string to Lists on arbitrary element type A. A value
+converter for element type must be available.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#longConverter" data-isabs="false">
       <a id="longConverter:ValueConverter[Long]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">longConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Long" class="extype">Long</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Long" class="extype">Long</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to longs.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to longs.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.package#read" data-isabs="false">
       <a id="read[A](String,A)(ValueConverter[A]):ConfigurationReader[A]"></a>
       <h4 class="signature">
@@ -267,7 +258,7 @@ be converted to false.
       <span class="symbol"> 
         <span class="name">read</span>
         <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="params">(<span name="key">key: String</span>, <span name="default">default: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result">: <a name="org.streum.configrity.ConfigurationReader" class="extype" href="ConfigurationReader.html">ConfigurationReader</a>[A]</span>
+        <span class="params">(<span name="key">key: String</span>, <span name="default">default: A</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result">: <a name="org.streum.configrity.ConfigurationReader" class="extype" href="ConfigurationReader.html">ConfigurationReader</a>[A]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.package" class="extype" href="package$.html">package</a></dd></dl></div>
@@ -278,7 +269,7 @@ be converted to false.
       <span class="symbol"> 
         <span class="name">read</span>
         <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="params">(<span name="key">key: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result">: <a name="org.streum.configrity.ConfigurationReader" class="extype" href="ConfigurationReader.html">ConfigurationReader</a>[A]</span>
+        <span class="params">(<span name="key">key: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[A]</span>)</span><span class="result">: <a name="org.streum.configrity.ConfigurationReader" class="extype" href="ConfigurationReader.html">ConfigurationReader</a>[A]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a reader which retrieves and converts a configuration
@@ -286,30 +277,30 @@ value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a reader 
 value. If the Configuration does not contain the value, an
 Exception will be thrown.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.package" class="extype" href="package$.html">package</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#shortConverter" data-isabs="false">
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#shortConverter" data-isabs="false">
       <a id="shortConverter:ValueConverter[Short]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">shortConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[<span name="scala.Short" class="extype">Short</span>]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[<span name="scala.Short" class="extype">Short</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Convert strings to shorts.</p><div class="fullcomment"><div class="comment cmt"><p>Convert strings to shorts.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.DefaultConverters#stringConverter" data-isabs="false">
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters#stringConverter" data-isabs="false">
       <a id="stringConverter:ValueConverter[String]"></a>
       <h4 class="signature">
       <span class="kind">implicit val</span>
       <span class="symbol"> 
         <span class="name">stringConverter</span>
         
-        <span class="result">: <a name="org.streum.configrity.ValueConverter" class="extype" href="ValueConverter.html">ValueConverter</a>[String]</span>
+        <span class="result">: <a name="org.streum.configrity.converter.ValueConverter" class="extype" href="converter/ValueConverter.html">ValueConverter</a>[String]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Converts a string, to itself.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a string, to itself... Well just an identity converter.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.DefaultConverters" class="extype" href="DefaultConverters.html">DefaultConverters</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd><dt>Definition Classes</dt><dd><a name="org.streum.configrity.converter.DefaultConverters" class="extype" href="converter/DefaultConverters.html">DefaultConverters</a></dd></dl></div>
     </li></ol>
             </div>
 
