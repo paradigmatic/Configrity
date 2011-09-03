@@ -53,7 +53,7 @@ object FlatFormat extends StandardFormat {
 
   /** Parser for FlatFormat */
   object FlatParser extends Parser {
-    def content = rep( entry ) ^^ {  _.flatten }
+    def content = rep( entry ) ^^ { reduce }
   }
 
 } 

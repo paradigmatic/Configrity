@@ -34,10 +34,10 @@ trait StandardFormat extends Format {
 
   def fromText( s: String ) = parser.parse( s )
 
-
   trait Parser extends RegexParsers {
 
-    private var blocks = List[String]()
+    def reduce( lst: List[Configuration] ) =
+      lst.foldLeft( Configuration() )( _ ++ _ )
 
     private def unquote( s: String ) = s.substring( 1, s.size - 1 )
 
@@ -63,14 +63,14 @@ trait StandardFormat extends Format {
     def value = item | list
 
     def entry = key ~ equals ~ value ^^ {
-      case k ~ _ ~ v  => List( (k,v) )
+      case k ~ _ ~ v  => Configuration( k -> v )
     }
 
-    def content: Parser[List[(String,String)]]
+    def content: Parser[Configuration]
     
     def parse( in: String )  = {
       parseAll(content, in) match {
-        case Success( lst , _ ) => Configuration( lst.toMap )
+        case Success( config , _ ) => config
         case x: NoSuccess => throw StandardFormat.ParserException(x.toString)
       }
     }
@@ -80,7 +80,7 @@ trait StandardFormat extends Format {
 
 } 
 
-object StandardFormat {
+object StandardFormat{ 
 
   /** Parser exceptions */
   case class ParserException(s: String) extends Exception(s)

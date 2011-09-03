@@ -148,6 +148,13 @@ case class Configuration( data: Map[String,String] ) {
    */
   def include( config: Configuration ) = Configuration( config.data ++ data )
 
+  /**
+   * Adds another configuration. The configuration passed in argument
+   * will override values.
+   */
+  def ++( config: Configuration ) = config include this
+
+
 }
 
 

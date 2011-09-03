@@ -70,34 +70,31 @@ object BlockFormat extends StandardFormat {
 
     private var blocks = List[String]()
    
-    private def addPrefix( lst: List[(String,String)] ) = {
-      val prefix = blocks.head + dot
-      for( (k,v) <- lst ) yield {
-        ( prefix + k, v ) 
+    private def addPrefix( config: Configuration ) = 
+      blocks match {
+        case Nil => config
+        case head :: _ => Configuration().attach( head, config )
       }
-    }
-
+    
     val dot  = "."
     val openBrace = "{"
     val closeBrace = "}"
 
-    def blocOrEntry:Parser[List[(String,String)]] = block | entry
-    
+    def blockOrEntry:Parser[Configuration] = block | entry
     
     def blockStart: Parser[Unit] = key ~ openBrace ^^ {
       case k ~ _ => blocks ::= k
     }
 
-    def block = blockStart ~ blocOrEntry ~ content ~ closeBrace ^^ {
-      case _ ~ single ~ lst ~ _ => {
-        val newLst = addPrefix( single ::: lst )
+    def block = blockStart ~ blockOrEntry ~ content ~ closeBrace ^^ {
+      case _ ~ single ~ rest ~ _ => {
+        val newLst = addPrefix( single ++ rest )
         blocks = blocks.tail
         newLst
       }
     }
    
-    def content = rep( blocOrEntry ) ^^ {  _.flatten } 
-
+    def content = rep( blockOrEntry ) ^^ { reduce }
   }
 
 
