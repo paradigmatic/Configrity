@@ -76,29 +76,24 @@ object BlockFormat extends StandardFormat {
         case head :: _ => Configuration().attach( head, config )
       }
     
-    val dot  = "."
+    val dot = "."
     val openBrace = "{"
     val closeBrace = "}"
 
-    def includeDirective = "include" ~ quoted ^^ {
-      case _ ~ filename => Configuration.load( filename )
-    }
-
-    def blockOrEntry:Parser[Configuration] = block | entry
-    
     def blockStart: Parser[Unit] = key ~ openBrace ^^ {
       case k ~ _ => blocks ::= k
     }
 
-    def block = blockStart ~ blockOrEntry ~ content ~ closeBrace ^^ {
-      case _ ~ single ~ rest ~ _ => {
-        val newLst = addPrefix( single ++ rest )
-        blocks = blocks.tail
-        newLst
+    def block: Parser[Configuration] = 
+      blockStart ~ ( block | entry ) ~ content ~ closeBrace ^^ {
+        case _ ~ single ~ rest ~ _ => {
+          val newLst = addPrefix( single ++ rest )
+          blocks = blocks.tail
+          newLst
+        }
       }
-    }
    
-    def content = rep( includeDirective | blockOrEntry ) ^^ { reduce }
+    def content = rep( includeDirective | block | entry ) ^^ { reduce }
   }
 
 

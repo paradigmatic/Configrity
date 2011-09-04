@@ -53,6 +53,10 @@ trait StandardFormat extends Format {
     def quoted = """"([^"]*)"""".r /*"*/ ^^ { unquote }
     val equals  = "="
 
+    def includeDirective = "include" ~ quoted ^^ {
+      case _ ~ filename => Configuration.load( filename )
+    }
+
     def item = word | quoted
 
     def items = repsep( item, "," )
