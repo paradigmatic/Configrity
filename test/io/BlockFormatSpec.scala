@@ -1,3 +1,5 @@
+package org.streum.configrity.test.io
+
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.streum.configrity._

@@ -1,5 +1,6 @@
-import org.scalatest.FlatSpec
+package org.streum.configrity.test
 
+import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.streum.configrity._
 import org.streum.configrity.JProperties

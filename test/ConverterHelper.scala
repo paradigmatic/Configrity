@@ -1,3 +1,5 @@
+package org.streum.configrity.test
+
 import org.streum.configrity.converter._
 
 

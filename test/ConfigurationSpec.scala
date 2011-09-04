@@ -1,3 +1,5 @@
+package org.streum.configrity.test
+
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.streum.configrity.Configuration
@@ -5,7 +7,7 @@ import org.streum.configrity.converter.DefaultConverters
 import org.streum.configrity.io._
 
 
-class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConverters{
+class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConverters with io.IOHelper {
 
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )
@@ -72,21 +74,18 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
   }
   
   it can "be saved to a file" in {
-    val file1 = "/tmp/configrity_configuration_spec_1.conf"
-    val file2 = "/tmp/configrity_configuration_spec_2.conf"
-
-    try {
-      config.save( file1 )
-      config.save( file2, FlatFormat )
-      val config2 = Configuration.load( file1 )
-      val config3 = Configuration.load( file2 )
-      config2 should be (config)
-      config3 should be (config)
-    } finally {
-      ( new java.io.File(file1) ).delete
-      ( new java.io.File(file2) ).delete
+    val fn1 = "/tmp/configrity_configuration_spec_1.conf"
+    val fn2 = "/tmp/configrity_configuration_spec_2.conf"
+    autoFile( fn1 ){ file1 =>
+      autoFile( fn2 ){ file2 =>
+        config.save( file1 )
+        config.save( file2, FlatFormat ) 
+        val config2 = Configuration.load( file1.getAbsolutePath )
+        val config3 = Configuration.load( file2.getAbsolutePath )
+        config2 should be (config)
+        config3 should be (config)
+      }
     }
-    
   }
 
   "A sub configuration" can "be attached at a given prefix" in {
@@ -130,7 +129,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
 
 }
 
-class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
+class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHelper {
 
   "A configuration" can "be created from the system properties" in {
     val config = Configuration.systemProperties
@@ -176,6 +175,16 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
       bar = 2
       baz = "hello world"
       """
+    autoFile( filename, s ){ file =>
+      val fn = file.getAbsolutePath
+      val config = Configuration.load(fn,fmt)
+      config.get[Boolean]("foo") should be (Some(true))
+      config.get[Int]("bar") should be (Some(2))
+      config.get[String]("baz") should be (Some("hello world"))
+      val config2 = Configuration.load(fn)
+      config2 should be (config)
+    }
+    /*
     val writer = new java.io.PrintWriter( filename )
     writer.println(s)
     writer.close()
@@ -188,7 +197,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers{
       config2 should be (config)
     } finally {
       ( new java.io.File(filename) ).delete
-    }
+    }*/
   }
 
 

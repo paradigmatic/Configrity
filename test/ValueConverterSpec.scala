@@ -1,3 +1,5 @@
+package org.streum.configrity.test
+
 import org.scalatest.WordSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.streum.configrity.converter._
