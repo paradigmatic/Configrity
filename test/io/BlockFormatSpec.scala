@@ -176,7 +176,7 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
     config[String]("block.bar") should be ("x")
   }
 
-  it must "choke on empty blocks" in {
+  it must "ignore empty blocks" in {
     val s = 
     """
      # Example
@@ -187,11 +187,23 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
         
       }
       baz = x
+      sub2 {
+        sub3 {
+          hoo = false
+          sub4 {
+          }
+        }
+      }
     }
     """
-    intercept[ParserException] {
-      val config = parse( s ) 
-    }
+    val config = parse( s ) 
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config.get[String]("block.sub") should be (None)
+    config.get[String]("block") should be (None)
+    config[String]("block.baz") should be ("x")
+    config[Boolean]("block.sub2.sub3.hoo") should be (false)
+    config.get[Boolean]("block.sub2.sub3.sub4") should be (None)
   }
 
   it can "parse include directive" in {

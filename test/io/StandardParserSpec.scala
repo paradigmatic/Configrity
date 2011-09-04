@@ -136,6 +136,20 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     config[String]("baz") should be ("x")
   }
 
+  it must "skip comments inline" in {
+       val s = 
+    """
+     # Example
+    foo = true
+    bar = 2 # This should "be" skipped
+    baz = x 
+    """
+    val config = parse( s ) 
+    config[Boolean]("foo") should be (true)
+    config[Int]("bar") should be (2)
+    config[String]("baz") should be ("x")
+  }
+
   it can "accept lists" in {
        val s = 
     """

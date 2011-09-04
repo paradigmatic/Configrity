@@ -81,11 +81,18 @@ object BlockFormat extends StandardFormat {
     val closeBrace = "}"
 
     def blockStart: Parser[Unit] = key ~ openBrace ^^ {
-      case k ~ _ => blocks ::= k
+      case k ~ _ =>  blocks ::= k
+    }
+    
+    def emptyBlock = blockStart <~ closeBrace ^^ {
+      case _ => {
+        blocks = blocks.tail.tail
+        Configuration()
+      }
     }
 
     def block: Parser[Configuration] = 
-      blockStart ~ ( block | entry ) ~ content ~ closeBrace ^^ {
+      blockStart ~ ( block | emptyBlock | entry ) ~ content ~ closeBrace ^^ {
         case _ ~ single ~ rest ~ _ => {
           val newLst = addPrefix( single ++ rest )
           blocks = blocks.tail
@@ -93,7 +100,7 @@ object BlockFormat extends StandardFormat {
         }
       }
    
-    def content = rep( includeDirective | block | entry ) ^^ { reduce }
+    def content = rep( includeDirective | block | emptyBlock | entry ) ^^ { reduce }
   }
 
 
