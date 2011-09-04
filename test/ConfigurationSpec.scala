@@ -55,7 +55,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     config[String]("foo") should be ("FOO")
   }
 
-  it should "be able to remove an exitsing key" in {
+  it should "be able to remove an existing key" in {
     val c2 = config.clear("foo")
     config[String]("foo") should be ("FOO")
     c2.get[String]("foo") should be (None)
@@ -64,6 +64,20 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
   it should "not complain when trying to remove an inexistant key" in {
     val c2 = config.clear("buzz")
     c2 should be (config)
+  }
+
+  it should "format lists correctly" in {
+    val lst = List( 1, 2, 3, 5 )
+    val c2 = config.set( "list", lst )
+    val lst2 = c2[List[Int]]( "list" )
+    lst should be (lst2)
+  }
+
+  it should "format empty lists correctly" in {
+    val lst = List[Int]( )
+    val c2 = config.set( "list", lst )
+    val lst2 = c2[List[Int]]( "list" )
+    lst should be (lst2)
   }
 
   it can "be nicely formatted" in {

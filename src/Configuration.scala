@@ -69,6 +69,15 @@ case class Configuration( data: Map[String,String] ) {
     Configuration( data + ( key -> a.toString ) )
 
   /**
+   * Sets a new configuration list value. If the key already exists,
+   * previous value is replaced.
+   */
+  def set[A]( key: String, as: List[A] ) = {
+    val str = as.mkString( "[", ",", "]" )
+    Configuration( data + ( key -> str ) )
+  }
+
+  /**
    * Removes a configuration value. No effect if the value was not previously
    * defined.
    */
