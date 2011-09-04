@@ -1,0 +1,8 @@
+New features since version 0.7.0:
+
+  - Setting a list in a configuration will automatically does not
+    require anymore proper formatting.
+  - An `include` directive is supported in both `FlatFormat` and
+    `BlockFormat`. Configrity is now able to parse most of `Akka`
+    and `Configgy` configuration files.
+

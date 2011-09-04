@@ -38,6 +38,8 @@ it may contain some bugs.
   - Access through reader monads
   - Values can be lists (v0.7.0)
   - Extra value converters: File, Color, URL, URI (v0.7.0)
+  - `include` directive is supported, adding compatibility with Akka and
+     Configgy configurations files.
 
 ### Planned ###
   
@@ -46,7 +48,7 @@ it may contain some bugs.
 
 ## Requirements ##
 
-The only requirement is Scala 2.9. It should be easy to provide
+The only requirement is Scala 2.9.x. It should be easy to provide
 compatibility with Scala 2.8 by dropping some minor features. If you
 are interested, let me know.
 
@@ -56,7 +58,7 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" % "configrity_2.9.0" % "0.7.0"
+    "org.streum" %% "configrity" % "0.8.0"
 
 ### From Maven ###
 
@@ -64,9 +66,10 @@ The dependency section is:
 
     <dependency>
         <groupId>org.streum</groupId>
-        <artifactId>configrity_2.9.0</artifactId>
-        <version>0.7.0</version>
+        <artifactId>configrity_2.9.1</artifactId>
+        <version>0.8.0</version>
     </dependency>
+    
 
 ### From source (master branch) ###
 

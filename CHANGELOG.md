@@ -1,6 +1,18 @@
 Changelog
 =========
 
+Version 0.8.0 - 2011-09-04
+--------------------------
+
+### New feature
+
+  - Flat and Block formats accept an include directive.
+
+### Minor feature
+
+  - `Configuration#set` formats lists directly to a convertible representation.
+  
+
 Version 0.7.0 - 2011-08-20
 --------------------------
 
