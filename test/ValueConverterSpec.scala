@@ -104,7 +104,12 @@ class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConver
     }
   }
 
-  "The list converter" should {
+  "The list converter" can {
+    "parse a string into an Empty List" in {
+      convert[List[String]](
+	Some( "[]" )
+       ) should be (Some( Nil ))
+    }
     "parse a string into a List of String" in {
       convert[List[String]](
 	Some( "[ hello, world ]" )

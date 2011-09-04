@@ -147,6 +147,20 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     config[String]("bar") should be ("[ 1, 2, 3, 4 ]")
     config[String]("baz") should be ("[ hello, \"wo,rld\" ]")
   }
+
+  it can "accept empty lists" in {
+       val s = 
+    """
+     # Example
+    foo = [ "hello" ]
+    bar = []
+    baz = [ "world" ]
+    """
+    val config = parse( s ) 
+    config[String]("foo") should be ("[ hello ]")
+    config[String]("bar") should be ("[  ]")
+    config[String]("baz") should be ("[ world ]")
+  }
   
     it can "accept lists defined over several lines" in {
        val s = 
