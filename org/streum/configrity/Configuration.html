@@ -112,6 +112,19 @@ a new Configuration instance.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.Configuration#++" data-isabs="false">
+      <a id="++(Configuration):Configuration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">++</span>
+        
+        <span class="params">(<span name="config">config: <a name="org.streum.configrity.Configuration" class="extype" href="">Configuration</a></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="">Configuration</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Adds another configuration.</p><div class="fullcomment"><div class="comment cmt"><p>Adds another configuration. The configuration passed in argument
+will override values.
+</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#==" data-isabs="false">
       <a id="==(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -337,7 +350,7 @@ elsewhere.
         <span class="params">()</span><span class="result">: java.lang.Class[_]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.Configuration#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -486,6 +499,19 @@ for defaulting to another Configuration
       </h4>
       <p class="shortcomment cmt">Saves the configuration to a file</p>
     </li><li visbl="pub" name="org.streum.configrity.Configuration#set" data-isabs="false">
+      <a id="set[A](String,List[A]):Configuration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">set</span>
+        <span class="tparams">[<span name="A">A</span>]</span>
+        <span class="params">(<span name="key">key: String</span>, <span name="as">as: List[A]</span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="">Configuration</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets a new configuration list value.</p><div class="fullcomment"><div class="comment cmt"><p>Sets a new configuration list value. If the key already exists,
+previous value is replaced.
+</p></div></div>
+    </li><li visbl="pub" name="org.streum.configrity.Configuration#set" data-isabs="false">
       <a id="set[A](String,A):Configuration"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -562,7 +588,12 @@ is replaced.
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
       <a id="productElements:Iterator[Any]"></a>
       <h4 class="signature">
       <span class="kind">def</span>

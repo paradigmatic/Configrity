@@ -300,13 +300,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io.FlatFormat.FlatParser#content" data-isabs="false">
-      <a id="content:Parser[List[(String, String)]]"></a>
+      <a id="content:Parser[Configuration]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">content</span>
         
-        <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<span name="scala.collection.immutable.List" class="extype">List</span>[(String, String)]]</span>
+        <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a>]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.FlatFormat.FlatParser" class="extype" href="">FlatParser</a> → <a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
@@ -333,13 +333,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parsers</dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#entry" data-isabs="false">
-      <a id="entry:Parser[List[(String, String)]]"></a>
+      <a id="entry:Parser[Configuration]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">entry</span>
         
-        <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<span name="scala.collection.immutable.List" class="extype">List</span>[(String, String)]]</span>
+        <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a>]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
@@ -422,7 +422,7 @@
         <span class="params">()</span><span class="result">: java.lang.Class[_]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="scala.util.parsing.combinator.Parsers#guard" data-isabs="false">
       <a id="guard[T](⇒ Parser[T]):Parser[T]"></a>
       <h4 class="signature">
@@ -456,6 +456,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#includeDirective" data-isabs="false">
+      <a id="includeDirective:Parser[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">includeDirective</span>
+        
+        <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -720,6 +731,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RegexParsers → Parsers</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#protect" data-isabs="false">
+      <a id="protect(String):String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">protect</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span><span class="result">: String</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#quoted" data-isabs="false">
       <a id="quoted:Parser[String]"></a>
       <h4 class="signature">
@@ -728,6 +750,17 @@
         <span class="name">quoted</span>
         
         <span class="result">: <span name="scala.util.parsing.combinator.Parsers.Parser" class="extype">Parser</span>[<span name="java.lang.String" class="extype">String</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#reduce" data-isabs="false">
+      <a id="reduce(List[Configuration]):Configuration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">reduce</span>
+        
+        <span class="params">(<span name="lst">lst: List[<a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a>]</span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
@@ -855,6 +888,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#unquote" data-isabs="false">
+      <a id="unquote(String):String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">unquote</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser#value" data-isabs="false">
       <a id="value:Parser[String]"></a>
       <h4 class="signature">
@@ -932,6 +976,8 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></dd></dl></div>
     </li></ol>
             </div>
+
+        
 
         <div name="org.streum.configrity.io.StandardFormat.Parser" class="parent">
               <h3>Inherited from <a name="org.streum.configrity.io.StandardFormat.Parser" class="extype" href="StandardFormat$Parser.html">Parser</a></h3>
