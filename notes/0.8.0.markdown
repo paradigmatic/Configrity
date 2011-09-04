@@ -1,8 +1,13 @@
+Configrity standard formats accepts an `include` directive. This allow
+the parsing of *Akka* configuration files as well as most legacy
+*Configgy* files.
+
 New features since version 0.7.0:
 
   - Setting a list in a configuration will automatically does not
     require anymore proper formatting.
   - An `include` directive is supported in both `FlatFormat` and
-    `BlockFormat`. Configrity is now able to parse most of `Akka`
-    and `Configgy` configuration files.
+    `BlockFormat`.
+  - `BlockFormat` parser ignores empty blocks without complaining.
 
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).

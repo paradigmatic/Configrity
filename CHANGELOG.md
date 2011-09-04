@@ -11,7 +11,7 @@ Version 0.8.0 - 2011-09-04
 ### Minor feature
 
   - `Configuration#set` formats lists directly to a convertible representation.
-  
+  - `BlockFormat` ignores empty blocks  
 
 Version 0.7.0 - 2011-08-20
 --------------------------
