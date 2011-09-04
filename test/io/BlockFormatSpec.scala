@@ -7,7 +7,7 @@ import org.streum.configrity.io.BlockFormat
 import org.streum.configrity.io.BlockFormat._
 import org.streum.configrity.io.StandardFormat.ParserException
 
-class BlockFormatSpec extends FlatSpec with ShouldMatchers{
+class BlockFormatSpec extends FlatSpec with ShouldMatchers {
 
   "The block format" can "write and read an empty Configuration" in {
     val config = Configuration( )
@@ -35,7 +35,7 @@ class BlockFormatSpec extends FlatSpec with ShouldMatchers{
 
 }
 
-class BlockFormatParserSpec extends StandardParserSpec {
+class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
 
   def parse( s: String ) = BlockFormat.parser.parse(s)
   lazy val parserName = "BlockFormatParser"
@@ -191,6 +191,47 @@ class BlockFormatParserSpec extends StandardParserSpec {
     """
     intercept[ParserException] {
       val config = parse( s ) 
+    }
+  }
+
+  it can "parse include directive" in {
+    val parentContent = """
+      block {
+        foo = true
+        bar = 2
+      }
+    """
+    val childContent = """
+      include "/tmp/parent.conf"
+      
+      block {
+        foo = false
+        baz = "hello"
+      }
+    """
+    autoFile( "/tmp/parent.conf", parentContent ) { parent =>
+      autoFile( "/tmp/child.conf", childContent ) { child =>
+        val config = Configuration.load("/tmp/child.conf")
+        config[Boolean]("block.foo") should be (false)
+        config[Int]("block.bar") should be (2)
+        config[String]("block.baz") should be ("hello")
+      }
+    }
+  }
+
+  it must "choke if the include points to a non existing file" in {
+    val childContent = """
+      include "/tmp/parent.conf"
+      
+      block {
+        foo = false
+        baz = "hello"
+      }
+    """
+    autoFile( "/tmp/child.conf", childContent ) { child =>
+      intercept[java.io.FileNotFoundException] {
+        val config = Configuration.load("/tmp/child.conf")
+      }
     }
   }
 }

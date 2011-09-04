@@ -80,6 +80,10 @@ object BlockFormat extends StandardFormat {
     val openBrace = "{"
     val closeBrace = "}"
 
+    def includeDirective = "include" ~ quoted ^^ {
+      case _ ~ filename => Configuration.load( filename )
+    }
+
     def blockOrEntry:Parser[Configuration] = block | entry
     
     def blockStart: Parser[Unit] = key ~ openBrace ^^ {
@@ -94,7 +98,7 @@ object BlockFormat extends StandardFormat {
       }
     }
    
-    def content = rep( blockOrEntry ) ^^ { reduce }
+    def content = rep( includeDirective | blockOrEntry ) ^^ { reduce }
   }
 
 

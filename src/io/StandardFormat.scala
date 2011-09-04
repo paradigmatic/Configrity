@@ -39,9 +39,9 @@ trait StandardFormat extends Format {
     def reduce( lst: List[Configuration] ) =
       lst.foldLeft( Configuration() )( _ ++ _ )
 
-    private def unquote( s: String ) = s.substring( 1, s.size - 1 )
+    def unquote( s: String ) = s.substring( 1, s.size - 1 )
 
-    private def protect( s: String ) =  word.findFirstIn(s)  match {
+    def protect( s: String ) =  word.findFirstIn(s)  match {
       case Some(z) if s == z => s
       case _ => "\"" + s + "\""
     }
