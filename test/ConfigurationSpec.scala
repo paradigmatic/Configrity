@@ -180,8 +180,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
     config.get[String]("baz") should be (Some("hello world"))
   }
 
-  it can "be loaded from a file" in {
-    val filename = "/tmp/configrity_configuration_obj_spec.conf"
+  it can "be loaded from a file" in {    
     val fmt = FlatFormat
     val s = 
       """
@@ -189,7 +188,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
       bar = 2
       baz = "hello world"
       """
-    autoFile( filename, s ){ file =>
+    autoFile( s ){ file =>
       val fn = file.getAbsolutePath
       val config = Configuration.load(fn,fmt)
       config.get[Boolean]("foo") should be (Some(true))

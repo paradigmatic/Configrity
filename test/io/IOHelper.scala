@@ -5,9 +5,9 @@ import java.io.PrintWriter
 
 trait IOHelper {
 
-  def autoFile[A]( filename: String, content: String = "" )
+  def autoFile[A]( content: String = "" )
   ( body: File => A ) = {
-    val f = new File( filename )
+    val f = File.createTempFile("configrity", ".conf")
     try {
       if( content != "" ) {
         val out = new PrintWriter( f )
