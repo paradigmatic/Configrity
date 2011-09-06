@@ -124,11 +124,11 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     config5[String]("nums.five") should be ("V")
   }
 
-  it can "be dettach from a configuration" in {
+  it can "be detach from a configuration" in {
     val data2 = Map( "one" -> "1", "two" -> "2" )
     val config2 = Configuration( data2 )
     val config3 = config attach ("nums", config2 )
-    val config4 = config3 dettach ("nums")
+    val config4 = config3 detach ("nums")
     config4 should be (config2)
   }
 
