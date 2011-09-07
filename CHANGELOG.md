@@ -67,7 +67,7 @@ Version 0.4.0 - 2011-07-04
 ### New features 
 
   - Hierarchical BlockFormat
-  - Block manipulations (attach and dettach)  
+  - Block manipulations (attach and detach)
 
 ### Code quality 
 

@@ -35,13 +35,13 @@ class FlatFormatParserSpec extends StandardParserSpec with IOHelper{
         bar = 2
     """
     val childContent = """
-      include "/tmp/parent.conf"
+      include "%s"
       foo = false
       baz = "hello"
     """
-    autoFile( "/tmp/parent.conf", parentContent ) { parent =>
-      autoFile( "/tmp/child.conf", childContent ) { child =>
-        val config = Configuration.load("/tmp/child.conf")
+    autoFile( parentContent ) { parent =>
+      autoFile( childContent.format(parent.getAbsolutePath) ) { child =>
+        val config = Configuration.load(child.getAbsolutePath)
         config[Boolean]("foo") should be (false)
         config[Int]("bar") should be (2)
         config[String]("baz") should be ("hello")
@@ -55,9 +55,9 @@ class FlatFormatParserSpec extends StandardParserSpec with IOHelper{
       foo = false
       baz = "hello"
     """
-    autoFile( "/tmp/child.conf", childContent ) { child =>
+    autoFile( childContent ) { child =>
       intercept[java.io.FileNotFoundException] {
-        val config = Configuration.load("/tmp/child.conf")
+        val config = Configuration.load(child.getAbsolutePath)
       }
     }
   }

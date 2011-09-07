@@ -132,11 +132,11 @@ case class Configuration( data: Map[String,String] ) {
    *  The initial configuration is not modified. The prefix is removed in the
    *  resulting configuration. An important property:
    *
-   *  <pre>val c2 = c1.attach(prefix, c1.dettach( prefix )</pre>
+   *  <pre>val c2 = c1.attach(prefix, c1.detach( prefix )</pre>
    *
    *  The resulting configuration c2 should be equal to c1.
    */
-  def dettach( prefix: String ) = {
+  def detach( prefix: String ) = {
     require( 
       prefix.substring( prefix.length-1) != ".", 
       "Prefix should not end with a dot"
