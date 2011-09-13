@@ -3,10 +3,24 @@ import Keys._
 
 object ConfigrityBuild extends Build {
 
+  lazy val configrity = Project(
+    id = "configrity",
+    base = file("."),
+    settings = standardSettings,
+    aggregate = Seq(core, hello)
+  )
+
    lazy val core = Project(
-    id = "configrity-core",
-    base = file("core"),
-    settings = standardSettings 
+     id = "configrity-core",
+     base = file("core"),
+     settings = standardSettings
+   )
+
+   lazy val hello = Project(
+     id = "configrity-hello",
+     base = file("modules/hello"),
+     dependencies = Seq(core),
+     settings = standardSettings 
    )
 
 
