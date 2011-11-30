@@ -166,6 +166,15 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
     config[Int]("bazz") should be (2)
   }
 
+  it can "support lists directly with key value pairs" in {
+    val config = Configuration(
+      "foo"-> List(10), 
+      "bar"-> ("hello"::"world"::Nil)
+    )
+    config[List[Int]]("foo") should be (List(10)) 
+    config[List[String]]("bar") should be (List("hello","world")) 
+  }
+
 
   it can "be created from a string using a given format" in {
     val s = 
@@ -197,21 +206,8 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
       val config2 = Configuration.load(fn)
       config2 should be (config)
     }
-    /*
-    val writer = new java.io.PrintWriter( filename )
-    writer.println(s)
-    writer.close()
-    try {
-      val config = Configuration.load(filename,fmt)
-      config.get[Boolean]("foo") should be (Some(true))
-      config.get[Int]("bar") should be (Some(2))
-      config.get[String]("baz") should be (Some("hello world"))
-      val config2 = Configuration.load(filename)
-      config2 should be (config)
-    } finally {
-      ( new java.io.File(filename) ).delete
-    }*/
   }
+
 
 
 }

@@ -176,7 +176,14 @@ object Configuration {
 
   /** Creates a configuration from tuples of key,value */
   def apply( entries:(String,Any)* ):Configuration =
-    Configuration( entries.map( t => (t._1,t._2.toString) ).toMap  )
+    Configuration( 
+      entries.map {
+        case (k,v) => v match {
+          case l: List[_] => (k, l.mkString("[",",","]") )
+            case _ => (k,v.toString)
+        }
+      }.toMap
+    )
 
 
   /** Returns the environement variables as a Configuration */
