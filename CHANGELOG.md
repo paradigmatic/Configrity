@@ -1,6 +1,19 @@
 Changelog
 =========
 
+Next version
+------------
+
+### New feature
+
+  - Better handling of lists when the configuration is built with
+    key/values (issue #4)
+
+### Code quality
+
+  - Test pass on Windows. Gerolf Seitz (issue #3)
+    
+
 Version 0.8.0 - 2011-09-04
 --------------------------
 
@@ -67,7 +80,7 @@ Version 0.4.0 - 2011-07-04
 ### New features 
 
   - Hierarchical BlockFormat
-  - Block manipulations (attach and dettach)  
+  - Block manipulations (attach and detach)
 
 ### Code quality 
 

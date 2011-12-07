@@ -214,16 +214,16 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
       }
     """
     val childContent = """
-      include "/tmp/parent.conf"
+      include "%s"
       
       block {
         foo = false
         baz = "hello"
       }
     """
-    autoFile( "/tmp/parent.conf", parentContent ) { parent =>
-      autoFile( "/tmp/child.conf", childContent ) { child =>
-        val config = Configuration.load("/tmp/child.conf")
+    autoFile( parentContent ) { parent =>
+      autoFile( childContent.format(parent.getAbsolutePath) ) { child =>
+        val config = Configuration.load(child.getAbsolutePath)
         config[Boolean]("block.foo") should be (false)
         config[Int]("block.bar") should be (2)
         config[String]("block.baz") should be ("hello")
@@ -240,9 +240,9 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
         baz = "hello"
       }
     """
-    autoFile( "/tmp/child.conf", childContent ) { child =>
+    autoFile( childContent ) { child =>
       intercept[java.io.FileNotFoundException] {
-        val config = Configuration.load("/tmp/child.conf")
+        val config = Configuration.load( child.getAbsolutePath )
       }
     }
   }

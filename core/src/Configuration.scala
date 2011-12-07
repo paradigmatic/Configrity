@@ -132,11 +132,11 @@ case class Configuration( data: Map[String,String] ) {
    *  The initial configuration is not modified. The prefix is removed in the
    *  resulting configuration. An important property:
    *
-   *  <pre>val c2 = c1.attach(prefix, c1.dettach( prefix )</pre>
+   *  <pre>val c2 = c1.attach(prefix, c1.detach( prefix )</pre>
    *
    *  The resulting configuration c2 should be equal to c1.
    */
-  def dettach( prefix: String ) = {
+  def detach( prefix: String ) = {
     require( 
       prefix.substring( prefix.length-1) != ".", 
       "Prefix should not end with a dot"
@@ -176,7 +176,14 @@ object Configuration {
 
   /** Creates a configuration from tuples of key,value */
   def apply( entries:(String,Any)* ):Configuration =
-    Configuration( entries.map( t => (t._1,t._2.toString) ).toMap  )
+    Configuration( 
+      entries.map {
+        case (k,v) => v match {
+          case l: List[_] => (k, l.mkString("[",",","]") )
+            case _ => (k,v.toString)
+        }
+      }.toMap
+    )
 
 
   /** Returns the environement variables as a Configuration */
