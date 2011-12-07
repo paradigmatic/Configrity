@@ -208,7 +208,16 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
     }
   }
 
-
+ it can "be loaded from the classpath" in {  
+   val fmt = FlatFormat
+   val resName = "/test-config.conf"
+   val config = Configuration.loadResource( resName, fmt )
+   config.get[Boolean]("foo") should be (Some(true))
+   config.get[Int]("bar") should be (Some(2))
+   config.get[String]("baz") should be (Some("hello world"))
+   val config2 = Configuration.loadResource( resName )
+   config2 should be (config)
+ }
 
 }
 
