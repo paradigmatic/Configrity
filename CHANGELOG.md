@@ -4,14 +4,17 @@ Changelog
 Next version
 ------------
 
-### New feature
+### New features
 
+  - Configurations can be loaded directly from the classpath using
+    `Configuration.loadResource`.
+  
   - Better handling of lists when the configuration is built with
     key/values (issue #4)
 
 ### Code quality
 
-  - Test pass on Windows. Gerolf Seitz (issue #3)
+  - Test pass on Windows (issue #3) -- Gerolf Seitz
     
 
 Version 0.8.0 - 2011-09-04

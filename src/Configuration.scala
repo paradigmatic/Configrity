@@ -221,6 +221,17 @@ object Configuration {
   def load( fileName: String, fmt: ImportFormat )
   (implicit codec: scala.io.Codec): Configuration =
     load( Source.fromFile( fileName ), fmt )
+  
+  /**
+   * Load a configuration as a resource from the classpath. An optional
+   * format can be passed.
+   */
+  def loadResource( fileName: String, fmt: ImportFormat = defaultFormat ) = {
+    val src = Source.fromInputStream(
+      getClass.getResourceAsStream( fileName ) 
+    )
+    load( src, fmt )
+  }
 
 
 }

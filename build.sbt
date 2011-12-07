@@ -16,6 +16,8 @@ scalaSource in Compile <<= baseDirectory(_ / "src")
 
 scalaSource in Test <<= baseDirectory(_ / "test")
 
+resourceDirectory in Test <<= baseDirectory { _ / "test-resources" }
+
 publishTo := Some("Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/")
 
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
