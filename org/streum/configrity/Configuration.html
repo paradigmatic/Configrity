@@ -260,12 +260,12 @@ given key, else false.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#dettach" data-isabs="false">
-      <a id="dettach(String):Configuration"></a>
+    </li><li visbl="pub" name="org.streum.configrity.Configuration#detach" data-isabs="false">
+      <a id="detach(String):Configuration"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">dettach</span>
+        <span class="name">detach</span>
         
         <span class="params">(<span name="prefix">prefix: String</span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="">Configuration</a></span>
       </span>
@@ -273,7 +273,7 @@ given key, else false.</p>
       <p class="shortcomment cmt">Detach all values whose keys have the given prefix as a new configuration.</p><div class="fullcomment"><div class="comment cmt"><p>Detach all values whose keys have the given prefix as a new configuration.
  The initial configuration is not modified. The prefix is removed in the
  resulting configuration. An important property:</p><p><pre>
-val c2 = c1.attach(prefix, c1.dettach( prefix )
+val c2 = c1.attach(prefix, c1.detach( prefix )
 </pre></p><p> The resulting configuration c2 should be equal to c1.
 </p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
