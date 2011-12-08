@@ -2,7 +2,7 @@ organization := "org.streum"
 
 name := "configrity"
 
-version := "0.8.0"
+version := "0.9.0"
 
 scalaVersion := "2.9.1"
 
@@ -17,6 +17,8 @@ scalaSource in Compile <<= baseDirectory(_ / "src")
 scalaSource in Test <<= baseDirectory(_ / "test")
 
 resourceDirectory in Test <<= baseDirectory { _ / "test-resources" }
+
+unmanagedClasspath in Compile += Attributed.blank(new java.io.File("doesnotexist"))
 
 publishTo := Some("Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/")
 

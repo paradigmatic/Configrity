@@ -1,14 +1,16 @@
 Changelog
 =========
 
-Next version
-------------
+Version 0.9.0 - 2011-12-08
+--------------------------
 
 ### New features
 
   - Configurations can be loaded directly from the classpath using
     `Configuration.loadResource`.
   
+### Minor feature
+
   - Better handling of lists when the configuration is built with
     key/values (issue #4)
 
