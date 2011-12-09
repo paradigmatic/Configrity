@@ -40,10 +40,11 @@ it may contain some bugs.
   - Extra value converters: File, Color, URL, URI (v0.7.0)
   - `include` directive is supported, adding compatibility with Akka and
      Configgy configurations files.
+  - Loading configurations from classpath (resources)
+
 
 ### Planned ###
   
-  - Loading from resources.
   - Export/Import formats: INI, JSON, XML, apache, etc.
 
 ## Requirements ##
