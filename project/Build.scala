@@ -32,7 +32,10 @@ object ConfigrityBuild extends Build {
     libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
     scalacOptions += "-deprecation",
     scalaSource in Compile <<= baseDirectory(_ / "src"),
-    scalaSource in Test <<= baseDirectory(_ / "test")
+    scalaSource in Test <<= baseDirectory(_ / "test"),
+    resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
+    unmanagedClasspath in Compile += 
+      Attributed.blank(new java.io.File("doesnotexist"))
     //publishSetting,
     //credentialsSetting,
     )

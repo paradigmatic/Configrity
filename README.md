@@ -40,10 +40,11 @@ it may contain some bugs.
   - Extra value converters: File, Color, URL, URI (v0.7.0)
   - `include` directive is supported, adding compatibility with Akka and
      Configgy configurations files.
+  - Loading configurations from classpath (resources)
+
 
 ### Planned ###
   
-  - Loading from resources.
   - Export/Import formats: INI, JSON, XML, apache, etc.
 
 ## Requirements ##
@@ -58,7 +59,7 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" %% "configrity" % "0.8.0"
+    "org.streum" %% "configrity" % "0.9.0"
 
 ### From Maven ###
 
@@ -74,7 +75,7 @@ The dependency section is:
 ### From source (master branch) ###
 
 To install Configrity you just need a working java installation (tested with
-JDK 1.6, but should work with 1.5) and SBT **0.10.x**:
+JDK 1.6, but may work with 1.5) and SBT **0.11+**:
 
     $ git clone git://github.com/paradigmatic/Configrity.git
     $ cd Configrity

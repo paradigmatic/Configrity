@@ -1,0 +1,9 @@
+Changes since version 0.8.0:
+
+  - Configurations can be loaded directly from the classpath using
+    `Configuration.loadResource`.
+  - Better handling of lists when the configuration is built from
+    key/values (issue #4)
+  - All tests pass on Windows (issue #3) -- Gerolf Seitz
+
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).
