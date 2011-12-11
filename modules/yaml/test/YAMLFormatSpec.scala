@@ -37,4 +37,20 @@ baz: hello
     }
   }
 
+  it can "parse list values" in {
+    pending
+  }
+
+  it should "throw an exception is list elements are not scalar" in {
+    pending
+  }
+
+  it must "parse nested maps as Config blocks" in {
+    pending
+  }
+
+  it can "write a config into YAML" in {
+    pending
+  }
+
 }
