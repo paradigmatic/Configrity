@@ -17,20 +17,22 @@ object ConfigrityBuild extends Build {
    )
 
    lazy val hello = Project(
-     id = "configrity-hello",
-     base = file("modules/hello"),
+     id = "configrity-yaml",
+     base = file("modules/yaml"),
      dependencies = Seq(core),
-     settings = standardSettings 
+     settings = standardSettings ++ Seq(
+       libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
+     )
    )
 
 
   lazy val standardSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.8.0",
+    version := "0.9.0",
     scalaVersion := "2.9.1",
     crossScalaVersions := Seq("2.9.0-1", "2.9.1"),
     libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
-    scalacOptions += "-deprecation",
+    scalacOptions ++= Seq( "-deprecation", "-unchecked" ),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
