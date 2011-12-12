@@ -38,15 +38,51 @@ baz: hello
   }
 
   it can "parse list values" in {
-    pending
+   val yml = 
+"""
+foo: 1
+bar: 
+  - true
+  - false
+  - true
+baz: hello
+"""
+    val config = FMT.fromText( yml )
+    config[Int]("foo") should be (1)
+    config[List[Boolean]]("bar") should be ( List(true,false,true) )
+    config[String]("baz") should be ("hello")
   }
 
-  it should "throw an exception is list elements are not scalar" in {
-    pending
+  it should "throw an exception isif list elements are not scalar" in {
+   val yml = 
+"""
+foo: 1
+bar: 
+  - inner:
+    hello: world
+    tl: dr
+baz: hello
+"""
+    intercept[YAMLFormatException]{
+      val config = FMT.fromText( yml )
+    }
   }
 
   it must "parse nested maps as Config blocks" in {
-    pending
+  val yml = 
+"""
+foo: 1
+bar: 
+  hello: 12
+  tl: dr
+baz: true
+"""
+    val config = FMT.fromText( yml )
+    config[Int]("foo") should be (1)
+    config[String]("baz") should be ("true")  
+    val inner = config.detach("bar")
+    inner[Int]("hello") should be (12)
+    inner[String]("tl") should be ("dr")
   }
 
   it can "write a config into YAML" in {

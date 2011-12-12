@@ -10,9 +10,7 @@ class YAMLFormatException(msg:String) extends RuntimeException(msg)
 
 object YAMLFormat extends Format {
 
-  def fromText( s: String ) = {
-    new Configuration( yaml2map( s ) )
-  }
+  def fromText( s: String ) = new Configuration( yaml2map( s ) )
   
   def toText( configuration: Configuration ) = ""
 
@@ -25,12 +23,13 @@ object YAMLFormat extends Format {
       }
       case other => {
         val klass = other.getClass
-        throw new YAMLFormatException(
-          "Top level should be a map. Received: " + klass 
-        )
+	except( "Top level should be a map. Received: " + klass )
       }
     }
   }
+
+  private def except( msg: String ) =
+    throw new YAMLFormatException( msg )
 
 }
 
