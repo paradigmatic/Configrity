@@ -75,6 +75,9 @@ foo: 1
 bar: 
   hello: 12
   tl: dr
+  too: 
+    deep: map
+    also: works
 baz: true
 """
     val config = FMT.fromText( yml )
@@ -83,6 +86,8 @@ baz: true
     val inner = config.detach("bar")
     inner[Int]("hello") should be (12)
     inner[String]("tl") should be ("dr")
+    val inner2 = inner.detach("too")
+    inner2[String]("deep") should be ("map")
   }
 
   it can "write a config into YAML" in {
