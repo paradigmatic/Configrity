@@ -19,7 +19,7 @@ object YAMLFormat extends Format {
   def toText( configuration: Configuration ) = ""
 
   private def yaml2map(s: String): Map[String,String] = {
-    new Yaml load s match {
+    (new Yaml).loadAll(s).head match {
       case jmap: JMap[_,_] => readMap( "", jmap.toMap )
       case other => {
         val klass = other.getClass
