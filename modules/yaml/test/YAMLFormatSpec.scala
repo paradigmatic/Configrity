@@ -136,7 +136,17 @@ baz: greetings
   }
 
   it can "write a config into YAML" in {
-    pending
+    val config = Configuration( 
+      "foo.gnats.gnits" -> "FOO", 
+      "bar.buzz" -> 1234, 
+      "bar.baz" -> true,
+      "lst" -> List( true, true, false, false )
+    )
+    val config2 = FMT.fromText( FMT.toText( config ) )
+    config[List[Boolean]]("lst") should be (config2[List[Boolean]]("lst"))
+    config[String]("foo.gnats.gnits") should be (config2[String]("foo.gnats.gnits"))
+    config[Int]("bar.buzz") should be (config2[Int]("bar.buzz"))
+    config[Boolean]("bar.baz") should be (config2[Boolean]("bar.baz"))
   }
 
 }
