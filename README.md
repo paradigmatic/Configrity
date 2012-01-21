@@ -68,7 +68,7 @@ The dependency section is:
     <dependency>
         <groupId>org.streum</groupId>
         <artifactId>configrity_2.9.1</artifactId>
-        <version>0.8.0</version>
+        <version>0.9.0</version>
     </dependency>
     
 

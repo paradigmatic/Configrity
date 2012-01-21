@@ -52,7 +52,7 @@ object YAMLFormat extends Format with HierarchyUtils {
       case jmap: JMap[_,_] => readMap( "", jmap.toMap )
       case other => {
         val klass = other.getClass
-	except( "Top level should be a map. Received: " + klass )
+	except( "Top level should be a Map. Received: " + klass )
       }
     }
   }
@@ -72,8 +72,8 @@ object YAMLFormat extends Format with HierarchyUtils {
 
   private def readList( key: String, lst: JList[_] ):Map[String,String] = {
     val value = lst.toList.map {
-      case jlist: JList[_] => except("Lists cannot contain nested lists")
-      case jMap: JMap[_,_] => except("Lists cannot contain nested maps")
+      case jlist: JList[_] => except("Lists cannot contain nested Lists.")
+      case jMap: JMap[_,_] => except("Lists cannot contain nested Maps.")
       case s => "\"" + s.toString + "\""
     }.mkString( "[", ",", "]" )
     Map( key -> value )
