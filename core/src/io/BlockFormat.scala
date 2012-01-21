@@ -26,43 +26,19 @@ import scala.util.parsing.combinator._
 /**
  * Encodes the default block format
  */
-object BlockFormat extends StandardFormat {
+object BlockFormat extends StandardFormat with HierarchyUtils {
 
-  def toText( configuration: Configuration ) = write( configuration.data )
+  def toText( configuration: Configuration ) = writeHierarchy( configuration.data )
 
-  private def splitKey( s: String ) = s.split("""\.""").toList
-  private def joinKey( ss: List[String] ) = ss.mkString(".")
-  private def writeEntry(k:String,v:String,ind:Int,out:StringBuffer) {
+  def writeEntry(k:String,v:String,ind:Int,out:StringBuffer) {
     out.append( "  " * ind )
     .append( k ).append(" = ").append(v).append("\n")
   }
+  def writeBlockStart( k:String, ind:Int, out:StringBuffer ) =
+      out.append("  "*ind).append(k).append(" {").append("\n")
 
-  private def write( 
-    map: Map[String,String], 
-    indents: Int = 0
-  ): String = {
-    val out = new StringBuffer
-    var blocks = Map[String,Map[String,String]]()
-    for( (k,v) <- map ) {
-      splitKey(k) match {
-        case el :: Nil => {
-          writeEntry(k,v,indents,out)
-        }
-        case first :: rest => {
-          val subKey = joinKey(rest)
-          blocks +=  first -> 
-          ( blocks.getOrElse( first, Map() ) + ( subKey -> v) )
-        }
-        case _ =>
-      }
-    }
-    for( (k,block) <- blocks ) {
-      out.append("  "*indents).append(k).append(" {").append("\n")
-      out.append( write( block, indents + 1 ) )
-      out.append("  "*indents).append("}").append("\n")
-    }
-    out.toString
-  }
+  def writeBlockEnd( k:String, ind:Int, out:StringBuffer ) =
+    out.append("  "*ind).append("}").append("\n")
 
   def parser = new BlockParser
 
