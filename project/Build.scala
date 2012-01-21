@@ -5,10 +5,12 @@ object ConfigrityBuild extends Build {
 
   lazy val configrity = Project(
     id = "configrity",
-    base = file("."),
-    settings = standardSettings,
-    aggregate = Seq(core, hello)
-  )
+    base = file(".")
+   ) settings (
+    publish := { },  
+    publishLocal := { }
+  ) aggregate(core, yaml)
+
 
    lazy val core = Project(
      id = "configrity-core",
@@ -16,7 +18,7 @@ object ConfigrityBuild extends Build {
      settings = standardSettings
    )
 
-   lazy val hello = Project(
+   lazy val yaml = Project(
      id = "configrity-yaml",
      base = file("modules/yaml"),
      dependencies = Seq(core),
@@ -37,27 +39,19 @@ object ConfigrityBuild extends Build {
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
-      Attributed.blank(new java.io.File("doesnotexist"))
-    //publishSetting,
-    //credentialsSetting,
+      Attributed.blank(new java.io.File("doesnotexist")),
+    publishTo := Some("Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"),
+    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
+    pomExtra := licenseSection
     )
-  /*
-  lazy val publishSetting = publishTo <<= (version) {
-    version: String =>
-      def repo(name: String) = name at "http://nexus-direct.scala-tools.org/content/repositories/" + name
-    val isSnapshot = version.trim.endsWith("SNAPSHOT")
-    val repoName = if(isSnapshot) "snapshots" else "releases"
-    Some(repo(repoName))
-  }
 
-  lazy val credentialsSetting = credentials += {
-    Seq("build.publish.user", "build.publish.password").map(k => Option(System.getProperty(k))) match {
-      case Seq(Some(user), Some(pass)) =>
-        Credentials("Sonatype Nexus Repository Manager", "nexus-direct.scala-tools.org", user, pass)
-      case _ =>
-        Credentials(Path.userHome / ".ivy2" / ".credentials")
-    }
+  lazy val licenseSection= {
+    <licenses>
+      <license>
+        <name>GNU LesserGPLv3</name>
+        <url>http://www.gnu.org/licenses/lgpl.html</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
   }
-*/
-
 }
