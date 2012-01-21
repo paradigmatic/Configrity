@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Next Version
+------------
+
+### New feature
+
+  - The module `configrity-yaml` allows YAML for import/export (issue #2)
+
 Version 0.9.0 - 2011-12-08
 --------------------------
 

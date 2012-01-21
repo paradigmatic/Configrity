@@ -40,8 +40,11 @@ it may contain some bugs.
   - Extra value converters: File, Color, URL, URI (v0.7.0)
   - `include` directive is supported, adding compatibility with Akka and
      Configgy configurations files.
-  - Loading configurations from classpath (resources)
+  - Loading configurations from classpath/resources (v0.9.0)
 
+### Provided by extra modules ###
+
+  - YAML format import/export (v0.10.0)
 
 ### Planned ###
   
@@ -59,18 +62,8 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" %% "configrity" % "0.9.0"
+    "org.streum" %% "configrity-core" % "0.10.0"
 
-### From Maven ###
-
-The dependency section is:
-
-    <dependency>
-        <groupId>org.streum</groupId>
-        <artifactId>configrity_2.9.1</artifactId>
-        <version>0.9.0</version>
-    </dependency>
-    
 
 ### From source (master branch) ###
 
@@ -114,4 +107,4 @@ github. Tests are appreciated.
 Configrity is a free and open source library released under the
 permissive GNU LesserGPLv3 license (see `LICENSE.txt`).
 
-Copyright (C) 2011. Paradigmatic. All rights reserved.
+Copyright (C) 2011-2012. Paradigmatic. All rights reserved.

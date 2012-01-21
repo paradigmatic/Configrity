@@ -5,11 +5,9 @@ object ConfigrityBuild extends Build {
 
   lazy val configrity = Project(
     id = "configrity",
-    base = file(".")
-   ) settings (
-    publish := { },  
-    publishLocal := { }
-  ) aggregate(core, yaml)
+    base = file("."),
+    settings = rootSettings
+   ).aggregate(core, yaml)
 
 
    lazy val core = Project(
@@ -27,12 +25,20 @@ object ConfigrityBuild extends Build {
      )
    )
 
-
-  lazy val standardSettings = Defaults.defaultSettings ++ Seq(
+  lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.10.0_BETA",
+    version := "0.10.0",
     scalaVersion := "2.9.1",
-    crossScalaVersions := Seq("2.9.0-1", "2.9.1"),
+    crossScalaVersions := Seq("2.9.0-1", "2.9.1")
+  )
+
+  lazy val rootSettings = minimalSettings ++ Seq(
+    publish := { },  
+    publishLocal := { }
+  )
+
+
+  lazy val standardSettings = minimalSettings ++  Seq(
     libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
     scalacOptions ++= Seq( "-deprecation", "-unchecked" ),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
