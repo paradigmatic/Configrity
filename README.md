@@ -41,17 +41,19 @@ it may contain some bugs.
   - `include` directive is supported, adding compatibility with Akka and
      Configgy configurations files.
   - Loading configurations from classpath (resources)
-
+  - YAML format support (v0.10.0)
 
 ### Planned ###
   
-  - Export/Import formats: INI, JSON, XML, apache, etc.
+  - More export/Import formats: INI, JSON, XML, apache, etc.
 
 ## Requirements ##
 
-The only requirement is Scala 2.9.x. It should be easy to provide
+Configrity depends on Scala 2.9.x. It should be easy to provide
 compatibility with Scala 2.8 by dropping some minor features. If you
 are interested, let me know.
+
+While core features do not depend on external libraries, some modules may. In that case, the approriate dependencies will be automatically installed by sbt/maven.
 
 ## Installation ##
 
@@ -59,17 +61,14 @@ are interested, let me know.
 
 The dependency line is:
 
-    "org.streum" %% "configrity" % "0.9.0"
+    "org.streum.configrity" %% "configrity-core" % "0.10.0"
+
+Additional modules require addition dependency lines. Check the wiki for more
+information:  <https://github.com/paradigmatic/Configrity/wiki/Modules>
 
 ### From Maven ###
 
-The dependency section is:
-
-    <dependency>
-        <groupId>org.streum</groupId>
-        <artifactId>configrity_2.9.1</artifactId>
-        <version>0.9.0</version>
-    </dependency>
+Instructions coming soon.
     
 
 ### From source (master branch) ###

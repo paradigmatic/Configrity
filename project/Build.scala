@@ -30,7 +30,7 @@ object ConfigrityBuild extends Build {
 
   lazy val standardSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.10.0_BETA",
+    version := "0.10.0",
     scalaVersion := "2.9.1",
     crossScalaVersions := Seq("2.9.0-1", "2.9.1"),
     libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test",
