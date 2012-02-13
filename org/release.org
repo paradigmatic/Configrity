@@ -1,8 +1,8 @@
 * Release check-list
 
-** Before publication
+** Before publication [57%]
 
-  - [X] Clean >> Tests all green.
+  - [X] Clean >> All tests green.
   - [X] Check version number in =project/Build.scala=
   - [X] Update changelog
   - [X] Update README file
@@ -10,11 +10,11 @@
   - [ ] Commit changes
   - [ ] Tag release
 
-** Publication
+** Publication [0%]
 
   - [ ] *PUBLISH !!!*  
 
-** After publication
+** After publication [0%]
 
   - [ ] Check it appears in MVN central
   - [ ] Push and push --tags
@@ -23,3 +23,7 @@
   - [ ] Update the wiki
   - [ ] submit the release to implicitly
   - [ ] close remaining issues
+
+** When everything is OK
+
+  - [ ] Reset this checklist

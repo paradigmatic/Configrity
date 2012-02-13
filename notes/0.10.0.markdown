@@ -1,0 +1,7 @@
+Changes since version 0.9.0:
+
+  - Configrity adopted a modular code layout. Most features are provided by the `configrity-core` module, which doesn't require any external dependencies. The sbt dependency line is now slightly different: check the [README file](https://github.com/paradigmatic/Configrity/blob/master/README.md).
+
+  - YAML import/export is now provided by the `configrity-yaml` module, based on [snakeyaml](http://code.google.com/p/snakeyaml/). Usage and documentation in the [project wiki](https://github.com/paradigmatic/Configrity/wiki/YAML) (issue #2).
+
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).
