@@ -71,6 +71,17 @@
       <p class="comment cmt">Format able to convert Configuration to String and
 String to Configuration
 </p>
+    </li><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils" data-isabs="true">
+      <a id="HierarchyUtils:HierarchyUtils"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="HierarchyUtils.html"><span class="name">HierarchyUtils</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Useful methods for implementing hierarchical output formats.</p>
     </li><li visbl="pub" name="org.streum.configrity.io.ImportFormat" data-isabs="true">
       <a id="ImportFormat:ImportFormat"></a>
       <h4 class="signature">
@@ -109,7 +120,7 @@ String to Configuration
       <span class="symbol"> 
         <a href="BlockFormat$.html"><span class="name">BlockFormat</span></a>
         
-        <span class="result"> extends StandardFormat</span>
+        <span class="result"> extends StandardFormat with HierarchyUtils</span>
       </span>
       </h4>
       <p class="comment cmt">Encodes the default block format

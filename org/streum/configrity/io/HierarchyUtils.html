@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>org.streum.configrity.io.BlockFormat</title>
+          <title>org.streum.configrity.io.HierarchyUtils</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
@@ -12,26 +12,29 @@
       <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img src="../../../../lib/object_big.png" />
+        <img src="../../../../lib/trait_big.png" />
         <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a>.<a name="org.streum.configrity.io" class="extype" href="package.html">io</a></p>
-        <h1>BlockFormat</h1>
+        <h1>HierarchyUtils</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">object</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
-        <span class="name">BlockFormat</span>
+        <span class="name">HierarchyUtils</span>
         
-        <span class="result"> extends <a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a> with <a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></span>
+        <span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Encodes the default block format
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Useful methods for implementing hierarchical output formats.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a>, <a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a>, <a name="org.streum.configrity.io.Format" class="extype" href="Format.html">Format</a>, <a name="org.streum.configrity.io.ExportFormat" class="extype" href="ExportFormat.html">ExportFormat</a>, <a name="org.streum.configrity.io.ImportFormat" class="extype" href="ImportFormat.html">ImportFormat</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a name="org.streum.configrity.io.BlockFormat" class="extype" href="BlockFormat$.html">BlockFormat</a></div>
         </div></div>
         
 
@@ -47,7 +50,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="org.streum.configrity.io.BlockFormat" class="in"><span>BlockFormat</span></li><li name="org.streum.configrity.io.HierarchyUtils" class="in"><span>HierarchyUtils</span></li><li name="org.streum.configrity.io.StandardFormat" class="in"><span>StandardFormat</span></li><li name="org.streum.configrity.io.Format" class="in"><span>Format</span></li><li name="org.streum.configrity.io.ExportFormat" class="in"><span>ExportFormat</span></li><li name="org.streum.configrity.io.ImportFormat" class="in"><span>ImportFormat</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="org.streum.configrity.io.HierarchyUtils" class="in"><span>HierarchyUtils</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -57,37 +60,48 @@
 
         
 
-        <div class="types members" id="types">
-              <h3>Type Members</h3>
-              <ol><li visbl="pub" name="org.streum.configrity.io.BlockFormat.BlockParser" data-isabs="false">
-      <a id="BlockParser:BlockParser"></a>
-      <h4 class="signature">
-      <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="BlockFormat$$BlockParser.html"><span class="name">BlockParser</span></a>
         
-        <span class="result"> extends Parser</span>
+        
+        <div class="values members" id="values">
+              <h3>Abstract Value Members</h3>
+              <ol><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils#writeBlockEnd" data-isabs="true">
+      <a id="writeBlockEnd(String,Int,StringBuffer):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">writeBlockEnd</span>
+        
+        <span class="params">(<span name="k">k: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat.Parser" data-isabs="true">
-      <a id="Parser:Parser"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils#writeBlockStart" data-isabs="true">
+      <a id="writeBlockStart(String,Int,StringBuffer):Unit"></a>
       <h4 class="signature">
-      <span class="kind">trait</span>
+      <span class="kind">def</span>
       <span class="symbol"> 
-        <a href="StandardFormat$Parser.html"><span class="name">Parser</span></a>
+        <span class="name">writeBlockStart</span>
         
-        <span class="result"> extends RegexParsers</span>
+        <span class="params">(<span name="k">k: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils#writeEntry" data-isabs="true">
+      <a id="writeEntry(String,String,Int,StringBuffer):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">writeEntry</span>
+        
+        <span class="params">(<span name="k">k: String</span>, <span name="v">v: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li></ol>
             </div>
-        
-        
 
         <div class="values members" id="values">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -204,19 +218,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat#fromText" data-isabs="false">
-      <a id="fromText(String):Configuration"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">fromText</span>
-        
-        <span class="params">(<span name="s">s: String</span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Converts a string into a configuration
-</p><div class="fullcomment"><div class="comment cmt"><p>Converts a string into a configuration
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a> → <a name="org.streum.configrity.io.ImportFormat" class="extype" href="ImportFormat.html">ImportFormat</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -283,17 +284,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.BlockFormat#parser" data-isabs="false">
-      <a id="parser:BlockParser"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">parser</span>
-        
-        <span class="result">: <a name="org.streum.configrity.io.BlockFormat.BlockParser" class="extype" href="BlockFormat$$BlockParser.html">BlockParser</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.BlockFormat" class="extype" href="">BlockFormat</a> → <a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -316,18 +306,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.BlockFormat#toText" data-isabs="false">
-      <a id="toText(Configuration):String"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">toText</span>
-        
-        <span class="params">(<span name="configuration">configuration: <a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a></span>)</span><span class="result">: String</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Converts a configuration into a string.</p><div class="fullcomment"><div class="comment cmt"><p>Converts a configuration into a string.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.BlockFormat" class="extype" href="">BlockFormat</a> → <a name="org.streum.configrity.io.ExportFormat" class="extype" href="ExportFormat.html">ExportFormat</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
@@ -370,39 +348,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.BlockFormat#writeBlockEnd" data-isabs="false">
-      <a id="writeBlockEnd(String,Int,StringBuffer):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">writeBlockEnd</span>
-        
-        <span class="params">(<span name="k">k: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.BlockFormat" class="extype" href="">BlockFormat</a> → <a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.BlockFormat#writeBlockStart" data-isabs="false">
-      <a id="writeBlockStart(String,Int,StringBuffer):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">writeBlockStart</span>
-        
-        <span class="params">(<span name="k">k: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.BlockFormat" class="extype" href="">BlockFormat</a> → <a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.io.BlockFormat#writeEntry" data-isabs="false">
-      <a id="writeEntry(String,String,Int,StringBuffer):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">writeEntry</span>
-        
-        <span class="params">(<span name="k">k: String</span>, <span name="v">v: String</span>, <span name="ind">ind: <span name="scala.Int" class="extype">Int</span></span>, <span name="out">out: <span name="java.lang.StringBuffer" class="extype">StringBuffer</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.BlockFormat" class="extype" href="">BlockFormat</a> → <a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></dd></dl></div>
     </li><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils#writeHierarchy" data-isabs="false">
       <a id="writeHierarchy(Map[String, String],Int):String"></a>
       <h4 class="signature">
@@ -413,23 +358,13 @@
         <span class="params">(<span name="map">map: Map[String, String]</span>, <span name="indents">indents: <span name="scala.Int" class="extype">Int</span> = <span class="symbol">0</span></span>)</span><span class="result">: String</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></dd></dl></div>
+      
     </li></ol>
             </div>
 
         
 
-        <div name="org.streum.configrity.io.HierarchyUtils" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.io.HierarchyUtils" class="extype" href="HierarchyUtils.html">HierarchyUtils</a></h3>
-            </div><div name="org.streum.configrity.io.StandardFormat" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a></h3>
-            </div><div name="org.streum.configrity.io.Format" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.io.Format" class="extype" href="Format.html">Format</a></h3>
-            </div><div name="org.streum.configrity.io.ExportFormat" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.io.ExportFormat" class="extype" href="ExportFormat.html">ExportFormat</a></h3>
-            </div><div name="org.streum.configrity.io.ImportFormat" class="parent">
-              <h3>Inherited from <a name="org.streum.configrity.io.ImportFormat" class="extype" href="ImportFormat.html">ImportFormat</a></h3>
-            </div><div name="scala.AnyRef" class="parent">
+        <div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">
               <h3>Inherited from <span name="scala.Any" class="extype">Any</span></h3>

@@ -1,0 +1,11 @@
+*~
+.#*
+*#
+
+core/
+modules/
+notes/
+project/
+src/
+target/
+test/
