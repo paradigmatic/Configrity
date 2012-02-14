@@ -1,12 +1,15 @@
 Changelog
 =========
 
-Next Version
-------------
+Version 0.10.0 - 2012-02-12
+---------------------------
 
-### New feature
+Configrity v0.10.0 was refactored to allow a modular project layout.
 
-  - The module `configrity-yaml` allows YAML for import/export (issue #2)
+### New features
+
+ - YAML module, allowing to use YAML format for loading/saving configurations (issue #2).
+
 
 Version 0.9.0 - 2011-12-08
 --------------------------

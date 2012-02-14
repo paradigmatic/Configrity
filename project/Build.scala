@@ -13,14 +13,14 @@ object ConfigrityBuild extends Build {
    lazy val core = Project(
      id = "configrity-core",
      base = file("core"),
-     settings = standardSettings
+     settings = standardSettings ++ publishSettings
    )
 
    lazy val yaml = Project(
      id = "configrity-yaml",
      base = file("modules/yaml"),
      dependencies = Seq(core),
-     settings = standardSettings ++ Seq(
+     settings = standardSettings ++ publishSettings ++ Seq(
        libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
      )
    )
@@ -45,13 +45,25 @@ object ConfigrityBuild extends Build {
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
-      Attributed.blank(new java.io.File("doesnotexist")),
-    publishTo := Some("Scala Tools Nexus" at "http://nexus.scala-tools.org/content/repositories/releases/"),
-    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
-    pomExtra := licenseSection
+      Attributed.blank(new java.io.File("doesnotexist"))
     )
 
-  lazy val licenseSection= {
+  lazy val publishSettings = Seq(
+    publishMavenStyle := true,
+    publishTo <<= version { (v: String) =>
+      val nexus = "https://oss.sonatype.org/"
+      if (v.trim.endsWith("SNAPSHOT")) 
+	Some("snapshots" at nexus + "content/repositories/snapshots") 
+      else
+	Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+    },
+    publishArtifact in Test := false,
+    pomIncludeRepository := { x => false },
+    pomExtra := requiredPOMextra    
+  )
+
+  lazy val requiredPOMextra = {
+    <url>https://github.com/paradigmatic/Configrity</url>
     <licenses>
       <license>
         <name>GNU LesserGPLv3</name>
@@ -59,5 +71,17 @@ object ConfigrityBuild extends Build {
         <distribution>repo</distribution>
       </license>
     </licenses>
+    <scm>
+    <url>https://github.com/paradigmatic/Configrity</url>
+    <connection>scm:git:git@github.com:paradigmatic/Configrity.git</connection>
+    </scm>
+    <developers>
+    <developer>
+    <id>jlfalcone</id>
+    <name>Jean-Luc Falcone</name>
+    <url>http://paradigmatic.streum.org/</url>
+    </developer>
+    </developers>
   }
+
 }
