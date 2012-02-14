@@ -1,22 +1,26 @@
 * Release check-list
 
-** Before publication [57%]
+** Before publication [100%]
 
   - [X] Clean >> All tests green.
   - [X] Check version number in =project/Build.scala=
   - [X] Update changelog
   - [X] Update README file
-  - [ ] Write the new note for implicitly
-  - [ ] Commit changes
-  - [ ] Tag release
+  - [X] Write the new note for implicitly
+  - [X] Commit changes
+  - [X] Tag release
 
-** Publication [0%]
+** Publication [100%]
 
-  - [ ] *PUBLISH !!!*  
+  - [X] SBT publish
+  - [X] Close the stagging repository on http://oss.sonatype.org
+  - [X] Release the repository 
 
-** After publication [0%]
+** After publication [25%]
 
-  - [ ] Check it appears in MVN central
+  - [X] Wait at least two hours
+  - [X] Check it appears in MVN central
+  - [ ] Update README maven section
   - [ ] Push and push --tags
   - [ ] Generate the scaladoc
   - [ ] Push the scaladoc

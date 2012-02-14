@@ -61,14 +61,14 @@ While core features do not depend on external libraries, some modules may. In th
 
 The dependency line is:
 
-    "org.streum.configrity" %% "configrity-core" % "0.10.0"
+    "org.streum" %% "configrity-core" % "0.10.0"
 
 Additional modules require addition dependency lines. Check the wiki for more
 information:  <https://github.com/paradigmatic/Configrity/wiki/Modules>
 
-### From Maven ###
+### From Maven, Buildr, Ivy, Grape and Grails ###
 
-Instructions coming soon.
+Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.1|0.10.0|jar).
     
 
 ### From source (master branch) ###
