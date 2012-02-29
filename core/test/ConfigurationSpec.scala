@@ -21,7 +21,6 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     config.contains("bar") should be (true)
     config.contains("baz") should be (true)
     config.contains("buzz") should be (false)
-    
   }
 
   it should "throw exception if it doesn't contain a key when 'applied'" in {
@@ -219,5 +218,12 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
    config2 should be (config)
  }
 
+ it must "throw FileNotFoundException when loading non-existing resource from the classpath" in {
+   val resName = "/non-existing.conf"
+   val ex = evaluating {
+     Configuration.loadResource( resName )
+   } should produce [java.io.FileNotFoundException]
+   ex.getMessage should be (resName)
+ }
 }
 
