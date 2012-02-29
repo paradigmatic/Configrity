@@ -227,9 +227,11 @@ object Configuration {
    * format can be passed.
    */
   def loadResource( fileName: String, fmt: ImportFormat = defaultFormat ) = {
-    val src = Source.fromInputStream(
-      getClass.getResourceAsStream( fileName ) 
-    )
+    val inputStream = getClass.getResourceAsStream( fileName )
+    if (inputStream == null) {
+      throw new java.io.FileNotFoundException(fileName)
+    }
+    val src = Source.fromInputStream(inputStream)
     load( src, fmt )
   }
 
