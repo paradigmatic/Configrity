@@ -150,6 +150,22 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     config[String]("baz") should be ("x")
   }
 
+  it must "skip commented lines when value is missing" in {
+       val s = 
+    """
+    # key = 
+    """
+    val config = parse( s )
+  }
+
+  it must "skip commented lines when key and value are missing" in {
+       val s = 
+    """
+    #= 
+    """
+    val config = parse( s )
+  }
+
   it can "accept lists" in {
        val s = 
     """
