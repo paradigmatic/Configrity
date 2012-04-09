@@ -153,7 +153,10 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
   it must "skip commented lines when value is missing" in {
        val s = 
     """
+    baz = hello world
     # key = 
+    # foo = true
+    # bar = 2    
     """
     val config = parse( s )
   }

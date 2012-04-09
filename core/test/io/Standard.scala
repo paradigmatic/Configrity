@@ -9,10 +9,8 @@ class Standard extends FlatSpec with ShouldMatchers{
 
   "a flat format comment line" must "be ignored" in {
     val config = Configuration.loadResource("/test-config-comments.conf")
-		
-		val comment = config("comment", "")
-		
-		assert(comment == "")
+    val comment = config("comment", "")
+    assert(comment == "")
   }
 
 }
