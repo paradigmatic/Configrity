@@ -7,7 +7,7 @@ object ConfigrityBuild extends Build {
     id = "configrity",
     base = file("."),
     settings = rootSettings
-   ).aggregate(core, yaml)
+   ).aggregate(core, yaml, opt)
 
 
    lazy val core = Project(
@@ -23,6 +23,16 @@ object ConfigrityBuild extends Build {
      settings = standardSettings ++ publishSettings ++ Seq(
        libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
      )
+   )
+
+   lazy val opt = Project(
+     id = "configrity-opt",
+     base = file("modules/opt"),
+     dependencies = Seq(core),
+     settings = standardSettings
+     /*settings = standardSettings ++ publishSettings ++ Seq(
+       libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
+     )*/
    )
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
