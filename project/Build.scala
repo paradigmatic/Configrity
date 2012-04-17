@@ -29,10 +29,9 @@ object ConfigrityBuild extends Build {
      id = "configrity-opt",
      base = file("modules/opt"),
      dependencies = Seq(core),
-     settings = standardSettings
-     /*settings = standardSettings ++ publishSettings ++ Seq(
-       libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
-     )*/
+     settings = standardSettings ++ publishSettings ++ Seq(
+       libraryDependencies +=  "com.github.scopt" %% "scopt" % "2.0.1"
+     )
    )
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
