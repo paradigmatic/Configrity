@@ -26,7 +26,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
   it should "throw exception if it doesn't contain a key when 'applied'" in {
     intercept[java.util.NoSuchElementException] {
       config[Int]("buzz")
-    }
+    }.getMessage should be ("buzz")
   }
 
   it should "be able to return converted values" in {
