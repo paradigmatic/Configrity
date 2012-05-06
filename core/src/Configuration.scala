@@ -43,7 +43,7 @@ case class Configuration( data: Map[String,String] ) {
    * implicitly defined elsewhere.
    */
   def apply[A]( key: String )( implicit converter: ValueConverter[A] ) =
-    get[A](key).get
+    converter( data get key ) getOrElse ( throw new NoSuchElementException( key ) )
 
   /**
    * Retrieve and convert configuration data in the wanted type. Returns None
