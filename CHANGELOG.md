@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Next Version
+------------
+
+### Bug fix
+
+  - List values are sanitized when added to a configuration (issue #12).
+
 Version 0.10.0 - 2012-02-12
 ---------------------------
 

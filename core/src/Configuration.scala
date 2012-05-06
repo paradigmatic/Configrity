@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2011, Paradigmatic <paradigmatic@streum.org>
+ Copyright (C) 2011-2012, Paradigmatic <paradigmatic@streum.org>
 
  This file is part of Configrity.
  
@@ -73,7 +73,7 @@ case class Configuration( data: Map[String,String] ) {
    * previous value is replaced.
    */
   def set[A]( key: String, as: List[A] ) = {
-    val str = as.mkString( "[", ",", "]" )
+    val str = io.Utils.sanitize(as).mkString( "[", ",", "]" )
     Configuration( data + ( key -> str ) )
   }
 
@@ -179,8 +179,9 @@ object Configuration {
     Configuration( 
       entries.map {
         case (k,v) => v match {
-          case l: List[_] => (k, l.mkString("[",",","]") )
-            case _ => (k,v.toString)
+          case l: List[_] => 
+	    (k, io.Utils.sanitize(l).mkString("[",",","]") )
+          case _ => (k,v.toString)
         }
       }.toMap
     )

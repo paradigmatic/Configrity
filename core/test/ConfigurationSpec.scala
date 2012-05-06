@@ -79,6 +79,14 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     lst should be (lst2)
   }
 
+  it should "format lists with empty spaces in values correctly" in {
+    val lst = List( "hello world" )
+    val c2 = config.set( "list", lst )
+    val lst2 = c2[List[String]]( "list" )
+    lst should be (lst2)
+  }
+
+
   it can "be nicely formatted" in {
     val out = new ExportFormat {
       def toText( c: Configuration ) = "FOOBAR"
@@ -172,6 +180,15 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
     )
     config[List[Int]]("foo") should be (List(10)) 
     config[List[String]]("bar") should be (List("hello","world")) 
+  }
+
+  it can "support lists directly with empty spaces in values" in {
+    val config = Configuration(
+      "foo"-> List(10), 
+      "bar"-> ("hello world"::Nil)
+    )
+    config[List[Int]]("foo") should be (List(10)) 
+    config[List[String]]("bar") should be (List("hello world")) 
   }
 
 
