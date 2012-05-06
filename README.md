@@ -46,6 +46,7 @@ it may contain some bugs.
 ### Planned ###
   
   - More export/Import formats: INI, JSON, XML, apache, etc.
+  - Build configurations from command line arguments
 
 ## Requirements ##
 
@@ -61,14 +62,14 @@ While core features do not depend on external libraries, some modules may. In th
 
 The dependency line is:
 
-    "org.streum" %% "configrity-core" % "0.10.0"
+    "org.streum" %% "configrity-core" % "0.10.1"
 
 Additional modules require addition dependency lines. Check the wiki for more
 information:  <https://github.com/paradigmatic/Configrity/wiki/Modules>
 
 ### From Maven, Buildr, Ivy, Grape and Grails ###
 
-Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.1|0.10.0|jar).
+Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.2|0.10.1|jar).
     
 
 ### From source (master branch) ###

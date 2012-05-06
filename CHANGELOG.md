@@ -1,12 +1,18 @@
 Changelog
 =========
 
-Next Version
-------------
+Version 0.10.1 - 2012-05-06
+---------------------------
 
 ### Bug fix
 
   - List values are sanitized when added to a configuration (issue #12).
+
+### Better exceptions
+
+  - Loading a non-existing file from claspath produces `FileNotFoundException` 
+    (issue #8) -- Martin Konicek
+  - Include key in `NoSuchElementException` message (issue #11) -- Jussi Virtanen
 
 Version 0.10.0 - 2012-02-12
 ---------------------------

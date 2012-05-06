@@ -1,0 +1,10 @@
+Small maintenance release, including:
+
+  - When loading a configuration from the classpath, a `FileNotFoundException` is thrown
+    (issue #8) -- Martin Konicek
+  - Looking for a non existing key will throw a `NoSuchElementException` with a message
+    clearly refering to the missing key (issue #11) -- Jussi Virtanen
+  - List values are sanitized by adding quotes when needed (issue #12)
+  - Artefacts for Scala 2.9.2
+
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).
