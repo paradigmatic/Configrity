@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>org.streum.configrity.io.ExportFormat</title>
+          <title>org.streum.configrity.io.Utils</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
@@ -12,30 +12,26 @@
       <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="type">
+        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
       <div id="definition">
-        <img src="../../../../lib/trait_big.png" />
+        <img src="../../../../lib/object_big.png" />
         <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a>.<a name="org.streum.configrity.io" class="extype" href="package.html">io</a></p>
-        <h1>ExportFormat</h1>
+        <h1>Utils</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">ExportFormat</span><span class="result"> extends AnyRef</span>
+        <span class="name">Utils</span><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Format for converting a Configuration into a String.
-</p></div><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a name="org.streum.configrity.io.BlockFormat" class="extype" href="BlockFormat$.html">BlockFormat</a>, <a name="org.streum.configrity.io.FlatFormat" class="extype" href="FlatFormat$.html">FlatFormat</a>, <a name="org.streum.configrity.io.Format" class="extype" href="Format.html">Format</a>, <a name="org.streum.configrity.io.PropertiesFormat" class="extype" href="PropertiesFormat$.html">PropertiesFormat</a>, <a name="org.streum.configrity.io.StandardFormat" class="extype" href="StandardFormat.html">StandardFormat</a></div>
         </div></div>
     
 
@@ -49,7 +45,7 @@
               <span class="filtertype">Inherited</span>
               <ol><li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="org.streum.configrity.io.ExportFormat" class="in"><span>ExportFormat</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+              <ol id="linearization"><li name="org.streum.configrity.io.Utils" class="in"><span>Utils</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
             </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -63,25 +59,10 @@
 
         
 
-        <div class="values members" id="values">
-              <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="org.streum.configrity.io.ExportFormat#toText" data-isabs="true">
-      <a id="toText(Configuration):String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">toText</span><span class="params">(<span name="configuration">configuration: <a name="org.streum.configrity.Configuration" class="extype" href="../Configuration.html">Configuration</a></span>)</span><span class="result">: String</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Converts a configuration into a string.</p>
-    </li></ol>
-            </div>
+        
 
         <div class="values members" id="values">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -142,6 +123,18 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.Utils#Alphanum" data-isabs="false">
+      <a id="Alphanum:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Alphanum</span><span class="result">: <span name="scala.util.matching.Regex" class="extype">Regex</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -280,6 +273,30 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="org.streum.configrity.io.Utils#sanitize" data-isabs="false">
+      <a id="sanitize[A](List[A]):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sanitize</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="as">as: List[A]</span>)</span><span class="result">: List[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="org.streum.configrity.io.Utils#sanitize" data-isabs="false">
+      <a id="sanitize(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sanitize</span><span class="params">(<span name="in">in: String</span>)</span><span class="result">: String</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

@@ -12,7 +12,7 @@
       <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
         <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a></p>
@@ -20,29 +20,30 @@
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">package</span>
-      <span class="symbol"> 
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
         <span class="name">converter</span>
-        
-        
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"></div>
+      <div class="fullcommenttop" id="comment"></div>
+    
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
         
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
 
       <div id="template">
-
-        <div id="mbrsel">
-          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
-          
-          
-          <div id="visbl">
-              <span class="filtertype">Visibility</span>
-              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
-            </div>
-        </div>
-
+        <div id="allMembers">
         
 
         <div class="types members" id="types">
@@ -50,50 +51,54 @@
               <ol><li visbl="pub" name="org.streum.configrity.converter.DefaultConverters" data-isabs="true">
       <a id="DefaultConverters:DefaultConverters"></a>
       <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="DefaultConverters.html"><span class="name">DefaultConverters</span></a>
-        
-        <span class="result"> extends AnyRef</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DefaultConverters.html"><span class="name">DefaultConverters</span></a><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <p class="comment cmt">Several predefined value converters for basic types: Int, Double, Boolean, etc.</p>
     </li><li visbl="pub" name="org.streum.configrity.converter.Extra" data-isabs="true">
       <a id="Extra:Extra"></a>
       <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Extra.html"><span class="name">Extra</span></a>
-        
-        <span class="result"> extends AnyRef</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Extra.html"><span class="name">Extra</span></a><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <p class="comment cmt">Extra value converters.</p>
     </li><li visbl="pub" name="org.streum.configrity.converter.ListConverter" data-isabs="false">
       <a id="ListConverter:ListConverter[A]"></a>
       <h4 class="signature">
-      <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="ListConverter.html"><span class="name">ListConverter</span></a>
-        <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="result"> extends ValueConverter[List[A]]</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ListConverter.html"><span class="name">ListConverter</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends ValueConverter[List[A]]</span>
       </span>
       </h4>
       <p class="comment cmt">Parse a list of type A.</p>
     </li><li visbl="pub" name="org.streum.configrity.converter.ValueConverter" data-isabs="true">
       <a id="ValueConverter:ValueConverter[A]"></a>
       <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ValueConverter.html"><span class="name">ValueConverter</span></a>
-        <span class="tparams">[<span name="A">A</span>]</span>
-        <span class="result"> extends AnyRef</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueConverter.html"><span class="name">ValueConverter</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <p class="comment cmt">Parse and convert an Option[String] into an Option[A].</p>
     </li></ol>
             </div>
-        
+
         
 
         <div class="values members" id="values">
@@ -101,33 +106,36 @@
               <ol><li visbl="pub" name="org.streum.configrity.converter.Extra" data-isabs="false">
       <a id="Extra:Extra"></a>
       <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Extra$.html"><span class="name">Extra</span></a>
-        
-        <span class="result"> extends Extra</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Extra$.html"><span class="name">Extra</span></a><span class="result"> extends Extra</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="org.streum.configrity.converter.ListConverter" data-isabs="false">
       <a id="ListConverter:ListConverter"></a>
       <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ListConverter$.html"><span class="name">ListConverter</span></a>
-        
-        <span class="result"> extends AnyRef</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ListConverter$.html"><span class="name">ListConverter</span></a><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="org.streum.configrity.converter.ValueConverter" data-isabs="false">
       <a id="ValueConverter:ValueConverter"></a>
       <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ValueConverter$.html"><span class="name">ValueConverter</span></a>
-        
-        <span class="result"> extends AnyRef</span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueConverter$.html"><span class="name">ValueConverter</span></a><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <p class="comment cmt">Ease the creation of a value converter.</p>
@@ -135,12 +143,18 @@
             </div>
 
         
+        </div>
 
+        <div id="inheritedMembers">
         
+        </div>
 
       </div>
-      
+
       <div id="tooltip"></div>
-      
+
+      <div id="footer">  </div>
+
+
     </body>
       </html>
