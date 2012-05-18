@@ -44,7 +44,9 @@ object FlatFormat extends StandardFormat {
     val out = new StringBuilder
     val data = configuration.data
     for( k <- data.keySet.toList.sorted ) {
-      out.append(k).append(" = ").append( data(k) ).append(sep)
+      out.append(k).append(" = ").append( 
+	sanitizeEmpty( data(k) )
+      ).append(sep)
     }
     out.toString
   }

@@ -16,8 +16,11 @@ class FlatFormatSpec extends FlatSpec with ShouldMatchers{
 
   it can "write and read a Configuration" in {
     val config = Configuration( 
-      Map("foo"->"FOO", "bar"->"1234", "baz"->"on",
-          "lst" -> """[ on, on, off, off ]""" )
+      Map("foo"->"FOO", "bar"->"1234", 
+	  "baz"->"on",
+          "lst" -> """[ on, on, off, off ]""",
+	  "empty" -> ""
+	)
     )
     fromText( toText( config ) ) should be (config)
   }

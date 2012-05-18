@@ -30,6 +30,8 @@ import scala.util.parsing.combinator._
  */
 trait StandardFormat extends Format {
   
+  def sanitizeEmpty( s: String ) = if ( s.isEmpty ) "\"\"" else s
+
   def parser: Parser
 
   def fromText( s: String ) = parser.parse( s )

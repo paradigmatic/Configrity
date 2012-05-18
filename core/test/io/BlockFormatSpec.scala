@@ -16,7 +16,7 @@ class BlockFormatSpec extends FlatSpec with ShouldMatchers {
 
   it can "write and read a Configuration" in {
     val config = Configuration( 
-      Map("foo"->"FOO", "bar"->"1234", "baz"->"on")
+      Map("foo"->"FOO", "bar"->"1234", "baz"->"on", "empty"->"")
     )
     fromText( toText( config ) ) should be (config)
   }

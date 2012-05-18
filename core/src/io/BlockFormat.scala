@@ -32,7 +32,9 @@ object BlockFormat extends StandardFormat with HierarchyUtils {
 
   def writeEntry(k:String,v:String,ind:Int,out:StringBuffer) {
     out.append( "  " * ind )
-    .append( k ).append(" = ").append(v).append("\n")
+    .append( k ).append(" = ").append(
+      sanitizeEmpty( v )
+    ).append("\n")
   }
   def writeBlockStart( k:String, ind:Int, out:StringBuffer ) =
       out.append("  "*ind).append(k).append(" {").append("\n")

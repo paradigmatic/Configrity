@@ -1,6 +1,15 @@
 Changelog
 =========
 
+
+Next version
+------------
+
+### Bug fix
+
+  - Formats can write (and read) empty string values (issue #13).
+
+
 Version 0.10.1 - 2012-05-06
 ---------------------------
 
