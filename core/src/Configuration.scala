@@ -22,6 +22,7 @@ package org.streum.configrity
 import converter.ValueConverter
 import io._
 import scala.io.Source
+import scalashim._
 
 /**
  * A Configuration class stores and allow access to configuration data. Although

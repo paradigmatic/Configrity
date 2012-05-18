@@ -1,6 +1,9 @@
 import sbt._
 import Keys._
 
+import sbtscalashim.Plugin._
+
+
 object ConfigrityBuild extends Build {
 
   lazy val configrity = Project(
@@ -13,7 +16,8 @@ object ConfigrityBuild extends Build {
    lazy val core = Project(
      id = "configrity-core",
      base = file("core"),
-     settings = standardSettings ++ publishSettings
+     settings = standardSettings ++ publishSettings ++ scalaShimSettings ++
+     Seq( sourceGenerators in Compile <+= scalaShim )
    )
 
    lazy val yaml = Project(
@@ -29,7 +33,7 @@ object ConfigrityBuild extends Build {
     organization := "org.streum",
     version := "0.10.1",
     scalaVersion := "2.9.2",
-    crossScalaVersions := Seq("2.9.0-1", "2.9.1", "2.9.2" )
+    crossScalaVersions := Seq("2.8.1", "2.8.2", "2.9.0-1", "2.9.1", "2.9.2" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(
