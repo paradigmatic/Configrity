@@ -1,9 +1,12 @@
 Changelog
 =========
 
+Version 0.10.2 - 2012-05-21
+---------------------------
 
-Next version
-------------
+### Improved compatibility
+
+  - Compatible with Scala 2.8.1+
 
 ### Bug fix
 

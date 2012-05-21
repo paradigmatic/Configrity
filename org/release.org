@@ -1,12 +1,12 @@
 * Release check-list
 
-** Before publication [57%]
+** Before publication [71%]
 
   - [X] Clean >> All tests green.
   - [X] Check version number in =project/Build.scala=
   - [X] Update changelog
   - [X] Update README file
-  - [ ] Write the new note for implicitly
+  - [X] Write the new note for implicitly
   - [ ] Commit changes
   - [ ] Tag release
 

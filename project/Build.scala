@@ -31,7 +31,7 @@ object ConfigrityBuild extends Build {
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.10.1",
+    version := "0.10.2",
     scalaVersion := "2.9.2",
     crossScalaVersions := Seq("2.8.1", "2.8.2", "2.9.0-1", "2.9.1", "2.9.2" )
   )

@@ -50,9 +50,7 @@ it may contain some bugs.
 
 ## Requirements ##
 
-Configrity depends on Scala 2.9.x. It should be easy to provide
-compatibility with Scala 2.8 by dropping some minor features. If you
-are interested, let me know.
+Configrity depends on Scala 2.8.1 or newer.
 
 While core features do not depend on external libraries, some modules
 may. In that case, the approriate dependencies will be automatically
@@ -64,7 +62,7 @@ installed by sbt/maven.
 
 The dependency line is:
 
-    "org.streum" %% "configrity-core" % "0.10.1"
+    "org.streum" %% "configrity-core" % "0.10.2"
 
 Additional modules require addition dependency lines. Check the wiki
 for more information:
@@ -72,7 +70,7 @@ for more information:
 
 ### From Maven, Buildr, Ivy, Grape and Grails ###
 
-Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.2|0.10.1|jar).
+Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.2|0.10.2|jar).
     
 
 ### From source (master branch) ###

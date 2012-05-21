@@ -1,0 +1,7 @@
+Small maintenance release, including:
+
+  - Thanks to `sbt-scalashim`, Configrity is now backward compatible
+    with Scala 2.8.1 and 2.8.2.
+  - Empty string values are properly formatted (issue #13)
+
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).
