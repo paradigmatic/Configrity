@@ -3,6 +3,8 @@ import Keys._
 
 import sbtscalashim.Plugin._
 
+import com.typesafe.tools.mima.plugin.MimaPlugin.mimaDefaultSettings
+import com.typesafe.tools.mima.plugin.MimaKeys.previousArtifact
 
 object ConfigrityBuild extends Build {
 
@@ -16,8 +18,15 @@ object ConfigrityBuild extends Build {
    lazy val core = Project(
      id = "configrity-core",
      base = file("core"),
-     settings = standardSettings ++ publishSettings ++ scalaShimSettings ++
-     Seq( sourceGenerators in Compile <+= scalaShim )
+     settings = 
+       standardSettings ++ 
+       publishSettings ++ 
+       scalaShimSettings ++
+       mimaDefaultSettings ++
+       Seq( 
+	 sourceGenerators in Compile <+= scalaShim,
+	 previousArtifact := Some("org.streum" % "configrity-core_2.9.1" % "0.10.2")
+       ) 
    )
 
    lazy val yaml = Project(
@@ -50,7 +59,8 @@ object ConfigrityBuild extends Build {
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
       Attributed.blank(new java.io.File("doesnotexist"))
-    )
+    ) ++ net.virtualvoid.sbt.graph.Plugin.graphSettings
+
 
   lazy val publishSettings = Seq(
     publishMavenStyle := true,
