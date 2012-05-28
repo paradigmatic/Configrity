@@ -12,7 +12,7 @@ object ConfigrityBuild extends Build {
     id = "configrity",
     base = file("."),
     settings = rootSettings
-   ).aggregate(core, yaml)
+   ).aggregate(core, yaml, javamod )
 
 
    lazy val core = Project(
@@ -35,6 +35,17 @@ object ConfigrityBuild extends Build {
      dependencies = Seq(core),
      settings = standardSettings ++ publishSettings ++ Seq(
        libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
+     )
+   )
+
+   lazy val javamod = Project(
+     id = "configrity-java",
+     base = file("modules/java"),
+       dependencies = Seq(core),
+       settings = standardSettings ++ publishSettings ++ Seq(
+       javaSource in Test <<= baseDirectory(_ / "test"),
+       libraryDependencies += "junit" % "junit" % "4.10" % "test",
+       libraryDependencies += "com.novocode" % "junit-interface" % "0.8" % "test"
      )
    )
 
