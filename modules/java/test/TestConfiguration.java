@@ -15,6 +15,7 @@ public class TestConfiguration {
 	conf = conf.set("foo", "FOO");
 	conf = conf.set("bar", 12 );
 	conf = conf.set("baz", true );
+	conf = conf.set("pi", 3.14 );
     }
 
     @Test public void testContains() {
@@ -32,6 +33,14 @@ public class TestConfiguration {
 	assertEquals( conf.get("baz"), "true" );
     }
 
+    @Test public void testGetDefault() {
+	assertEquals( conf.get("foo", "1" ), "FOO" );
+	assertEquals( conf.get("hoo", "2" ), "2" );
+	conf = conf.set("hoo", "HOO" );
+	assertEquals( conf.get("hoo", "2" ), "HOO" );
+    }
+
+
     @Test(expected = java.util.NoSuchElementException.class)
     public void testGetNotFound() {
 	assertEquals( conf.get("hello"), "" );
@@ -48,6 +57,21 @@ public class TestConfiguration {
 	conf = conf.set("foo","hello");
 	assertEquals( conf.get("foo"), "hello" );
     }
-	
+
+    @Test public void testGetInt() {
+	assertEquals( conf.getInt("bar"), 12 );
+	assertEquals( conf.getInt("hello",0), 0 );
+    }
+
+    @Test public void testGetDouble() {
+	assertEquals( conf.getDouble("pi"), 3.14, 1e-8 );	
+	assertEquals( conf.getDouble("hello",0.0), 0.0, 1e-8 );
+    }
+
+    @Test public void testGetBoolean() {
+	assertTrue( conf.getBoolean("baz") );	
+	assertFalse( conf.getBoolean("hello",false) );
+    }
+
 }
 

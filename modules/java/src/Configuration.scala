@@ -9,6 +9,21 @@ class Configuration private ( sconfig: SConfig ) {
   
   def get( key: String ): String = sconfig[String]( key )
 
+  def get( key: String, default: String ): String = sconfig( key, default )
+
+  def getInt( key: String ): Int = sconfig[Int]( key )
+
+  def getInt( key: String, default: Int ): Int = sconfig( key, default )
+
+  def getDouble( key: String ): Double = sconfig[Double]( key )
+
+  def getDouble( key: String, default: Double ): Double = sconfig( key, default )
+
+  def getBoolean( key: String ): Boolean = sconfig[Boolean]( key )
+
+  def getBoolean( key: String, default: Boolean ): Boolean = sconfig( key, default )
+  
+
   def contains( key: String ): Boolean = sconfig.contains(key)
   
 
