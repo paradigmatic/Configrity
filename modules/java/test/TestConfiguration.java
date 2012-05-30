@@ -92,5 +92,14 @@ public class TestConfiguration {
 	assertEquals( conf.getInt("value"), 333 );	
     }
 
+    @Test public void testEquals() {
+	assertEquals( conf, conf );
+	Configuration conf2 = conf.set( "hello", "world" );
+	assertFalse( conf.equals( conf2 ) );
+	Configuration conf3 = conf.set( "hello", "world" );
+	assertTrue( conf2.equals( conf3 ) );
+	assertFalse( conf.equals( null ) );
+    }
+
 }
 

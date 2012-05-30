@@ -30,6 +30,15 @@ class Configuration private ( sconfig: SConfig ) {
     configurationToProperties( sconfig )
   }
 
+  def toScala: SConfig = sconfig
+
+  override def equals( that: Any ): Boolean = that match {
+    case conf: Configuration => sconfig == conf.toScala
+    case _ => false
+  }
+
+  override def hashCode: Int = sconfig.hashCode
+
 }
 
 object Configuration {
