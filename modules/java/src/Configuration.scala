@@ -1,6 +1,7 @@
 package org.streum.configrity.conf4j
 
 import org.streum.configrity.{Configuration=> SConfig}
+import org.streum.configrity.io.ImportFormat
 
 class Configuration private ( sconfig: SConfig ) {
 
@@ -41,6 +42,12 @@ class Configuration private ( sconfig: SConfig ) {
 
 }
 
+object Formats {
+  import org.streum.configrity.io._
+  val blockFormat = BlockFormat
+  val flatFormat = FlatFormat
+}
+
 object Configuration {
 
   def empty():Configuration = new Configuration( SConfig() )
@@ -49,6 +56,14 @@ object Configuration {
     import org.streum.configrity.JProperties._
     val conf = propertiesToConfiguration( props )
     new Configuration( conf )
+  }
+
+  def load( filename: String,  format: ImportFormat ): Configuration = 
+    load( new java.io.File(filename), format )
+
+  def load( file: java.io.File, format: ImportFormat ): Configuration = {
+    val conf = SConfig.load( io.Source.fromFile( file ), format ) 
+    new Configuration(conf)
   }
 
 }
