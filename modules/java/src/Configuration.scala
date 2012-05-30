@@ -1,4 +1,4 @@
-package org.streum.configrity.conf4j;
+package org.streum.configrity.conf4j
 
 import org.streum.configrity.{Configuration=> SConfig}
 
@@ -23,9 +23,12 @@ class Configuration private ( sconfig: SConfig ) {
 
   def getBoolean( key: String, default: Boolean ): Boolean = sconfig( key, default )
   
-
   def contains( key: String ): Boolean = sconfig.contains(key)
   
+  def toProperties: java.util.Properties = {
+    import org.streum.configrity.JProperties._
+    configurationToProperties( sconfig )
+  }
 
 }
 
@@ -33,5 +36,10 @@ object Configuration {
 
   def empty():Configuration = new Configuration( SConfig() )
 
+  def fromProperties( props: java.util.Properties ) = {
+    import org.streum.configrity.JProperties._
+    val conf = propertiesToConfiguration( props )
+    new Configuration( conf )
+  }
 
 }

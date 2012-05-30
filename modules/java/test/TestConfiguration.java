@@ -1,5 +1,7 @@
 package org.streum.configrity.conf4j;
 
+import java.util.Properties;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -71,6 +73,23 @@ public class TestConfiguration {
     @Test public void testGetBoolean() {
 	assertTrue( conf.getBoolean("baz") );	
 	assertFalse( conf.getBoolean("hello",false) );
+    }
+
+    @Test public void testToProperties() {
+	final Properties props = conf.toProperties();
+	assertEquals( props.getProperty("foo" ) , "FOO" );		     
+	assertEquals( props.getProperty("bar" ) , "12" );		     
+	assertEquals( props.getProperty("baz" ) , "true" );		     
+	assertEquals( props.getProperty("pi" ) , "3.14" );		     
+    }
+
+    @Test public void testFromProperties() {
+	final Properties props = conf.toProperties();
+	props.setProperty( "hello", "world" );
+	props.setProperty( "value", "333" );
+	conf = Configuration.fromProperties( props );
+	assertEquals( conf.get("hello"), "world" );	
+	assertEquals( conf.getInt("value"), 333 );	
     }
 
 }
