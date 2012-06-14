@@ -5,3 +5,7 @@ scala:
 jdk:
   - openjdk7
   - openjdk6
+branches:
+  except:
+    - java
+    - opt
