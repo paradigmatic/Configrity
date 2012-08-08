@@ -136,7 +136,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     val config2 = Configuration( data2 )
     val config3 = config attach ("nums", config2 )
     val config4 = config3 detach ("nums")
-    config4 should be (config2)
+    config4.data should be (config2.data)
   }
 
   it can "include another configuration" in {
@@ -146,6 +146,14 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     config3[Int]("bar") should be (1234)
     config3[Int]("buzz") should be (122)
     (config2 include config) should not be (config include config2)
+  }
+  
+  it should "carry its original prefix" in {
+    val sup = Configuration()
+    val sub1 = Configuration()
+    val sub2 = Configuration()
+    val full = sup.attach("foo", sub1.attach("bar", sub2))
+    full.detach("foo.bar").prefix should be (Some("foo.bar"))
   }
 
 }

@@ -29,8 +29,8 @@ import scalashim._
  * immutable, several methods allow to easily change configuration data, returning
  * a new Configuration instance.
  */
-case class Configuration( data: Map[String,String] ) {
-
+case class Configuration( data: Map[String,String], prefix: Option[String] = None ) {
+  
   /**
    * Returns true if some value is associated with the
    * given key, else false.
@@ -148,7 +148,7 @@ case class Configuration( data: Map[String,String] ) {
       case regexp( subkey ) =>  nextData += subkey -> v
       case _ => {}
     }
-    Configuration( nextData )
+    Configuration( nextData, Some(prefix) )
   }
 
   /**
