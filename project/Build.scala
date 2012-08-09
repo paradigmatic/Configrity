@@ -41,7 +41,7 @@ object ConfigrityBuild extends Build {
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
     version := "0.10.2",
-    scalaVersion := "2.9.2",
+    scalaVersion := "2.10.0-M6",
     crossScalaVersions := Seq("2.8.1", "2.8.2", "2.9.0-1", "2.9.1", "2.9.2" )
   )
 
@@ -52,14 +52,14 @@ object ConfigrityBuild extends Build {
 
 
   lazy val standardSettings = minimalSettings ++  Seq(
-    libraryDependencies += "org.scalatest" %% "scalatest" % "1.7.2" % "test",
-    scalacOptions ++= Seq( "-deprecation", "-unchecked" ),
+    libraryDependencies += "org.scalatest" % "scalatest_2.10.0-M6" % "1.9-2.10.0-M6-B2",
+    scalacOptions ++= Seq( "-deprecation", "-unchecked", "-feature" ),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
       Attributed.blank(new java.io.File("doesnotexist"))
-    ) ++ net.virtualvoid.sbt.graph.Plugin.graphSettings
+    ) //++ net.virtualvoid.sbt.graph.Plugin.graphSettings
 
 
   lazy val publishSettings = Seq(

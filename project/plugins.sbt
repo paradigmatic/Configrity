@@ -6,4 +6,4 @@ addSbtPlugin("com.eed3si9n" % "sbt-scalashim" % "0.2.2")
 
 addSbtPlugin("com.typesafe" % "sbt-mima-plugin" % "0.1.3")
 
-addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.6.0")
+//addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.6.0")
