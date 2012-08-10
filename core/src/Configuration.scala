@@ -29,8 +29,13 @@ import scalashim._
  * immutable, several methods allow to easily change configuration data, returning
  * a new Configuration instance.
  */
-case class Configuration( data: Map[String,String] ) {
+case class Configuration( data: Map[String,String], prefix: Option[String] ) {
 
+  /**
+   * Constructs a Configuration with the given data and no prefix
+   */
+  def this( data: Map[String,String] ) = this(data, None)
+  
   /**
    * Returns true if some value is associated with the
    * given key, else false.
@@ -148,7 +153,7 @@ case class Configuration( data: Map[String,String] ) {
       case regexp( subkey ) =>  nextData += subkey -> v
       case _ => {}
     }
-    Configuration( nextData )
+    Configuration( nextData, Some(prefix) )
   }
 
   /**
@@ -174,6 +179,10 @@ object Configuration {
 
   /** By default, all conversions are done with BlockFormat */
   val defaultFormat = BlockFormat
+
+  /** Creates a configuration with the given data and no prefix */
+  def apply( data: Map[String,String] ): Configuration =
+    Configuration(data, None)
 
   /** Creates a configuration from tuples of key,value */
   def apply( entries:(String,Any)* ):Configuration =
