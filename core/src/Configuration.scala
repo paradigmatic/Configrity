@@ -156,6 +156,19 @@ case class Configuration( data: Map[String,String], prefix: Option[String] ) {
     Configuration( nextData, Some(prefix) )
   }
 
+  /** Detach all values whose keys have a common prefix as a new configuration,
+   *  and repeat this for the entire set of unique prefixes.
+   *
+   *  The initial configuration is not modified. The prefix is removed in the
+   *  resulting configuration.
+   */
+  def detachAll: Map[String, Configuration] = prefixes.map { prefix =>
+    prefix -> detach(prefix)
+  }.toMap
+
+  /** Return the set of unique prefixes in this configuration. */
+  def prefixes = data.keySet.filter( _.contains('.') ).map( _.split('.').head )
+
   /**
    * Adds another configuration values providing entries
    * which are not present in the present one. Useful

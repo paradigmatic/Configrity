@@ -156,6 +156,16 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     full.detach("foo.bar").prefix should be (Some("foo.bar"))
   }
 
+  "Sub configurations" can "be detached from a configuration" in {
+    val sup = Configuration( "foo" -> "bar" )
+    val sub1 = Configuration(Map( "one" -> "1", "two" -> "2" ))
+    val sub2 = Configuration(Map( "first" -> "", "second" -> "b" ))
+    val full = sup attach ("nums", sub1) attach ("letters", sub2)
+    full.detachAll should be (Map(
+      "nums" -> sub1.copy(prefix = Some("nums")),
+      "letters" -> sub2.copy(prefix = Some("letters"))
+    ))
+  }
 }
 
 class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHelper {
