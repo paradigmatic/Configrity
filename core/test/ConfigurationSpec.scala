@@ -60,7 +60,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     c2.get[String]("foo") should be (None)
   }
   
-  it should "not complain when trying to remove an inexistant key" in {
+  it should "not complain when trying to remove an non-existent key" in {
     val c2 = config.clear("buzz")
     c2 should be (config)
   }
