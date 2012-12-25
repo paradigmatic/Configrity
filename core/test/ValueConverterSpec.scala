@@ -95,6 +95,10 @@ class ValueConverterSpec extends WordSpec with ShouldMatchers with DefaultConver
       convert[Boolean](Option("F")) should be (Option(false))
       convert[Boolean](Option("T")) should be (Option(true))
     }
+    "parse a string with yes/no into a Boolean" in {
+      convert[Boolean](Option("no")) should be (Option(false))
+      convert[Boolean](Option("yes")) should be (Option(true))
+    }
     "parse a string with on/off into a Boolean" in {
       convert[Boolean](Option("off")) should be (Option(false))
       convert[Boolean](Option("on")) should be (Option(true))
