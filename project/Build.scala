@@ -41,8 +41,8 @@ object ConfigrityBuild extends Build {
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
     version := "0.10.2",
-    scalaVersion := "2.9.2",
-    crossScalaVersions := Seq("2.8.1", "2.8.2", "2.9.0-1", "2.9.1", "2.9.2" )
+    scalaVersion := "2.10.0",
+    crossScalaVersions := Seq("2.9.2", "2.10.0" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(
@@ -52,7 +52,7 @@ object ConfigrityBuild extends Build {
 
 
   lazy val standardSettings = minimalSettings ++  Seq(
-    libraryDependencies += "org.scalatest" %% "scalatest" % "1.7.2" % "test",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1" % "test",
     scalacOptions ++= Seq( "-deprecation", "-unchecked" ),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
     scalaSource in Test <<= baseDirectory(_ / "test"),
