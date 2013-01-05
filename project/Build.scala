@@ -36,7 +36,9 @@ object ConfigrityBuild extends Build {
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.99.0",
+    version := "1.0.0",
+    licenses := Seq("GNU LesserGPLv3" -> url("http://www.gnu.org/licenses/lgpl.html")),
+    homepage := Some(url("https://github.com/paradigmatic/Configrity")),
     scalaVersion := "2.10.0",
     crossScalaVersions := Seq( "2.9.2", "2.10.0" )
   )
@@ -75,15 +77,8 @@ object ConfigrityBuild extends Build {
     pomExtra := requiredPOMextra    
   )
 
+
   lazy val requiredPOMextra = {
-    <url>https://github.com/paradigmatic/Configrity</url>
-    <licenses>
-      <license>
-        <name>GNU LesserGPLv3</name>
-        <url>http://www.gnu.org/licenses/lgpl.html</url>
-        <distribution>repo</distribution>
-      </license>
-    </licenses>
     <scm>
     <url>https://github.com/paradigmatic/Configrity</url>
     <connection>scm:git:git@github.com:paradigmatic/Configrity.git</connection>

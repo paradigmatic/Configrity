@@ -1,0 +1,14 @@
+After 18 months since first public release, we are proud to annouce the first stable version of Configrity. The version was bumped to 1.0.0 to reflect the project maturity. [Semantic versioning](http://semver.org/) will now be strictly enforced. Changes since version 0.10.2:
+
+### Scala compatibility
+
+  - Configrity is now compatible with Scala 2.9.2 and 2.10.0 (thanks to Aki Saarinen).
+  - **Support for Scala 2.8.2 was dropped.** If you are currently using Configrity with Scala 2.8 and if you cannot upgrade to Scala 2.9, you can fill a request using the [issue tracker](https://github.com/paradigmatic/Configrity/issues/).
+
+### New features
+
+  - Detached configurations carry their context prefix. (issue #14 and #15) -- Pablo Lalloni.
+  - The method `Configuration#detachAll` allows to detach all first level sub-configurations to produce a map that associates each prefix with its sub-configuration (issue #19) -- Jussi Virtanen.
+  - Booleans can be represented as "yes/no" strings (issue #20) -- Yuri Molchan
+
+If you wish for extra features, [feel free to ask](https://github.com/paradigmatic/Configrity/issues/).

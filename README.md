@@ -8,8 +8,7 @@ functional design patterns, such as:
   - Converting implicitly values via type-classes
   - Reader monad
 
-The API is now stable and covered by tests. However, as it is very young,
-it may contain some bugs.
+The API is stable and covered by tests.
 
 [![Build Status](https://secure.travis-ci.org/paradigmatic/Configrity.png)](http://travis-ci.org/paradigmatic/Configrity)
 
@@ -52,7 +51,7 @@ it may contain some bugs.
 
 ## Requirements ##
 
-Configrity depends on Scala 2.8.1 or newer.
+Configrity depends on Scala 2.9.2 or newer.
 
 While core features do not depend on external libraries, some modules
 may. In that case, the approriate dependencies will be automatically
@@ -64,7 +63,7 @@ installed by sbt/maven.
 
 The dependency line is:
 
-    "org.streum" %% "configrity-core" % "0.10.2"
+    "org.streum" %% "configrity-core" % "1.0.0"
 
 Additional modules require addition dependency lines. Check the wiki
 for more information:
@@ -78,7 +77,7 @@ Follow the [repository instructions](http://search.maven.org/#artifactdetails|or
 ### From source (master branch) ###
 
 To install Configrity you just need a working java installation (tested with
-JDK 1.6, but may work with 1.5) and SBT **0.11+**:
+JDK 1.6 and 1.7, but may work with 1.5) and SBT **0.12.1**:
 
     $ git clone git://github.com/paradigmatic/Configrity.git
     $ cd Configrity
@@ -127,4 +126,4 @@ github. Tests are appreciated.
 Configrity is a free and open source library released under the
 permissive GNU LesserGPLv3 license (see `LICENSE.txt`).
 
-Copyright (C) 2011-2012. Paradigmatic. All rights reserved.
+Copyright (C) 2011-2013. Paradigmatic. All rights reserved.
