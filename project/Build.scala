@@ -1,8 +1,6 @@
 import sbt._
 import Keys._
 
-import sbtscalashim.Plugin._
-
 import com.typesafe.tools.mima.plugin.MimaPlugin.mimaDefaultSettings
 import com.typesafe.tools.mima.plugin.MimaKeys.previousArtifact
 
@@ -21,10 +19,8 @@ object ConfigrityBuild extends Build {
      settings = 
        standardSettings ++ 
        publishSettings ++ 
-       scalaShimSettings ++
        mimaDefaultSettings ++
        Seq( 
-	 sourceGenerators in Compile <+= scalaShim,
 	 previousArtifact := Some("org.streum" % "configrity-core_2.9.1" % "0.10.2")
        ) 
    )
@@ -34,15 +30,16 @@ object ConfigrityBuild extends Build {
      base = file("modules/yaml"),
      dependencies = Seq(core),
      settings = standardSettings ++ publishSettings ++ Seq(
-       libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.9"
+       libraryDependencies +=  "org.yaml" % "snakeyaml" % "1.11"
      )
    )
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "0.10.2",
-    scalaVersion := "2.10.0-M6",
-    crossScalaVersions := Seq("2.8.1", "2.8.2", "2.9.0-1", "2.9.1", "2.9.2" )
+    version := "0.99.0",
+    scalaVersion := "2.10.0",
+    crossScalaVersions := Seq("2.9.0-1", "2.9.1", "2.9.2",
+			      "2.10.0" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(
@@ -52,14 +49,14 @@ object ConfigrityBuild extends Build {
 
 
   lazy val standardSettings = minimalSettings ++  Seq(
-    libraryDependencies += "org.scalatest" % "scalatest_2.10.0-M6" % "1.9-2.10.0-M6-B2",
-    scalacOptions ++= Seq( "-deprecation", "-unchecked", "-feature" ),
+    libraryDependencies +=  "org.scalatest" % "scalatest_2.10" % "1.9.1",
+    scalacOptions ++= Seq( "-deprecation", "-unchecked", "-feature", "-language:implicitConversions"),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
       Attributed.blank(new java.io.File("doesnotexist"))
-    ) //++ net.virtualvoid.sbt.graph.Plugin.graphSettings
+    )
 
 
   lazy val publishSettings = Seq(

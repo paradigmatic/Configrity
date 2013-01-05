@@ -12,11 +12,11 @@ trait IOHelper {
       if( content != "" ) {
         val out = new PrintWriter( f )
         out println content 
-        out close
+        out.close
       }
       body( f )
     } finally {
-      f delete
+      f.delete
     }
   }
 
