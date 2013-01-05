@@ -2,24 +2,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>org.streum.configrity.io</title>
+          <title>io - org.streum.configrity.io</title>
+          <meta name="description" content="io - org.streum.configrity.io" />
+          <meta name="keywords" content="io org.streum.configrity.io" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../../lib/template.css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
       <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../../../lib/template.js"></script>
       <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.streum.configrity.io.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
-        <p id="owner"><a name="org" class="extype" href="../../../package.html">org</a>.<a name="org.streum" class="extype" href="../../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="../package.html">configrity</a></p>
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.streum">streum</a>.<a href="../package.html" class="extype" name="org.streum.configrity">configrity</a></p>
         <h1>io</h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">package</span>
@@ -29,11 +44,11 @@
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"></div>
-    
+          <div id="comment" class="fullcommenttop"></div>
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         
         
         <div id="visbl">
@@ -46,9 +61,10 @@
         <div id="allMembers">
         
 
-        <div class="types members" id="types">
+        <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="org.streum.configrity.io.ExportFormat" data-isabs="true">
+              <ol><li name="org.streum.configrity.io.ExportFormat" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ExportFormatextendsObject"></a>
       <a id="ExportFormat:ExportFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -56,11 +72,12 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ExportFormat.html"><span class="name">ExportFormat</span></a><span class="result"> extends AnyRef</span>
+        <a href="ExportFormat.html"><span class="name">ExportFormat</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Format for converting a Configuration into a String.</p>
-    </li><li visbl="pub" name="org.streum.configrity.io.Format" data-isabs="true">
+    </li><li name="org.streum.configrity.io.Format" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FormatextendsImportFormatwithExportFormat"></a>
       <a id="Format:Format"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -68,13 +85,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Format.html"><span class="name">Format</span></a><span class="result"> extends ImportFormat with ExportFormat</span>
+        <a href="Format.html"><span class="name">Format</span></a><span class="result"> extends <a href="ImportFormat.html" class="extype" name="org.streum.configrity.io.ImportFormat">ImportFormat</a> with <a href="ExportFormat.html" class="extype" name="org.streum.configrity.io.ExportFormat">ExportFormat</a></span>
       </span>
       </h4>
       <p class="comment cmt">Format able to convert Configuration to String and
 String to Configuration
 </p>
-    </li><li visbl="pub" name="org.streum.configrity.io.HierarchyUtils" data-isabs="true">
+    </li><li name="org.streum.configrity.io.HierarchyUtils" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="HierarchyUtilsextendsObject"></a>
       <a id="HierarchyUtils:HierarchyUtils"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -82,11 +100,12 @@ String to Configuration
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="HierarchyUtils.html"><span class="name">HierarchyUtils</span></a><span class="result"> extends AnyRef</span>
+        <a href="HierarchyUtils.html"><span class="name">HierarchyUtils</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Useful methods for implementing hierarchical output formats.</p>
-    </li><li visbl="pub" name="org.streum.configrity.io.ImportFormat" data-isabs="true">
+    </li><li name="org.streum.configrity.io.ImportFormat" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImportFormatextendsObject"></a>
       <a id="ImportFormat:ImportFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -94,12 +113,13 @@ String to Configuration
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ImportFormat.html"><span class="name">ImportFormat</span></a><span class="result"> extends AnyRef</span>
+        <a href="ImportFormat.html"><span class="name">ImportFormat</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">Format for converting a String into a Configuration
 </p>
-    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat" data-isabs="true">
+    </li><li name="org.streum.configrity.io.StandardFormat" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StandardFormatextendsFormat"></a>
       <a id="StandardFormat:StandardFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -107,7 +127,7 @@ String to Configuration
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="StandardFormat.html"><span class="name">StandardFormat</span></a><span class="result"> extends Format</span>
+        <a href="StandardFormat.html"><span class="name">StandardFormat</span></a><span class="result"> extends <a href="Format.html" class="extype" name="org.streum.configrity.io.Format">Format</a></span>
       </span>
       </h4>
       <p class="comment cmt">Encodes the common behavior of standard formats
@@ -117,9 +137,10 @@ String to Configuration
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="org.streum.configrity.io.BlockFormat" data-isabs="false">
+              <ol><li name="org.streum.configrity.io.BlockFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BlockFormat"></a>
       <a id="BlockFormat:BlockFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -127,12 +148,13 @@ String to Configuration
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="BlockFormat$.html"><span class="name">BlockFormat</span></a><span class="result"> extends StandardFormat with HierarchyUtils</span>
+        <a href="BlockFormat$.html"><span class="name">BlockFormat</span></a><span class="result"> extends <a href="StandardFormat.html" class="extype" name="org.streum.configrity.io.StandardFormat">StandardFormat</a> with <a href="HierarchyUtils.html" class="extype" name="org.streum.configrity.io.HierarchyUtils">HierarchyUtils</a></span>
       </span>
       </h4>
       <p class="comment cmt">Encodes the default block format
 </p>
-    </li><li visbl="pub" name="org.streum.configrity.io.FlatFormat" data-isabs="false">
+    </li><li name="org.streum.configrity.io.FlatFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FlatFormat"></a>
       <a id="FlatFormat:FlatFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -140,11 +162,12 @@ String to Configuration
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="FlatFormat$.html"><span class="name">FlatFormat</span></a><span class="result"> extends StandardFormat</span>
+        <a href="FlatFormat$.html"><span class="name">FlatFormat</span></a><span class="result"> extends <a href="StandardFormat.html" class="extype" name="org.streum.configrity.io.StandardFormat">StandardFormat</a></span>
       </span>
       </h4>
       <p class="comment cmt">Encodes a simple flat text format.</p>
-    </li><li visbl="pub" name="org.streum.configrity.io.PropertiesFormat" data-isabs="false">
+    </li><li name="org.streum.configrity.io.PropertiesFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PropertiesFormat"></a>
       <a id="PropertiesFormat:PropertiesFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -152,11 +175,12 @@ String to Configuration
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="PropertiesFormat$.html"><span class="name">PropertiesFormat</span></a><span class="result"> extends Format</span>
+        <a href="PropertiesFormat$.html"><span class="name">PropertiesFormat</span></a><span class="result"> extends <a href="Format.html" class="extype" name="org.streum.configrity.io.Format">Format</a></span>
       </span>
       </h4>
       <p class="comment cmt">Text format described by java.</p>
-    </li><li visbl="pub" name="org.streum.configrity.io.StandardFormat" data-isabs="false">
+    </li><li name="org.streum.configrity.io.StandardFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StandardFormat"></a>
       <a id="StandardFormat:StandardFormat"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -164,11 +188,12 @@ String to Configuration
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="StandardFormat$.html"><span class="name">StandardFormat</span></a><span class="result"> extends AnyRef</span>
+        <a href="StandardFormat$.html"><span class="name">StandardFormat</span></a>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="org.streum.configrity.io.Utils" data-isabs="false">
+    </li><li name="org.streum.configrity.io.Utils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Utils"></a>
       <a id="Utils:Utils"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -176,7 +201,7 @@ String to Configuration
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Utils$.html"><span class="name">Utils</span></a><span class="result"> extends AnyRef</span>
+        <a href="Utils$.html"><span class="name">Utils</span></a>
       </span>
       </h4>
       
@@ -184,10 +209,20 @@ String to Configuration
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
         
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
         </div>
 
       </div>

@@ -2,51 +2,78 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>org.streum.configrity.Configuration</title>
+          <title>Configuration - org.streum.configrity.Configuration</title>
+          <meta name="description" content="Configuration - org.streum.configrity.Configuration" />
+          <meta name="keywords" content="Configuration org.streum.configrity.Configuration" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../../lib/template.css" />
-      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
       <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../../lib/template.js"></script>
       <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'org.streum.configrity.Configuration$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body class="value">
       <div id="definition">
-        <a title="Go to companion" href="Configuration.html"><img src="../../../lib/object_to_class_big.png" /></a>
-        <p id="owner"><a name="org" class="extype" href="../../package.html">org</a>.<a name="org.streum" class="extype" href="../package.html">streum</a>.<a name="org.streum.configrity" class="extype" href="package.html">configrity</a></p>
-        <h1><a title="Go to companion" href="Configuration.html">Configuration</a></h1>
+        <a href="Configuration.html" title="Go to companion"><img src="../../../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.streum">streum</a>.<a href="package.html" class="extype" name="org.streum.configrity">configrity</a></p>
+        <h1><a href="Configuration.html" title="Go to companion">Configuration</a></h1>
       </div>
 
-      <h4 class="signature" id="signature">
+      <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Configuration</span><span class="result"> extends <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="name">Configuration</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Configuration companion object</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Configuration companion object</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
-    
+        
 
       <div id="mbrsel">
-        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
         <div id="order">
               <span class="filtertype">Ordering</span>
-              <ol><li class="alpha in"><span>Alphabetic</span></li><li class="inherit out"><span>By inheritance</span></li></ol>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
             </div>
         <div id="ancestors">
-              <span class="filtertype">Inherited</span>
-              <ol><li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="org.streum.configrity.Configuration" class="in"><span>Configuration</span></li><li name="scala.Serializable" class="in"><span>Serializable</span></li><li name="java.io.Serializable" class="in"><span>Serializable</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
-            </div>
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.streum.configrity.Configuration"><span>Configuration</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
             <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
@@ -61,9 +88,10 @@
 
         
 
-        <div class="values members" id="values">
+        <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -71,11 +99,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $bang$eq">!=</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#!=" data-isabs="false">
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -83,11 +112,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $bang$eq">!=</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef###" data-isabs="false">
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
       <a id="##():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -95,11 +125,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $hash$hash">##</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#==" data-isabs="false">
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
       <a id="==(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -107,11 +138,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $eq$eq">==</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#==" data-isabs="false">
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -119,23 +151,38 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name" title="gt4s: $eq$eq">==</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#apply" data-isabs="false">
-      <a id="apply((String, Any)*):Configuration"></a>
+    </li><li name="org.streum.configrity.Configuration#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(entries:(String,Any)*):org.streum.configrity.Configuration"></a>
+      <a id="apply((String,Any)*):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="entries">entries: (String, <span name="scala.Any" class="extype">Any</span>)*</span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">apply</span><span class="params">(<span name="entries">entries: (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Any">Any</span>)*</span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Creates a configuration from tuples of key,value</p>
-    </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(data:Map[String,String]):org.streum.configrity.Configuration"></a>
+      <a id="apply(Map[String,String]):Configuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="data">data: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates a configuration with the given data and no prefix</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -143,11 +190,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: T0</span>
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -155,26 +203,28 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: AnyRef</span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#defaultFormat" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#defaultFormat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="defaultFormat:org.streum.configrity.io.BlockFormat.type"></a>
+      <a id="defaultFormat:io.BlockFormat.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">defaultFormat</span><span class="result">: org.streum.configrity.io.BlockFormat.type</span>
+        <span class="name">defaultFormat</span><span class="result">: <a href="io/BlockFormat$.html" class="extype" name="org.streum.configrity.io.BlockFormat">io.BlockFormat</a>.type</span>
       </span>
       </h4>
       <p class="shortcomment cmt">By default, all conversions are done with BlockFormat</p>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#environment" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#environment" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="environment:org.streum.configrity.Configuration"></a>
       <a id="environment:Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -182,11 +232,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">environment</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">environment</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns the environement variables as a Configuration</p>
-    </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -194,11 +245,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#equals" data-isabs="false">
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -206,11 +258,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -218,26 +271,28 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
-      <a id="getClass():java.lang.Class[_]"></a>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: java.lang.Class[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -245,11 +300,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -257,11 +313,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#load" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#load" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="load(fileName:String,fmt:org.streum.configrity.io.ImportFormat)(implicitcodec:scala.io.Codec):org.streum.configrity.Configuration"></a>
       <a id="load(String,ImportFormat)(Codec):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -269,12 +326,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">load</span><span class="params">(<span name="fileName">fileName: String</span>, <span name="fmt">fmt: <a name="org.streum.configrity.io.ImportFormat" class="extype" href="io/ImportFormat.html">ImportFormat</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="codec">codec: <span name="scala.io.Codec" class="extype">Codec</span></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">load</span><span class="params">(<span name="fileName">fileName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fmt">fmt: <a href="io/ImportFormat.html" class="extype" name="org.streum.configrity.io.ImportFormat">ImportFormat</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="codec">codec: <span class="extype" name="scala.io.Codec">Codec</span></span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Load a configuration from a file specified by a filename and
 using a given format.</p>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#load" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#load" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="load(fileName:String)(implicitcodec:scala.io.Codec):org.streum.configrity.Configuration"></a>
       <a id="load(String)(Codec):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -282,11 +340,12 @@ using a given format.</p>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">load</span><span class="params">(<span name="fileName">fileName: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="codec">codec: <span name="scala.io.Codec" class="extype">Codec</span></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">load</span><span class="params">(<span name="fileName">fileName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="codec">codec: <span class="extype" name="scala.io.Codec">Codec</span></span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Load a configuration from a file specified by a filename.</p>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#load" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#load" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="load(source:scala.io.Source,fmt:org.streum.configrity.io.ImportFormat):org.streum.configrity.Configuration"></a>
       <a id="load(Source,ImportFormat):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -294,13 +353,14 @@ using a given format.</p>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">load</span><span class="params">(<span name="source">source: <span name="scala.io.Source" class="extype">Source</span></span>, <span name="fmt">fmt: <a name="org.streum.configrity.io.ImportFormat" class="extype" href="io/ImportFormat.html">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">load</span><span class="params">(<span name="source">source: <span class="extype" name="scala.io.Source">Source</span></span>, <span name="fmt">fmt: <a href="io/ImportFormat.html" class="extype" name="org.streum.configrity.io.ImportFormat">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Load a configuration from a scala.</p><div class="fullcomment"><div class="comment cmt"><p>Load a configuration from a scala.io.Source. An optional
 format can be passed.
 </p></div></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#loadResource" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#loadResource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadResource(fileName:String,fmt:org.streum.configrity.io.ImportFormat):org.streum.configrity.Configuration"></a>
       <a id="loadResource(String,ImportFormat):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -308,13 +368,14 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">loadResource</span><span class="params">(<span name="fileName">fileName: String</span>, <span name="fmt">fmt: <a name="org.streum.configrity.io.ImportFormat" class="extype" href="io/ImportFormat.html">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">loadResource</span><span class="params">(<span name="fileName">fileName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fmt">fmt: <a href="io/ImportFormat.html" class="extype" name="org.streum.configrity.io.ImportFormat">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Load a configuration as a resource from the classpath.</p><div class="fullcomment"><div class="comment cmt"><p>Load a configuration as a resource from the classpath. An optional
 format can be passed.
 </p></div></div>
-    </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -322,11 +383,12 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -334,11 +396,12 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#notifyAll" data-isabs="false">
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
       <a id="notifyAll():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -346,11 +409,12 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#parse" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse(s:String,fmt:org.streum.configrity.io.ImportFormat):org.streum.configrity.Configuration"></a>
       <a id="parse(String,ImportFormat):Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -358,7 +422,7 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parse</span><span class="params">(<span name="s">s: String</span>, <span name="fmt">fmt: <a name="org.streum.configrity.io.ImportFormat" class="extype" href="io/ImportFormat.html">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">parse</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="fmt">fmt: <a href="io/ImportFormat.html" class="extype" name="org.streum.configrity.io.ImportFormat">ImportFormat</a> = <span class="symbol"><span class="name"><a href="#defaultFormat:org.streum.configrity.io.BlockFormat.type">defaultFormat</a></span></span></span>)</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Instanciates a configuration file from a string using
@@ -366,31 +430,21 @@ format can be passed.
  eventually a specified format. By default, the FlatFormat
  will be used.
 </p></div></div>
-    </li><li visbl="prt" name="org.streum.configrity.Configuration#readResolve" data-isabs="false">
-      <a id="readResolve():AnyRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">readResolve</span><span class="params">()</span><span class="result">: AnyRef</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
-      <a id="synchronized[T0](⇒ T0):T0"></a>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ T0</span>)</span><span class="result">: T0</span>
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="org.streum.configrity.Configuration#systemProperties" data-isabs="false">
+    </li><li name="org.streum.configrity.Configuration#systemProperties" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="systemProperties:org.streum.configrity.Configuration"></a>
       <a id="systemProperties:Configuration"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -398,11 +452,12 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">systemProperties</span><span class="result">: <a name="org.streum.configrity.Configuration" class="extype" href="Configuration.html">Configuration</a></span>
+        <span class="name">systemProperties</span><span class="result">: <a href="Configuration.html" class="extype" name="org.streum.configrity.Configuration">Configuration</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Returns the system properties as a Configuration</p>
-    </li><li visbl="pub" name="scala.AnyRef#toString" data-isabs="false">
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
       <a id="toString():String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -410,11 +465,12 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -422,14 +478,15 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
       <a id="wait(Long,Int):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -437,14 +494,15 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span name="scala.Long" class="extype">Long</span></span>, <span name="arg1">arg1: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
       <a id="wait(Long):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -452,7 +510,7 @@ format can be passed.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span name="scala.Long" class="extype">Long</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
@@ -463,17 +521,27 @@ format can be passed.
             </div>
 
         
+
+        
         </div>
 
         <div id="inheritedMembers">
-        <div name="scala.Serializable" class="parent">
-              <h3>Inherited from <span name="scala.Serializable" class="extype">Serializable</span></h3>
-            </div><div name="java.io.Serializable" class="parent">
-              <h3>Inherited from <span name="java.io.Serializable" class="extype">Serializable</span></h3>
-            </div><div name="scala.AnyRef" class="parent">
-              <h3>Inherited from AnyRef</h3>
-            </div><div name="scala.Any" class="parent">
-              <h3>Inherited from <span name="scala.Any" class="extype">Any</span></h3>
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
             </div>
         </div>
 
