@@ -108,15 +108,15 @@ trait DefaultConverters {
   )
 
   /**
-   * Convert strings to Booleans. The strings values: "T", "true" and "on"
-   * will be converted to true and the strings: "F", "false" and "off" will
+   * Convert strings to Booleans. The strings values: "T", "true", "yes" and "on"
+   * will be converted to true and the strings: "F", "false", "no" and "off" will
    * be converted to false.
    */
   implicit val booleanConverter = BooleanConverter
 
   object BooleanConverter extends ValueConverter[Boolean] {
-    val trues = Set("T","true","on")
-    val falses = Set("F","false","off" )
+    val trues = Set("T", "true", "yes", "on")
+    val falses = Set("F", "false", "no", "off")
     def parse( s: String ) = {
       if( trues contains s ) true
       else if ( falses contains s ) false

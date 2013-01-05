@@ -28,8 +28,13 @@ import scala.io.Source
  * immutable, several methods allow to easily change configuration data, returning
  * a new Configuration instance.
  */
-case class Configuration( data: Map[String,String] ) {
+case class Configuration( data: Map[String,String], prefix: Option[String] ) {
 
+  /**
+   * Constructs a Configuration with the given data and no prefix
+   */
+  def this( data: Map[String,String] ) = this(data, None)
+  
   /**
    * Returns true if some value is associated with the
    * given key, else false.
@@ -147,8 +152,21 @@ case class Configuration( data: Map[String,String] ) {
       case regexp( subkey ) =>  nextData += subkey -> v
       case _ => {}
     }
-    Configuration( nextData )
+    Configuration( nextData, Some(prefix) )
   }
+
+  /** Detach all values whose keys have a common prefix as a new configuration,
+   *  and repeat this for the entire set of unique prefixes.
+   *
+   *  The initial configuration is not modified. The prefix is removed in the
+   *  resulting configuration.
+   */
+  def detachAll: Map[String, Configuration] = prefixes.map { prefix =>
+    prefix -> detach(prefix)
+  }.toMap
+
+  /** Return the set of unique prefixes in this configuration. */
+  def prefixes = data.keySet.filter( _.contains('.') ).map( _.split('.').head )
 
   /**
    * Adds another configuration values providing entries
@@ -173,6 +191,10 @@ object Configuration {
 
   /** By default, all conversions are done with BlockFormat */
   val defaultFormat = BlockFormat
+
+  /** Creates a configuration with the given data and no prefix */
+  def apply( data: Map[String,String] ): Configuration =
+    Configuration(data, None)
 
   /** Creates a configuration from tuples of key,value */
   def apply( entries:(String,Any)* ):Configuration =
