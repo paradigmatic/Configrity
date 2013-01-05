@@ -1,6 +1,20 @@
 Changelog
 =========
 
+Next Version
+------------
+
+### Compatibility
+
+  - Compatible with Scala 2.9.2 and 2.10.0 (thanks to Aki Saarinen).
+  - **Dropping support for Scala 2.8.2**
+
+### New features
+
+  - Allow Configuration to carry its context name (issue #14 and #15) -- Pablo Lalloni.
+  - Add `Configuration#detachAll` (issue #19) -- Jussi Virtanen.
+  - Allow to parse "yes/no" into a Boolean (issue #20) -- Yuri Molchan
+
 Version 0.10.2 - 2012-05-21
 ---------------------------
 
