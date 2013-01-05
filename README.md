@@ -71,7 +71,7 @@ for more information:
 
 ### From Maven, Buildr, Ivy, Grape and Grails ###
 
-Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.9.2|0.10.2|jar).
+Follow the [repository instructions](http://search.maven.org/#artifactdetails|org.streum|configrity-core_2.10|1.0.0|jar).
     
 
 ### From source (master branch) ###
