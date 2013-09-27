@@ -21,7 +21,7 @@ object ConfigrityBuild extends Build {
        publishSettings ++ 
        mimaDefaultSettings ++
        Seq( 
-	 previousArtifact := Some("org.streum" % "configrity-core_2.9.1" % "0.10.2")
+	 previousArtifact := Some("org.streum" % "configrity-core_2.10" % "1.0.0")
        ) 
    )
 
@@ -39,8 +39,8 @@ object ConfigrityBuild extends Build {
     version := "1.0.0",
     licenses := Seq("GNU LesserGPLv3" -> url("http://www.gnu.org/licenses/lgpl.html")),
     homepage := Some(url("https://github.com/paradigmatic/Configrity")),
-    scalaVersion := "2.10.0",
-    crossScalaVersions := Seq( "2.9.2", "2.10.0" )
+    scalaVersion := "2.10.2",
+    crossScalaVersions := Seq( "2.9.2", "2.10.2" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(

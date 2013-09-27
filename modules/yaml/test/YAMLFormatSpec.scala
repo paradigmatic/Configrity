@@ -149,4 +149,18 @@ baz: greetings
     config[Boolean]("bar.baz") should be (config2[Boolean]("bar.baz"))
   }
 
+  it must "ignore key with empty value" in {
+    val yml = 
+"""
+mixer:
+
+hardware:
+    device: "/dev/ttyUSB0"
+""";
+    val config = FMT.fromText( yml )
+    config[String]( "hardware.device" ) should be ( "/dev/ttyUSB0" )
+  }
+
+ 
+
 }

@@ -60,6 +60,7 @@ object YAMLFormat extends Format with HierarchyUtils {
   private def readMap( prefix: String, map: Map[_,_] ):Map[String,String] =
     map.foldLeft( Map[String,String]() ){
       case (map,(k,v)) => map ++ readValue( prefix + k.toString, v )
+      //case (map,(k,v)) => map ++ readValue( prefix + k.toString, v )
     }
   
 
@@ -67,6 +68,7 @@ object YAMLFormat extends Format with HierarchyUtils {
     value match {
       case jl: JList[_] => readList( key, jl )
       case jm: JMap[_,_] => readMap( key+".", jm.toMap )
+      case null => Map.empty
       case _ => Map( key -> value.toString )
     }
 
