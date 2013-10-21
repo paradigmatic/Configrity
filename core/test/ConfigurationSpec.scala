@@ -85,6 +85,13 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
     val lst2 = c2[List[String]]( "list" )
     lst should be (lst2)
   }
+  
+  it should "format values containing empty spaces correctly" in {
+    val lst = """"hello world""""
+    val c2 = config.set( "hi", lst )
+    val lst2 = c2[String]( "hi" )
+    lst should be (lst2)
+  }
 
 
   it can "be nicely formatted" in {
@@ -220,7 +227,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
     val config = Configuration.parse( s, FlatFormat )
     config.get[Boolean]("foo") should be (Some(true))
     config.get[Int]("bar") should be (Some(2))
-    config.get[String]("baz") should be (Some("hello world"))
+    config.get[String]("baz") should be (Some(""""hello world""""))
   }
 
   it can "be loaded from a file" in {    
@@ -236,7 +243,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
       val config = Configuration.load(fn,fmt)
       config.get[Boolean]("foo") should be (Some(true))
       config.get[Int]("bar") should be (Some(2))
-      config.get[String]("baz") should be (Some("hello world"))
+      config.get[String]("baz") should be (Some(""""hello world""""))
       val config2 = Configuration.load(fn)
       config2 should be (config)
     }
@@ -248,7 +255,7 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
    val config = Configuration.loadResource( resName, fmt )
    config.get[Boolean]("foo") should be (Some(true))
    config.get[Int]("bar") should be (Some(2))
-   config.get[String]("baz") should be (Some("hello world"))
+   config.get[String]("baz") should be (Some(""""hello world""""))
    val config2 = Configuration.loadResource( resName )
    config2 should be (config)
  }

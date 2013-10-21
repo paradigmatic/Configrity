@@ -35,6 +35,12 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     val config = parse( "    foo=2 " )
     config[Int]("foo") should be (2)
   }
+  
+  it should "keep parsed double quotes" in {
+    val config = parse( """foo= "helloWorld"""")
+    config[String]("foo") should be (""""helloWorld"""")
+  }
+    
 
   it can "parse several lines" in {
     val s = 
@@ -46,7 +52,7 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     val config = parse( s )
     config[Boolean]("foo") should be (true)
     config[Int]("bar") should be (2)
-    config[String]("baz") should be ("hello world")
+    config[String]("baz") should be (""""hello world"""")
   }
 
   it can "parse several badly spaced lines" in {
@@ -59,7 +65,7 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     val config = parse( s )
     config[Boolean]("foo") should be (true)
     config[Int]("bar") should be (2)
-    config[String]("baz") should be ("hello world")
+    config[String]("baz") should be (""""hello world"""")
   }
 
   it must "choke when encoutering an unquoted value with spaces" in {
@@ -180,15 +186,15 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     val config = parse( s ) 
     config[String]("foo") should be ("[ true, false ]")
     config[String]("bar") should be ("[ 1, 2, 3, 4 ]")
-    config[String]("baz") should be ("[ hello, \"wo,rld\" ]")
+    config[String]("baz") should be ("""[ "hello", "wo,rld" ]""")
   }
 
   it can "accept empty strings" in {
     val s =
   """
-    bar = "bar"
+    bar = bar
     foo = ""
-    baz = "baz"
+    baz = baz
   """
     val config = parse( s )
     config[String]("foo") should be ("")
@@ -205,9 +211,9 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     baz = [ "world" ]
     """
     val config = parse( s ) 
-    config[String]("foo") should be ("[ hello ]")
+    config[String]("foo") should be ("""[ "hello" ]""")
     config[String]("bar") should be ("[  ]")
-    config[String]("baz") should be ("[ world ]")
+    config[String]("baz") should be ("""[ "world" ]""")
   }
   
     it can "accept lists defined over several lines" in {
@@ -227,7 +233,7 @@ trait StandardParserSpec extends FlatSpec with ShouldMatchers {
     val config = parse( s ) 
     config[String]("foo") should be ("[ true, false ]")
     config[String]("bar") should be ("[ 1, 2, 3, 4 ]")
-    config[String]("baz") should be ("[ hello, \"wo,rld\" ]")
+    config[String]("baz") should be ("[ \"hello\", \"wo,rld\" ]")
   }
 
 

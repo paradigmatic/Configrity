@@ -42,7 +42,8 @@ trait StandardFormat extends Format {
       lst.foldLeft( Configuration() )( _ ++ _ )
 
     def unquote( s: String ) = s.substring( 1, s.size - 1 )
-
+   
+    
     def protect( s: String ) =  word.findFirstIn(s)  match {
       case Some(z) if s == z => s
       case _ => "\"" + s + "\""
@@ -52,18 +53,21 @@ trait StandardFormat extends Format {
     def key = """([^=\s])+""".r 
     val lineSep = "\n"
     def word = """([^=\s\n#\{\}\"\[\],])+""".r 
-    def quoted = """"([^"]*)"""".r /*"*/ ^^ { unquote }
+    def quoted = """"([^"]+)"""".r  // /*"*/ ^^ { unquote }
+    def dequoted = """"([^"]+)"""".r  /*"*/ ^^ { unquote }
+    def emptyQuote = """""""".r  ^^ { unquote }
     val equals  = "="
+      
 
-    def includeDirective = "include" ~ quoted ^^ {
+    def includeDirective = "include" ~ dequoted ^^ {
       case _ ~ filename => Configuration.load( filename )
     }
 
-    def item = word | quoted
-
+    def item = word | quoted | emptyQuote
+    
     def items = repsep( item, "," )
     def list = "[" ~ items ~ "]" ^^ {
-      case _ ~ lst ~ _ => lst.map( protect ).mkString("[ ", ", ", " ]")
+      case _ ~ lst ~ _ => lst.mkString("[ ", ", ", " ]")
     }
 
     def value = item | list

@@ -102,6 +102,22 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
     config[String]("block.baz") should be ("x")
     config[String]("block.sub.buzz") should be ("hello")
   }
+  
+  it must "keep parsed double quotes in blocks" in {
+    val s = 
+    """
+     # Example
+    foo = true
+    block {
+      bar = 2 
+      baz = "hello world"
+    }
+    """
+    val config = parse( s ) 
+    config[Boolean]("foo") should be (true)
+    config[Int]("block.bar") should be (2)
+    config[String]("block.baz") should be (""""hello world"""")
+  }
 
   it should "ignore whitespaces" in {
    val s = 
@@ -226,7 +242,7 @@ class BlockFormatParserSpec extends StandardParserSpec with IOHelper {
         val config = Configuration.load(child.getAbsolutePath)
         config[Boolean]("block.foo") should be (false)
         config[Int]("block.bar") should be (2)
-        config[String]("block.baz") should be ("hello")
+        config[String]("block.baz") should be (""""hello"""")
       }
     }
   }
