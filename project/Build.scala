@@ -40,7 +40,7 @@ object ConfigrityBuild extends Build {
     licenses := Seq("GNU LesserGPLv3" -> url("http://www.gnu.org/licenses/lgpl.html")),
     homepage := Some(url("https://github.com/paradigmatic/Configrity")),
     scalaVersion := "2.10.2",
-    crossScalaVersions := Seq( "2.9.2", "2.10.2" )
+    crossScalaVersions := Seq( "2.10.2", "2.11.0" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(
@@ -50,7 +50,7 @@ object ConfigrityBuild extends Build {
 
 
   lazy val standardSettings = minimalSettings ++  Seq(
-    libraryDependencies +=  "org.scalatest" %% "scalatest" % "1.9.1",
+    libraryDependencies +=  "org.scalatest" %% "scalatest" % "2.1.6",
     scalacOptions <<= scalaVersion map { v: String =>
       val default = Seq( "-deprecation", "-unchecked" )
       if (v.startsWith("2.9.")) default else default ++ Seq( "-feature", "-language:implicitConversions" )
