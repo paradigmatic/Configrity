@@ -1,11 +1,11 @@
 package org.streum.configrity.test.io
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity._
 import org.streum.configrity.io.StandardFormat.ParserException
 
-trait StandardParserSpec extends FlatSpec with ShouldMatchers {
+trait StandardParserSpec extends FlatSpec  {
 
   def parse( s: String ): Configuration
   val parserName: String

@@ -21,9 +21,9 @@ object ConfigrityBuild extends Build {
        publishSettings ++ 
        mimaDefaultSettings ++
        Seq( 
-	 previousArtifact := Some("org.streum" % "configrity-core_2.10" % "1.0.0")
+	     previousArtifact := Some("org.streum" % "configrity-core_2.10" % "1.0.0")
        ) 
-   )
+     )
 
    lazy val yaml = Project(
      id = "configrity-yaml",
@@ -36,11 +36,11 @@ object ConfigrityBuild extends Build {
 
   lazy val minimalSettings = Defaults.defaultSettings ++ Seq(
     organization := "org.streum",
-    version := "1.0.0",
+    version := "1.0.1",
     licenses := Seq("GNU LesserGPLv3" -> url("http://www.gnu.org/licenses/lgpl.html")),
     homepage := Some(url("https://github.com/paradigmatic/Configrity")),
-    scalaVersion := "2.10.2",
-    crossScalaVersions := Seq( "2.9.2", "2.10.2" )
+    scalaVersion := "2.11.2",
+    crossScalaVersions := Seq( "2.10.3", "2.11.2" )
   )
 
   lazy val rootSettings = minimalSettings ++ Seq(
@@ -49,18 +49,29 @@ object ConfigrityBuild extends Build {
   )
 
 
+  lazy val scalatest = "org.scalatest" %% "scalatest" % "2.2.0" % "test"
+  lazy val parsers =  "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.0"
+
   lazy val standardSettings = minimalSettings ++  Seq(
-    libraryDependencies +=  "org.scalatest" %% "scalatest" % "1.9.1",
-    scalacOptions <<= scalaVersion map { v: String =>
-      val default = Seq( "-deprecation", "-unchecked" )
-      if (v.startsWith("2.9.")) default else default ++ Seq( "-feature", "-language:implicitConversions" )
-    },
+    libraryDependencies ++= Seq(
+      scalatest
+    ),
+    scalacOptions ++= Seq( "-deprecation", "-unchecked", "-feature", "-language:implicitConversions" ),
     scalaSource in Compile <<= baseDirectory(_ / "src"),
     scalaSource in Test <<= baseDirectory(_ / "test"),
     resourceDirectory in Test <<= baseDirectory { _ / "test-resources" },
     unmanagedClasspath in Compile += 
-      Attributed.blank(new java.io.File("doesnotexist"))
-    )
+      Attributed.blank(new java.io.File("doesnotexist")),
+    libraryDependencies := {
+        CrossVersion.partialVersion(scalaVersion.value) match {
+          case Some((2, scalaMajor)) if scalaMajor >= 11 =>
+            libraryDependencies.value ++ Seq(
+              "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.2"
+            )
+          case _ => libraryDependencies.value 
+        }
+      }
+  )
 
 
   lazy val publishSettings = Seq(
