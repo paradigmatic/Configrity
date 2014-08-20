@@ -1,13 +1,13 @@
 package org.streum.configrity.test.io
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity._
 import org.streum.configrity.io.FlatFormat._
 import org.streum.configrity.io.FlatFormat
 
 
-class FlatFormatSpec extends FlatSpec with ShouldMatchers{
+class FlatFormatSpec extends FlatSpec {
 
   "The flat format" can "write and read an empty Configuration" in {
     val config = Configuration()

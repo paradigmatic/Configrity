@@ -1,13 +1,13 @@
 package org.streum.configrity.test
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity._
 import org.streum.configrity.JProperties
 import org.streum.configrity.io._
 import java.util.Properties
 
-class JPropertiesSpec extends FlatSpec with ShouldMatchers {
+class JPropertiesSpec extends FlatSpec {
 
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )

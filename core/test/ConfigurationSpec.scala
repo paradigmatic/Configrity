@@ -1,13 +1,13 @@
 package org.streum.configrity.test
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity.Configuration
 import org.streum.configrity.converter.DefaultConverters
 import org.streum.configrity.io._
 
 
-class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConverters with io.IOHelper {
+class ConfigurationSpec extends FlatSpec with DefaultConverters with io.IOHelper {
 
   val data = Map("foo"->"FOO", "bar"->"1234", "baz"->"on" )
   val config = Configuration( data )
@@ -168,7 +168,7 @@ class ConfigurationSpec extends FlatSpec with ShouldMatchers with DefaultConvert
   }
 }
 
-class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHelper {
+class ConfigurationObjectSpec extends FlatSpec  with io.IOHelper {
 
   "A configuration" can "be created from the system properties" in {
     val config = Configuration.systemProperties
@@ -255,10 +255,9 @@ class ConfigurationObjectSpec extends FlatSpec with ShouldMatchers with io.IOHel
 
  it must "throw FileNotFoundException when loading non-existing resource from the classpath" in {
    val resName = "/non-existing.conf"
-   val ex = evaluating {
+   the [java.io.FileNotFoundException] thrownBy {
      Configuration.loadResource( resName )
-   } should produce [java.io.FileNotFoundException]
-   ex.getMessage should be (resName)
+   } should have message (resName)
  }
 }
 

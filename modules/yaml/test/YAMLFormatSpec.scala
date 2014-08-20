@@ -1,13 +1,13 @@
 package org.streum.configrity.test.yaml
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity._
 
 import org.streum.configrity.yaml._
 
 
-class YAMLFormatSpec extends FlatSpec with ShouldMatchers {
+class YAMLFormatSpec extends FlatSpec  {
 
   val FMT = YAMLFormat
 

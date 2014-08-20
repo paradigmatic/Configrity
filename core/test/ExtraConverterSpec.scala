@@ -1,14 +1,14 @@
 package org.streum.configrity.test
 
 import org.scalatest.WordSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity.converter._
 import java.io.File
 import java.awt.Color
 import java.net.URI
 import java.net.URL
 
-class ExtraConverterSpec extends WordSpec with ShouldMatchers with DefaultConverters{
+class ExtraConverterSpec extends WordSpec with DefaultConverters{
 
   import ConverterHelper._
   import Extra._

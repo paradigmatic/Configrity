@@ -1,11 +1,11 @@
 package org.streum.configrity.test
 
 import org.scalatest.FlatSpec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers._
 import org.streum.configrity._
 import converter.DefaultConverters
 
-class ReeaderSpec extends FlatSpec with ShouldMatchers with DefaultConverters{
+class ReeaderSpec extends FlatSpec with DefaultConverters{
 
   val config = Configuration( "foo"->"FOO", "bar"->"1234", "baz"->"on" )
 
