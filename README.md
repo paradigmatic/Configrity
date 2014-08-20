@@ -1,6 +1,6 @@
 # Configrity README file #
 
-Configrity is a configuration library for Scala 2.9 or
+Configrity is a configuration library for Scala 2.10 or
 +. Configuration instances are immutable, thread-safe and allow
 functional design patterns, such as:
 
@@ -51,7 +51,7 @@ The API is stable and covered by tests.
 
 ## Requirements ##
 
-Configrity depends on Scala 2.9.2 or newer.
+Configrity depends on Scala 2.10 or newer.
 
 While core features do not depend on external libraries, some modules
 may. In that case, the approriate dependencies will be automatically
@@ -77,7 +77,7 @@ Follow the [repository instructions](http://search.maven.org/#artifactdetails|or
 ### From source (master branch) ###
 
 To install Configrity you just need a working java installation (tested with
-JDK 1.6 and 1.7, but may work with 1.5) and SBT **0.12.1**:
+JDK 1.6 and 1.7, but may work with 1.5) and SBT **0.13.5**:
 
     $ git clone git://github.com/paradigmatic/Configrity.git
     $ cd Configrity
@@ -86,15 +86,6 @@ JDK 1.6 and 1.7, but may work with 1.5) and SBT **0.12.1**:
     > doc
     > package
 
-If you want to cross-build, you will need to generate adapters for Scala 2.8.x
-via [sbt-scalashim](https://github.com/sbt/sbt-scalashim):
-
-    $ sbt
-    > project configrity-core
-    > scalashim
-    > project configrity
-    > +test
-    > +package
 
 ## Documentation ##
 
@@ -126,4 +117,4 @@ github. Tests are appreciated.
 Configrity is a free and open source library released under the
 permissive GNU LesserGPLv3 license (see `LICENSE.txt`).
 
-Copyright (C) 2011-2013. Paradigmatic. All rights reserved.
+Copyright (C) 2011-2014. Paradigmatic. All rights reserved.
