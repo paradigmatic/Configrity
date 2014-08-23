@@ -68,6 +68,8 @@ object BlockFormat extends StandardFormat with HierarchyUtils {
         Configuration()
       }
     }
+    
+
 
     def block: Parser[Configuration] = 
       blockStart ~ ( block | emptyBlock | entry ) ~ content ~ closeBrace ^^ {

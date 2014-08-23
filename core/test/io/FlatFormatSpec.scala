@@ -18,7 +18,7 @@ class FlatFormatSpec extends FlatSpec {
     val config = Configuration( 
       Map("foo"->"FOO", "bar"->"1234", 
 	  "baz"->"on",
-          "lst" -> """[ on, on, off, off ]""",
+      "lst" -> """[ on, on, off, off ]""",
 	  "empty" -> ""
 	)
     )
@@ -47,7 +47,7 @@ class FlatFormatParserSpec extends StandardParserSpec with IOHelper{
         val config = Configuration.load(child.getAbsolutePath)
         config[Boolean]("foo") should be (false)
         config[Int]("bar") should be (2)
-        config[String]("baz") should be ("hello")
+        config[String]("baz") should be (""""hello"""")
       }
     }
   }
