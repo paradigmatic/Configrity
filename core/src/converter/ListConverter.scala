@@ -23,7 +23,7 @@ import scala.util.parsing.combinator._
 
 /**
  * Parse a list of type A. The string representation must be surrounded
- * by square brackets: '[...]'. Elements are separed by comma: 'elem1, elem2'.
+ * by square brackets: '[...]'. Elements are separated by comma: 'elem1, elem2'.
  * Elements are either a single word without reserved characters, or any characters
  * surrounded by double quotes '"'.
  */

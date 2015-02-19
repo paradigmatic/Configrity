@@ -22,24 +22,18 @@ package org.streum.configrity
 import converter.ValueConverter
 
 /** Monadic Reader */
-trait Reader[A] {
+trait Reader[A] { self =>
 
   /** Produce a value from a Configuration */
   def apply( c: Configuration ): A
 
-  def map[B]( f: A => B ) = {
-    val parent = this
-    new Reader[B] {
-      def apply( c: Configuration ) = f( parent(c) )
-    }
-  }
-  def flatMap[B]( f: A => Reader[B] ) = {
-    val parent = this
-    new Reader[B] {
-      def apply( c: Configuration ) = f( parent(c) )(c)
-    }
+  def map[B]( f: A => B ) = new Reader[B] {
+    def apply( c: Configuration ) = f( self(c) )
   }
 
+  def flatMap[B]( f: A => Reader[B] ) = new Reader[B] {
+    def apply( c: Configuration ) = f( self(c) )(c)
+  }
 }
 
 case class ConfigurationReader[A: ValueConverter](

@@ -34,7 +34,7 @@ object PropertiesFormat extends Format {
   def toText( config: Configuration ) = {
     val out = new StringWriter
     config.store( out, "")
-    out.close
+    out.close()
     out.toString
   }
 
@@ -42,7 +42,7 @@ object PropertiesFormat extends Format {
     val in = new StringReader( s )
     val props = new Properties
     props.load( in )
-    in.close
+    in.close()
     props: Configuration
   }
 

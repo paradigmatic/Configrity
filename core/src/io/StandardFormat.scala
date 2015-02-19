@@ -21,8 +21,6 @@ package org.streum.configrity.io
 
 import org.streum.configrity.Configuration
 
-import scala.collection.mutable.StringBuilder
-
 import scala.util.parsing.combinator._
 
 /**
