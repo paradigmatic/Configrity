@@ -14,15 +14,17 @@ The API is stable and covered by tests.
 
 ## Example ##
 
-    import org.streum.configrity._
-    
-    val config = Configuration.load( "server.conf" )
+```scala
+import org.streum.configrity._
 
-    val hostname = config[String]("host")
-    val port = config[Int]("port")
+val config = Configuration.load( "server.conf" )
 
-    val updatedConfig = config.set ("port",8080 )
-    upddatedConfig.save( "local.conf" )	
+val hostname = config[String]("host")
+val port = config[Int]("port")
+
+val updatedConfig = config.set ("port",8080 )
+updatedConfig.save( "local.conf" )
+```
 
 ## Features ##
 
@@ -54,7 +56,7 @@ The API is stable and covered by tests.
 Configrity depends on Scala 2.10 or newer.
 
 While core features do not depend on external libraries, some modules
-may. In that case, the approriate dependencies will be automatically
+may. In that case, the appropriate dependencies will be automatically
 installed by sbt/maven.
 
 ## Installation ##
@@ -63,7 +65,11 @@ installed by sbt/maven.
 
 The dependency line is:
 
-    "org.streum" %% "configrity-core" % "1.0.0"
+```scala
+libraryDependencies ++= Seq(
+  "org.streum" %% "configrity-core" % "1.0.0"
+)
+```
 
 Additional modules require addition dependency lines. Check the wiki
 for more information:

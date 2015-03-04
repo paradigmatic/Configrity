@@ -106,7 +106,7 @@ case class Configuration( data: Map[String,String], prefix: Option[String] ) {
   ) {
     val out = new java.io.PrintWriter( file )
     out.println( format(fmt) )
-    out.close
+    out.close()
   }
 
   /** Saves the configuration to a file */
@@ -202,20 +202,20 @@ object Configuration {
       entries.map {
         case (k,v) => v match {
           case l: List[_] => 
-	    (k, io.Utils.sanitize(l).mkString("[",",","]") )
+            (k, io.Utils.sanitize(l).mkString("[",",","]") )
           case _ => (k,v.toString)
         }
       }.toMap
     )
 
 
-  /** Returns the environement variables as a Configuration */
+  /** Returns the environment variables as a Configuration */
   def environment = Configuration( sys.env )
 
   /** Returns the system properties as a Configuration */
   def systemProperties = Configuration( sys.props.toMap ) 
 
-  /** Instanciates a configuration file from a string using
+  /** Instantiates a configuration file from a string using
    *  eventually a specified format. By default, the FlatFormat
    *  will be used.
    */

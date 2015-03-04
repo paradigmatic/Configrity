@@ -21,7 +21,6 @@ package org.streum.configrity.converter
 
 import java.io.File
 import java.awt.Color
-import java.net.URL
 import java.net.URI
 
 /**
@@ -45,8 +44,8 @@ trait Extra {
 
     def parse( s: String ) = s match {
       case HexColor(c) => {
-	val rgb = Integer.parseInt( c.toLowerCase, 16 )
-	new Color( rgb )
+        val rgb = Integer.parseInt( c.toLowerCase, 16 )
+        new Color( rgb )
       }
     }
 

@@ -80,28 +80,28 @@ trait DefaultConverters {
   )
 
   /**
-   * Convert strings to ints.
+   * Convert strings to `Int`s.
    */
   implicit val intConverter = ValueConverter[Int]( 
     s => java.lang.Integer.parseInt(s)
   )
 
   /**
-   * Convert strings to longs.
+   * Convert strings to `Long`s.
    */
   implicit val longConverter = ValueConverter[Long]( 
     s => java.lang.Long.parseLong(s)
   )
 
   /**
-   * Convert strings to floats.
+   * Convert strings to `Float`s.
    */
   implicit val floatConverter = ValueConverter[Float]( 
     s => java.lang.Float.parseFloat(s)
   )
 
   /**
-   * Convert strings to doubles.
+   * Convert strings to `Double`s.
    */
   implicit val doubleConverter = ValueConverter[Double]( 
     s => java.lang.Double.parseDouble(s)
