@@ -19,14 +19,14 @@ J'ai installé:
 
 https://git.c57.fr/explore
 
-Si vous acceptéez de colalborer,n n'hésitez pas ! <a href="http://board.concrete5.fr/viewtopic.php?p=4655#4655">"Plus on est de fous, polsu il y de riz"</a> !
+Si vous acceptéez de colalborer, n'hésitez pas ! <a href="http://board.concrete5.fr/viewtopic.php?p=4655#4655">"Plus on est de fous, plus il y de riz"</a> !
 
 
 @ très bientôt, j'espère,
 
 
 Lionel Adel.
-
+<i>P.S.: Et vvous avez raison ! Cet outil devienbt de + en + un concurrent de Fb ;-) !</i>
 ----
 
 
