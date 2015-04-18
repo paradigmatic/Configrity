@@ -1,3 +1,37 @@
+Bonjour, Jean-Luc,
+
+
+Désolé de vous laisser croire qu'il peut y avoir un futur update sur votre projet Configrity...
+
+Et donc de vous écrire par ce biais...
+
+Je découvre depuis ne quinzaine de jours ces outils révolutionnaire de partage de code.
+
+C'est géant, et ça peut vraiement aider beaucoup de monde...
+
+... Anglophone !
+
+Pour les autres, c'est là qu'il y a à faire d'après moi...
+
+Donc, je recherche toute personne qui serait à même de collaborer dans le cadre de la vulgariasationd e l'utillisation de ces outils pour les 'non-anglophones'
+
+J'ai installé:
+
+https://git.c57.fr/explore
+
+Si vous acceptéez de colalborer, n'hésitez pas ! <a href="http://board.concrete5.fr/viewtopic.php?p=4655#4655">"Plus on est de fous, plus il y de riz"</a> !
+
+
+@ très bientôt, j'espère,
+
+
+Lionel Adel.
+<i>P.S.: Et vvous avez raison ! Cet outil devienbt de + en + un concurrent de Fb ;-) !</i>
+
+
+----
+
+
 # Configrity README file #
 
 Configrity is a configuration library for Scala 2.10 or
